@@ -1,0 +1,8 @@
+name: Publish Document
+title:
+account: rpubs
+server: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/309950/98493c8bdb71478180ad184284e5540f
+bundleId: https://api.rpubs.com/api/v1/document/309950/98493c8bdb71478180ad184284e5540f
+url: http://rpubs.com/alanksnielsen/309950
+when: 1505897923.23635

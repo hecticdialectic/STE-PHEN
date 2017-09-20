@@ -1,0 +1,152 @@
+---
+title: "Prediction Reader"
+author: "Alan Nielsen"
+date: "September 20, 2017"
+output: html_document
+---
+
+```{r Loading Libraries, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(reshape2)
+```
+
+#Making Predictions
+As part of the Hypothesis Challenge, you will be generating sets of hypotheses - you can do this in a few ways
+
+You will be making predictions for how participants will respond for each type of comparison- thus the values you are predicting will be any number between 0 and 1.
+
+
+A value of 0 suggests that the "High" Inducer goes with the "Low" Concurrent - for example on a Speed-Size Trial a response of 0 means that the participant chose that a Fast Object (Speed-H) is associated with A Small Figure (Size-L).
+
+A value of 1 suggest that the "High" Inducer goes with the "High" concurrent- for example on a Pitch-Brightness trial a response of 1 means that the participant associated a High-Pitched sound (Pitch-H) with a Bright Image (Brightness-H).
+
+You will not be making direct predictions about how participants respond on a trial-by-trial basis - instead you will be making a prediction about the *mean* value of participant responses for a given comparison. So you may think that on Pitch-Brightness Trials participants will **always** respond that High Pitch goes with Bright (and Low Pitch goes with Dark) - if that was your prediction you would give a value of "1" for that comparison.
+
+It is unlikely, however, that all participants will *always* respond the same- so you're likely to want to make predictions that are a bit more moderate - you might predict for example that Participants will associate Brightness with High Pitch 90% of the time - in which case you would give a value of "0.9" for that comparison.
+
+On the other hand, values close to "0" suggest that participants will match High-to-Low - so for Speed-Size comparisons you may think participants will generally think that Small Images are Fast - if you think *all* participants would respond in this way you could enter a value of "0", but you again might not want to make such a strong prediction - you might instead suggest that the mean Response will be "0.1", which would mean that on 90% of trials participants match Small to Fast.
+
+A value of "0.5" means that participants responded randomly and/or had no bias to associate one domain with another - You might think that for comparisons between **Noise and Size** that participants might respond either way - that Small things are Noisy or that Large Things are noisy - here you might want to make a prediction around 0.5.
+
+##Imputed Predictions
+
+You are not required to make **every** prediction yourself - in fact you might argue that the most elegant explanation of the way participants respond is the one that makes the **minimum** number of predictions.
+
+Earlier, Bill covered some scripts that Impute Predictions from seen values to unseen values - for example if we know (or have predicted) that participants will match Bright and High Pitched Stimuli 90% of the time (Predicted Mean Response = 0.9), and also that they will match Jagged and High Pitched Stimuli 80% of the time (Predicted Mean Response = 0.8), we can estimate that they will associate Bright and Jagged Stimuli 85% of the time (Predicted Mean Response = 0.85 - which is the average of the two known values).
+
+
+# How to Make Predictions
+You can make predictions in a number of ways, but regardless of what method you want to use, you'll need to take a look at a list of all of the comparisons in the experiment - so let's load that in first
+
+```{r Loading in Comparisons}
+
+myPLong <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Long.csv")
+
+head(myPLong)
+```
+
+So taking a look at the data frame for predictions, we can see that it is a data frame with 2 columns - the first column contains the (order insensitive) comparison, while the second (empty) column contains the Prediction, which will be a Number between 0 and 1 (as described above).
+
+Your task now will be to fill that column. You can do this directly in R (or Python, if you're more comfortable), by making a string of predictions (in the correct order), and then simply putting that vector into the dataframe (if this terminology scares you, don't worry!)
+
+The comparisons are as follows:
+
+```{r Comparions vector}
+as.vector(myPLong$Comparison)
+```
+
+So the R (or python) way to assign our predictions is simply to make an equal length vector of predictions (in the same order), and then paste it into the Predictions column of our data frame.
+
+So you could make a list of (1, 0.9, 0.7, 0.6 etc...)
+
+You can leave cells blank (and force a prediction to be imputed) by putting "NA" at that point in your list
+
+##Assigning Predictions in R
+
+```{r Assigning Predictions in R}
+myPLong$Prediction <- as.vector(runif(93, 0, 1))   # puts random values between 0 and 1 into every cell
+
+#myPLong$Prediction <- c(Pred1, Pred2, Pred3, Pred4... PredN) #assign a string of your own predictions to the column
+
+# Rewrite out the CSV with your Predictions included
+write.csv(myPLong, "F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Long-YOURNAME.csv")
+```
+
+##Assigning Predictions in Excel (Long Format)
+
+If you simply open the .csv file that we loaded in earlier ("myPredictions-Long.csv") in Excel you can fill in the Prediction column manually with your predictions - then save the .csv file again as normal - **but rename it to "myPredictions-Long-YOURNAME.csv"**
+
+
+##Assigning Predictions in Excel (Wide Format)
+
+Maybe you find looking at the list of comparisons difficult, because you can't conceptualize how they are related to each other - the most natural way to look at the data is likely in wide format (this is also how we will visualise the data).
+
+A set of predictions in wide format looks like this :
+
+```{r Wide Format Predictions}
+
+myPWide <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Wide-Sample.csv")
+
+myPWide
+```
+
+
+You can look at the data frame here, but you can also look at it simply by opening it in Excel - to see our random set of associations open "myPredictions-Wide-Sample.csv". To make your own predictions, instead open "myPredictions-Wide.xls"
+
+This spreadsheet is in .xls format because it includes some formulas that fill in values- the predictions you need to make are the empty cells in the top right of the data frame - once you make those predictions you can re-save the file - but re-save that file as "myPredictions-Wide.csv" noting that we want it in CSV format (not xls)
+
+Once you've done that, you just need to get this data frame into the same format as myPredictions-Long - this Long Format dataframe is what will be used in Bill's Imputation Script, and also for the Simulation of data
+
+To that end, you'll need to run the script below (don't worry about how it works- you will learn most of these commands tomorrow):
+
+```{r Wide Format Data Transformation, message = FALSE, warning = FALSE}
+myPWide <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Wide.csv")
+
+colnames(myPWide) <- c("Inducer", "Affect EB", "Affect HS", "Affect PD", "Affect SC",
+                       "Pitch", "Amplitude", "Noise", "Size", "Shape", "Speed", "Brightness",
+                       "Color RB", "Color RG", "Color RY", "Color YB")
+
+myPLong <- melt(myPWide,
+                 variable.name = "Concurrent",
+                value.name = "Prediction",
+                 id.vars = "Inducer")
+
+Inducers <- unique(myPLong$Inducer)       #All possible inducer token sets   
+Concurrents <- unique(myPLong$Concurrent)    #All possible concurrent token sets
+
+myPLong <- separate(data=myPLong, col= Inducer,     #split columns back up for subsetting
+                         into= c("IndType", "IndToken"), sep = " ", remove = FALSE)
+myPLong <- separate(data=myPLong, col= Concurrent, 
+                         into= c("ConType", "ConToken"), sep = " ", remove = FALSE)
+
+myPLong <- subset(myPLong, IndType != ConType)
+
+# Code the comparison column into the SSData frame
+myPLong$IndCon <- paste(myPLong$Inducer, myPLong$Concurrent, sep = '-')
+myPLong$ConInd <- paste(myPLong$Inducer, myPLong$Concurrent, sep = '-')
+
+myPLong$Comparison <- paste(myPLong$Inducer, myPLong$Concurrent, sep = '-') #Make a comparison column
+myPLong <- arrange(myPLong, Comparison)  # Order the data frame alphabetically by the comparison column
+
+delRows = NULL # the rows to be removed
+for(i in 1:nrow(myPLong)){
+  j = which(myPLong$Inducer == myPLong$Concurrent[i] & myPLong$Concurrent == myPLong$Inducer[i])
+  j = j [j > i]
+  if (length(j) > 0){
+    delRows = c(delRows, j)
+  }
+}
+myPLong <- myPLong[-delRows,]
+
+myPLong <- subset(myPLong, select = c(Comparison, Prediction))
+
+write.csv(myPLong, "F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Long-YOURNAME.csv")
+
+```
+
+
+
+
+
+
+

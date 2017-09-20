@@ -1,0 +1,94 @@
+"","Comparison","Prediction"
+"1","Affect EB-Amplitude",NA
+"2","Affect EB-Brightness",NA
+"3","Affect EB-Color RB",NA
+"4","Affect EB-Color RG",NA
+"5","Affect EB-Color RY",NA
+"6","Affect EB-Color YB",NA
+"7","Affect EB-Noise",NA
+"8","Affect EB-Pitch",NA
+"9","Affect EB-Shape",NA
+"10","Affect EB-Size",NA
+"11","Affect EB-Speed",NA
+"12","Affect HS-Amplitude",NA
+"13","Affect HS-Brightness",NA
+"14","Affect HS-Color RB",NA
+"15","Affect HS-Color RG",NA
+"16","Affect HS-Color RY",NA
+"17","Affect HS-Color YB",NA
+"18","Affect HS-Noise",NA
+"19","Affect HS-Pitch",NA
+"20","Affect HS-Shape",NA
+"21","Affect HS-Size",NA
+"22","Affect HS-Speed",NA
+"23","Affect PD-Amplitude",NA
+"24","Affect PD-Brightness",NA
+"25","Affect PD-Color RB",NA
+"26","Affect PD-Color RG",NA
+"27","Affect PD-Color RY",NA
+"28","Affect PD-Color YB",NA
+"29","Affect PD-Noise",NA
+"30","Affect PD-Pitch",NA
+"31","Affect PD-Shape",NA
+"32","Affect PD-Size",NA
+"33","Affect PD-Speed",NA
+"34","Affect SC-Amplitude",NA
+"35","Affect SC-Brightness",NA
+"36","Affect SC-Color RB",NA
+"37","Affect SC-Color RG",NA
+"38","Affect SC-Color RY",NA
+"39","Affect SC-Color YB",NA
+"40","Affect SC-Noise",NA
+"41","Affect SC-Pitch",NA
+"42","Affect SC-Shape",NA
+"43","Affect SC-Size",NA
+"44","Affect SC-Speed",NA
+"49","Amplitude-Brightness",NA
+"50","Amplitude-Color RB",NA
+"51","Amplitude-Color RG",NA
+"52","Amplitude-Color RY",NA
+"53","Amplitude-Color YB",NA
+"54","Amplitude-Noise",NA
+"55","Amplitude-Pitch",0
+"56","Amplitude-Shape",NA
+"57","Amplitude-Size",NA
+"58","Amplitude-Speed",NA
+"64","Brightness-Color RB",NA
+"65","Brightness-Color RG",NA
+"66","Brightness-Color RY",NA
+"67","Brightness-Color YB",NA
+"68","Brightness-Noise",0
+"69","Brightness-Pitch",0
+"70","Brightness-Shape",0
+"71","Brightness-Size",0
+"72","Brightness-Speed",0
+"79","Color RB-Noise",0
+"80","Color RB-Pitch",0
+"81","Color RB-Shape",0
+"82","Color RB-Size",0
+"83","Color RB-Speed",0
+"90","Color RG-Noise",0
+"91","Color RG-Pitch",0
+"92","Color RG-Shape",0
+"93","Color RG-Size",0
+"94","Color RG-Speed",0
+"101","Color RY-Noise",0
+"102","Color RY-Pitch",0
+"103","Color RY-Shape",0
+"104","Color RY-Size",0
+"105","Color RY-Speed",0
+"112","Color YB-Noise",0
+"113","Color YB-Pitch",0
+"114","Color YB-Shape",0
+"115","Color YB-Size",0
+"116","Color YB-Speed",0
+"127","Noise-Pitch",0
+"128","Noise-Shape",NA
+"129","Noise-Size",NA
+"130","Noise-Speed",NA
+"142","Pitch-Shape",NA
+"143","Pitch-Size",NA
+"144","Pitch-Speed",NA
+"157","Shape-Size",0
+"158","Shape-Speed",NA
+"172","Size-Speed",NA
