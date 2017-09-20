@@ -37,50 +37,6 @@ You are not required to make **every** prediction yourself - in fact you might a
 Earlier, Bill covered some scripts that Impute Predictions from seen values to unseen values - for example if we know (or have predicted) that participants will match Bright and High Pitched Stimuli 90% of the time (Predicted Mean Response = 0.9), and also that they will match Jagged and High Pitched Stimuli 80% of the time (Predicted Mean Response = 0.8), we can estimate that they will associate Bright and Jagged Stimuli 85% of the time (Predicted Mean Response = 0.85 - which is the average of the two known values).
 
 
-# How to Make Predictions
-You can make predictions in a number of ways, but regardless of what method you want to use, you'll need to take a look at a list of all of the comparisons in the experiment - so let's load that in first
-
-```{r Loading in Comparisons}
-
-myPLong <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Long.csv")
-
-head(myPLong)
-```
-
-
-So taking a look at the data frame for predictions, we can see that it is a data frame with 2 columns - the first column contains the (order insensitive) comparison, while the second (empty) column contains the Prediction, which will be a Number between 0 and 1 (as described above).
-
-Your task now will be to fill that column. You can do this directly in R (or Python, if you're more comfortable), by making a string of predictions (in the correct order), and then simply putting that vector into the dataframe (if this terminology scares you, don't worry!)
-
-The comparisons are as follows:
-
-```{r Comparions vector}
-as.vector(myPLong$Comparison)
-```
-
-
-So the R (or python) way to assign our predictions is simply to make an equal length vector of predictions (in the same order), and then paste it into the Predictions column of our data frame.
-
-So you could make a list of (1, 0.9, 0.7, 0.6 etc...)
-
-You can leave cells blank (and force a prediction to be imputed) by putting "NA" at that point in your list
-
-##Assigning Predictions in R
-
-```{r Assigning Predictions in R}
-myPLong$Prediction <- as.vector(runif(93, 0, 1))   # puts random values between 0 and 1 into every cell
-
-#myPLong$Prediction <- c(Pred1, Pred2, Pred3, Pred4... PredN) #assign a string of your own predictions to the column
-
-# Rewrite out the CSV with your Predictions included
-write.csv(myPLong, "F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Long-YOURNAME.csv")
-```
-
-##Assigning Predictions in Excel (Long Format)
-
-If you simply open the .csv file that we loaded in earlier ("myPredictions-Long.csv") in Excel you can fill in the Prediction column manually with your predictions - then save the .csv file again as normal - **but rename it to "myPredictions-Long-YOURNAME.csv"**
-
-
 ##Assigning Predictions in Excel (Wide Format)
 
 Maybe you find looking at the list of comparisons difficult, because you can't conceptualize how they are related to each other - the most natural way to look at the data is likely in wide format (this is also how we will visualise the data).
@@ -88,7 +44,7 @@ Maybe you find looking at the list of comparisons difficult, because you can't c
 A set of predictions in wide format looks like this :
 
 ```{r Wide Format Predictions}
-
+#### REPLACE THIS WITH YOUR EDITED FILE
 myPWide <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Wide-Sample.csv")
 
 myPWide
@@ -104,8 +60,6 @@ Once you've done that, you just need to get this data frame into the same format
 To that end, you'll need to run the script below (don't worry about how it works- you will learn most of these commands tomorrow):
 
 ```{r Wide Format Data Transformation, message = FALSE, warning = FALSE}
-myPWide <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Wide.csv")
-
 colnames(myPWide) <- c("Inducer", "Affect EB", "Affect HS", "Affect PD", "Affect SC",
                        "Pitch", "Amplitude", "Noise", "Size", "Shape", "Speed", "Brightness",
                        "Color RB", "Color RG", "Color RY", "Color YB")
@@ -114,9 +68,6 @@ myPLong <- melt(myPWide,
                  variable.name = "Concurrent",
                 value.name = "Prediction",
                  id.vars = "Inducer")
-
-Inducers <- unique(myPLong$Inducer)       #All possible inducer token sets   
-Concurrents <- unique(myPLong$Concurrent)    #All possible concurrent token sets
 
 myPLong <- separate(data=myPLong, col= Inducer,     #split columns back up for subsetting
                          into= c("IndType", "IndToken"), sep = " ", remove = FALSE)
@@ -142,7 +93,7 @@ for(i in 1:nrow(myPLong)){
 }
 myPLong <- myPLong[-delRows,]
 
-myPLong <- subset(myPLong, select = c(Comparison, Prediction))
+myPLong <- subset(myPLong, select = c(Inducer, Concurrent, Comparison, Prediction))
 
 write.csv(myPLong, "F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Long-YOURNAME.csv")
 
@@ -153,10 +104,6 @@ Just for fun, you can ouput a HeatMap of your Predictions:
 ```{r Predictions Heatmap}
 
 myPLong <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/myPredictions-Long-YOURNAME.csv")
-
-#mypreds <- sample(myPLong$Prediction, 77)
-#mypreds <- c(mypreds, rep("", 16))
-#myPLong$Prediction <- sample(mypreds)
 
 Predictions <- separate(data = myPLong, col = Comparison,
                       into = c("Left", "Right"), 
@@ -198,7 +145,6 @@ Predictions$Concurrent2 <- factor(Predictions$Concurrent2,
                                             "High Pitch/Low Pitch", "Jagged/Curvy", "Large/Small",
                                             "Fast/Slow"))
 
-Predictions <- subset(Predictions, Prediction != "")
 Predictions$Prediction <-as.numeric(Predictions$Prediction)
 
 
@@ -308,7 +254,7 @@ simdataAgg$Concurrent2 <- mapvalues(simdataAgg$Concurrent, from = Domains, to= H
 
 ggplot(data= simdataAgg, aes(x=Concurrent2, y=Inducer2, fill=ResponseSimulated.mean)) +
   geom_tile(color = "white") +
-  ggtitle("Biases - Affect Data") +
+  ggtitle("Biases - Simulated Data") +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
                        midpoint = 0.5, limit = c(0,1),
                        name="Direction and Strength of Associaton") +
@@ -324,7 +270,28 @@ So those are your graphs - to drive the difference between them home, one quite 
 
 ```{r One Heatplot to Rule them all and in the darkness bind them}
 
+Predictions <- arrange(Predictions, Comparison)
+ImputedPredictions <- arrange(ImputedPredictions, Comparison)
+simdataAgg <- arrange(simdataAgg, Comparison)
 
+TheOne <- subset(Predictions, select = c(Inducer2, Concurrent2, Prediction))
+TheOne$ImputedPrediction <- ImputedPredictions$ImputedPrediction
+TheOne$SimData <- simdataAgg$ResponseSimulated.mean
+
+TheOne <- melt(TheOne,
+                   variable.name = "Source",
+                   id.vars = c ("Inducer2", "Concurrent2"))
+
+ggplot(data= TheOne, aes(x=Concurrent2, y=Inducer2, fill=value)) +
+  geom_tile(color = "white") +
+  ggtitle("Biases - Affect Data") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
+                       midpoint = 0.5, limit = c(0,1),
+                       name="Direction and Strength of Associaton") +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  facet_wrap(~Source, nrow =3)
+  coord_fixed()
 
 
 ```

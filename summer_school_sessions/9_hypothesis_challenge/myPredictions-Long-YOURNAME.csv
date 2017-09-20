@@ -1,187 +1,94 @@
-"","Inducer","Concurrent","Comparison","Prediction","Inducer2","Concurrent2"
-"1","Affect EB","Amp","Affect EB-Amp",0.775628853123635,"Excited/Bored","Loud/Quiet"
-"2","Affect EB","Brightness","Affect EB-Brightness",0.683649914339185,"Excited/Bored","Bright/Dark"
-"3","Affect EB","Color RB","Affect EB-Color RB",0.73729251162149,"Excited/Bored","Red/Blue"
-"4","Affect EB","Color RG","Affect EB-Color RG",0.241817056201398,"Excited/Bored","Red/Green"
-"5","Affect EB","Color RY","Affect EB-Color RY",0.819137279409915,"Excited/Bored","Red/Yellow"
-"6","Affect EB","Color YB","Affect EB-Color YB",0.980192924384028,"Excited/Bored","Yellow/Blue"
-"7","Affect EB","Noise","Affect EB-Noise",NA,"Excited/Bored","Noisy/Tonal"
-"8","Affect EB","Pitch","Affect EB-Pitch",0.283611885504797,"Excited/Bored","High Pitch/Low Pitch"
-"9","Affect EB","Shape","Affect EB-Shape",0.85685700038448,"Excited/Bored","Jagged/Curvy"
-"10","Affect EB","Size","Affect EB-Size",0.79310617223382,"Excited/Bored","Large/Small"
-"11","Affect EB","Speed","Affect EB-Speed",NA,"Excited/Bored","Fast/Slow"
-"12","Affect HS","Amp","Affect HS-Amp",0.702382423449308,"Happy/Sad","Loud/Quiet"
-"13","Affect HS","Brightness","Affect HS-Brightness",0.00584606803022325,"Happy/Sad","Bright/Dark"
-"14","Affect HS","Color RB","Affect HS-Color RB",0.0502413583453745,"Happy/Sad","Red/Blue"
-"15","Affect HS","Color RG","Affect HS-Color RG",NA,"Happy/Sad","Red/Green"
-"16","Affect HS","Color RY","Affect HS-Color RY",0.818171943770722,"Happy/Sad","Red/Yellow"
-"17","Affect HS","Color YB","Affect HS-Color YB",0.329041192540899,"Happy/Sad","Yellow/Blue"
-"18","Affect HS","Noise","Affect HS-Noise",0.353242662269622,"Happy/Sad","Noisy/Tonal"
-"19","Affect HS","Pitch","Affect HS-Pitch",NA,"Happy/Sad","High Pitch/Low Pitch"
-"20","Affect HS","Shape","Affect HS-Shape",0.736336212605238,"Happy/Sad","Jagged/Curvy"
-"21","Affect HS","Size","Affect HS-Size",0.756249234313145,"Happy/Sad","Large/Small"
-"22","Affect HS","Speed","Affect HS-Speed",0.31752003938891,"Happy/Sad","Fast/Slow"
-"23","Affect PD","Amp","Affect PD-Amp",0.308422905625775,"Pleased/Disgusted","Loud/Quiet"
-"24","Affect PD","Brightness","Affect PD-Brightness",0.205492195440456,"Pleased/Disgusted","Bright/Dark"
-"25","Affect PD","Color RB","Affect PD-Color RB",0.507446544244885,"Pleased/Disgusted","Red/Blue"
-"26","Affect PD","Color RG","Affect PD-Color RG",0.0252823589835316,"Pleased/Disgusted","Red/Green"
-"27","Affect PD","Color RY","Affect PD-Color RY",0.39696075534448,"Pleased/Disgusted","Red/Yellow"
-"28","Affect PD","Color YB","Affect PD-Color YB",0.783307985402644,"Pleased/Disgusted","Yellow/Blue"
-"29","Affect PD","Noise","Affect PD-Noise",0.630946665536612,"Pleased/Disgusted","Noisy/Tonal"
-"30","Affect PD","Pitch","Affect PD-Pitch",0.323299242649227,"Pleased/Disgusted","High Pitch/Low Pitch"
-"31","Affect PD","Shape","Affect PD-Shape",0.153072076383978,"Pleased/Disgusted","Jagged/Curvy"
-"32","Affect PD","Size","Affect PD-Size",0.20292320754379,"Pleased/Disgusted","Large/Small"
-"33","Affect PD","Speed","Affect PD-Speed",0.921854335349053,"Pleased/Disgusted","Fast/Slow"
-"34","Affect SC","Amp","Affect SC-Amp",0.162090190220624,"Stressed/Calm","Loud/Quiet"
-"35","Affect SC","Brightness","Affect SC-Brightness",NA,"Stressed/Calm","Bright/Dark"
-"36","Affect SC","Color RB","Affect SC-Color RB",0.900587288895622,"Stressed/Calm","Red/Blue"
-"37","Affect SC","Color RG","Affect SC-Color RG",NA,"Stressed/Calm","Red/Green"
-"38","Affect SC","Color RY","Affect SC-Color RY",0.240040138596669,"Stressed/Calm","Red/Yellow"
-"39","Affect SC","Color YB","Affect SC-Color YB",0.585107653867453,"Stressed/Calm","Yellow/Blue"
-"40","Affect SC","Noise","Affect SC-Noise",0.795569280860946,"Stressed/Calm","Noisy/Tonal"
-"41","Affect SC","Pitch","Affect SC-Pitch",0.526415813714266,"Stressed/Calm","High Pitch/Low Pitch"
-"42","Affect SC","Shape","Affect SC-Shape",0.54444797639735,"Stressed/Calm","Jagged/Curvy"
-"43","Affect SC","Size","Affect SC-Size",0.0264046455267817,"Stressed/Calm","Large/Small"
-"44","Affect SC","Speed","Affect SC-Speed",0.275974668795243,"Stressed/Calm","Fast/Slow"
-"45","Amp","Brightness","Amp-Brightness",0.138959350064397,"Loud/Quiet","Bright/Dark"
-"46","Amp","Color RB","Amp-Color RB",0.775366052053869,"Loud/Quiet","Red/Blue"
-"47","Amp","Color RG","Amp-Color RG",NA,"Loud/Quiet","Red/Green"
-"48","Amp","Color RY","Amp-Color RY",0.314106098841876,"Loud/Quiet","Red/Yellow"
-"49","Amp","Color YB","Amp-Color YB",0.169968113768846,"Loud/Quiet","Yellow/Blue"
-"50","Amp","Noise","Amp-Noise",NA,"Loud/Quiet","Noisy/Tonal"
-"51","Amp","Pitch","Amp-Pitch",NA,"Loud/Quiet","High Pitch/Low Pitch"
-"52","Amp","Shape","Amp-Shape",0.95989746786654,"Loud/Quiet","Jagged/Curvy"
-"53","Amp","Size","Amp-Size",0.0804963740520179,"Loud/Quiet","Large/Small"
-"54","Amp","Speed","Amp-Speed",0.981482639210299,"Loud/Quiet","Fast/Slow"
-"55","Brightness","Color RB","Brightness-Color RB",0.931655785767362,"Bright/Dark","Red/Blue"
-"56","Brightness","Color RG","Brightness-Color RG",0.244097311515361,"Bright/Dark","Red/Green"
-"57","Brightness","Color RY","Brightness-Color RY",0.241447103908285,"Bright/Dark","Red/Yellow"
-"58","Brightness","Color YB","Brightness-Color YB",0.788239176617935,"Bright/Dark","Yellow/Blue"
-"59","Brightness","Noise","Brightness-Noise",0.51165834441781,"Bright/Dark","Noisy/Tonal"
-"60","Brightness","Pitch","Brightness-Pitch",0.153373501263559,"Bright/Dark","High Pitch/Low Pitch"
-"61","Brightness","Shape","Brightness-Shape",0.243136275326833,"Bright/Dark","Jagged/Curvy"
-"62","Brightness","Size","Brightness-Size",0.408830467378721,"Bright/Dark","Large/Small"
-"63","Brightness","Speed","Brightness-Speed",0.274820303078741,"Bright/Dark","Fast/Slow"
-"64","Color RB","Noise","Color RB-Noise",0.496471533784643,"Red/Blue","Noisy/Tonal"
-"65","Color RB","Pitch","Color RB-Pitch",0.488294328562915,"Red/Blue","High Pitch/Low Pitch"
-"66","Color RB","Shape","Color RB-Shape",0.298230975167826,"Red/Blue","Jagged/Curvy"
-"67","Color RB","Size","Color RB-Size",0.322784962132573,"Red/Blue","Large/Small"
-"68","Color RB","Speed","Color RB-Speed",0.185942885698751,"Red/Blue","Fast/Slow"
-"69","Color RG","Noise","Color RG-Noise",0.53396644955501,"Red/Green","Noisy/Tonal"
-"70","Color RG","Pitch","Color RG-Pitch",0.651222035288811,"Red/Green","High Pitch/Low Pitch"
-"71","Color RG","Shape","Color RG-Shape",NA,"Red/Green","Jagged/Curvy"
-"72","Color RG","Size","Color RG-Size",0.0715044597163796,"Red/Green","Large/Small"
-"73","Color RG","Speed","Color RG-Speed",0.350449304562062,"Red/Green","Fast/Slow"
-"74","Color RY","Noise","Color RY-Noise",NA,"Red/Yellow","Noisy/Tonal"
-"75","Color RY","Pitch","Color RY-Pitch",NA,"Red/Yellow","High Pitch/Low Pitch"
-"76","Color RY","Shape","Color RY-Shape",0.266975017962977,"Red/Yellow","Jagged/Curvy"
-"77","Color RY","Size","Color RY-Size",0.63733829674311,"Red/Yellow","Large/Small"
-"78","Color RY","Speed","Color RY-Speed",0.465235480805859,"Red/Yellow","Fast/Slow"
-"79","Color YB","Noise","Color YB-Noise",0.804933388484642,"Yellow/Blue","Noisy/Tonal"
-"80","Color YB","Pitch","Color YB-Pitch",0.699704576516524,"Yellow/Blue","High Pitch/Low Pitch"
-"81","Color YB","Shape","Color YB-Shape",0.316896281205118,"Yellow/Blue","Jagged/Curvy"
-"82","Color YB","Size","Color YB-Size",0.448941540205851,"Yellow/Blue","Large/Small"
-"83","Color YB","Speed","Color YB-Speed",NA,"Yellow/Blue","Fast/Slow"
-"84","Noise","Pitch","Noise-Pitch",0.207264642696828,"Noisy/Tonal","High Pitch/Low Pitch"
-"85","Noise","Shape","Noise-Shape",NA,"Noisy/Tonal","Jagged/Curvy"
-"86","Noise","Size","Noise-Size",NA,"Noisy/Tonal","Large/Small"
-"87","Noise","Speed","Noise-Speed",0.50222160643898,"Noisy/Tonal","Fast/Slow"
-"88","Pitch","Shape","Pitch-Shape",0.163271452533081,"High Pitch/Low Pitch","Jagged/Curvy"
-"89","Pitch","Size","Pitch-Size",0.304625479271635,"High Pitch/Low Pitch","Large/Small"
-"90","Pitch","Speed","Pitch-Speed",0.958560835337266,"High Pitch/Low Pitch","Fast/Slow"
-"91","Shape","Size","Shape-Size",0.236173738725483,"Jagged/Curvy","Large/Small"
-"92","Shape","Speed","Shape-Speed",NA,"Jagged/Curvy","Fast/Slow"
-"93","Size","Speed","Size-Speed",0.923177028074861,"Large/Small","Fast/Slow"
-"94","Amp","Affect EB","Affect EB-Amp",0.775628853123635,"Loud/Quiet","Excited/Bored"
-"95","Brightness","Affect EB","Affect EB-Brightness",0.683649914339185,"Bright/Dark","Excited/Bored"
-"96","Color RB","Affect EB","Affect EB-Color RB",0.73729251162149,"Red/Blue","Excited/Bored"
-"97","Color RG","Affect EB","Affect EB-Color RG",0.241817056201398,"Red/Green","Excited/Bored"
-"98","Color RY","Affect EB","Affect EB-Color RY",0.819137279409915,"Red/Yellow","Excited/Bored"
-"99","Color YB","Affect EB","Affect EB-Color YB",0.980192924384028,"Yellow/Blue","Excited/Bored"
-"100","Noise","Affect EB","Affect EB-Noise",NA,"Noisy/Tonal","Excited/Bored"
-"101","Pitch","Affect EB","Affect EB-Pitch",0.283611885504797,"High Pitch/Low Pitch","Excited/Bored"
-"102","Shape","Affect EB","Affect EB-Shape",0.85685700038448,"Jagged/Curvy","Excited/Bored"
-"103","Size","Affect EB","Affect EB-Size",0.79310617223382,"Large/Small","Excited/Bored"
-"104","Speed","Affect EB","Affect EB-Speed",NA,"Fast/Slow","Excited/Bored"
-"105","Amp","Affect HS","Affect HS-Amp",0.702382423449308,"Loud/Quiet","Happy/Sad"
-"106","Brightness","Affect HS","Affect HS-Brightness",0.00584606803022325,"Bright/Dark","Happy/Sad"
-"107","Color RB","Affect HS","Affect HS-Color RB",0.0502413583453745,"Red/Blue","Happy/Sad"
-"108","Color RG","Affect HS","Affect HS-Color RG",NA,"Red/Green","Happy/Sad"
-"109","Color RY","Affect HS","Affect HS-Color RY",0.818171943770722,"Red/Yellow","Happy/Sad"
-"110","Color YB","Affect HS","Affect HS-Color YB",0.329041192540899,"Yellow/Blue","Happy/Sad"
-"111","Noise","Affect HS","Affect HS-Noise",0.353242662269622,"Noisy/Tonal","Happy/Sad"
-"112","Pitch","Affect HS","Affect HS-Pitch",NA,"High Pitch/Low Pitch","Happy/Sad"
-"113","Shape","Affect HS","Affect HS-Shape",0.736336212605238,"Jagged/Curvy","Happy/Sad"
-"114","Size","Affect HS","Affect HS-Size",0.756249234313145,"Large/Small","Happy/Sad"
-"115","Speed","Affect HS","Affect HS-Speed",0.31752003938891,"Fast/Slow","Happy/Sad"
-"116","Amp","Affect PD","Affect PD-Amp",0.308422905625775,"Loud/Quiet","Pleased/Disgusted"
-"117","Brightness","Affect PD","Affect PD-Brightness",0.205492195440456,"Bright/Dark","Pleased/Disgusted"
-"118","Color RB","Affect PD","Affect PD-Color RB",0.507446544244885,"Red/Blue","Pleased/Disgusted"
-"119","Color RG","Affect PD","Affect PD-Color RG",0.0252823589835316,"Red/Green","Pleased/Disgusted"
-"120","Color RY","Affect PD","Affect PD-Color RY",0.39696075534448,"Red/Yellow","Pleased/Disgusted"
-"121","Color YB","Affect PD","Affect PD-Color YB",0.783307985402644,"Yellow/Blue","Pleased/Disgusted"
-"122","Noise","Affect PD","Affect PD-Noise",0.630946665536612,"Noisy/Tonal","Pleased/Disgusted"
-"123","Pitch","Affect PD","Affect PD-Pitch",0.323299242649227,"High Pitch/Low Pitch","Pleased/Disgusted"
-"124","Shape","Affect PD","Affect PD-Shape",0.153072076383978,"Jagged/Curvy","Pleased/Disgusted"
-"125","Size","Affect PD","Affect PD-Size",0.20292320754379,"Large/Small","Pleased/Disgusted"
-"126","Speed","Affect PD","Affect PD-Speed",0.921854335349053,"Fast/Slow","Pleased/Disgusted"
-"127","Amp","Affect SC","Affect SC-Amp",0.162090190220624,"Loud/Quiet","Stressed/Calm"
-"128","Brightness","Affect SC","Affect SC-Brightness",NA,"Bright/Dark","Stressed/Calm"
-"129","Color RB","Affect SC","Affect SC-Color RB",0.900587288895622,"Red/Blue","Stressed/Calm"
-"130","Color RG","Affect SC","Affect SC-Color RG",NA,"Red/Green","Stressed/Calm"
-"131","Color RY","Affect SC","Affect SC-Color RY",0.240040138596669,"Red/Yellow","Stressed/Calm"
-"132","Color YB","Affect SC","Affect SC-Color YB",0.585107653867453,"Yellow/Blue","Stressed/Calm"
-"133","Noise","Affect SC","Affect SC-Noise",0.795569280860946,"Noisy/Tonal","Stressed/Calm"
-"134","Pitch","Affect SC","Affect SC-Pitch",0.526415813714266,"High Pitch/Low Pitch","Stressed/Calm"
-"135","Shape","Affect SC","Affect SC-Shape",0.54444797639735,"Jagged/Curvy","Stressed/Calm"
-"136","Size","Affect SC","Affect SC-Size",0.0264046455267817,"Large/Small","Stressed/Calm"
-"137","Speed","Affect SC","Affect SC-Speed",0.275974668795243,"Fast/Slow","Stressed/Calm"
-"138","Brightness","Amp","Amp-Brightness",0.138959350064397,"Bright/Dark","Loud/Quiet"
-"139","Color RB","Amp","Amp-Color RB",0.775366052053869,"Red/Blue","Loud/Quiet"
-"140","Color RG","Amp","Amp-Color RG",NA,"Red/Green","Loud/Quiet"
-"141","Color RY","Amp","Amp-Color RY",0.314106098841876,"Red/Yellow","Loud/Quiet"
-"142","Color YB","Amp","Amp-Color YB",0.169968113768846,"Yellow/Blue","Loud/Quiet"
-"143","Noise","Amp","Amp-Noise",NA,"Noisy/Tonal","Loud/Quiet"
-"144","Pitch","Amp","Amp-Pitch",NA,"High Pitch/Low Pitch","Loud/Quiet"
-"145","Shape","Amp","Amp-Shape",0.95989746786654,"Jagged/Curvy","Loud/Quiet"
-"146","Size","Amp","Amp-Size",0.0804963740520179,"Large/Small","Loud/Quiet"
-"147","Speed","Amp","Amp-Speed",0.981482639210299,"Fast/Slow","Loud/Quiet"
-"148","Color RB","Brightness","Brightness-Color RB",0.931655785767362,"Red/Blue","Bright/Dark"
-"149","Color RG","Brightness","Brightness-Color RG",0.244097311515361,"Red/Green","Bright/Dark"
-"150","Color RY","Brightness","Brightness-Color RY",0.241447103908285,"Red/Yellow","Bright/Dark"
-"151","Color YB","Brightness","Brightness-Color YB",0.788239176617935,"Yellow/Blue","Bright/Dark"
-"152","Noise","Brightness","Brightness-Noise",0.51165834441781,"Noisy/Tonal","Bright/Dark"
-"153","Pitch","Brightness","Brightness-Pitch",0.153373501263559,"High Pitch/Low Pitch","Bright/Dark"
-"154","Shape","Brightness","Brightness-Shape",0.243136275326833,"Jagged/Curvy","Bright/Dark"
-"155","Size","Brightness","Brightness-Size",0.408830467378721,"Large/Small","Bright/Dark"
-"156","Speed","Brightness","Brightness-Speed",0.274820303078741,"Fast/Slow","Bright/Dark"
-"157","Noise","Color RB","Color RB-Noise",0.496471533784643,"Noisy/Tonal","Red/Blue"
-"158","Pitch","Color RB","Color RB-Pitch",0.488294328562915,"High Pitch/Low Pitch","Red/Blue"
-"159","Shape","Color RB","Color RB-Shape",0.298230975167826,"Jagged/Curvy","Red/Blue"
-"160","Size","Color RB","Color RB-Size",0.322784962132573,"Large/Small","Red/Blue"
-"161","Speed","Color RB","Color RB-Speed",0.185942885698751,"Fast/Slow","Red/Blue"
-"162","Noise","Color RG","Color RG-Noise",0.53396644955501,"Noisy/Tonal","Red/Green"
-"163","Pitch","Color RG","Color RG-Pitch",0.651222035288811,"High Pitch/Low Pitch","Red/Green"
-"164","Shape","Color RG","Color RG-Shape",NA,"Jagged/Curvy","Red/Green"
-"165","Size","Color RG","Color RG-Size",0.0715044597163796,"Large/Small","Red/Green"
-"166","Speed","Color RG","Color RG-Speed",0.350449304562062,"Fast/Slow","Red/Green"
-"167","Noise","Color RY","Color RY-Noise",NA,"Noisy/Tonal","Red/Yellow"
-"168","Pitch","Color RY","Color RY-Pitch",NA,"High Pitch/Low Pitch","Red/Yellow"
-"169","Shape","Color RY","Color RY-Shape",0.266975017962977,"Jagged/Curvy","Red/Yellow"
-"170","Size","Color RY","Color RY-Size",0.63733829674311,"Large/Small","Red/Yellow"
-"171","Speed","Color RY","Color RY-Speed",0.465235480805859,"Fast/Slow","Red/Yellow"
-"172","Noise","Color YB","Color YB-Noise",0.804933388484642,"Noisy/Tonal","Yellow/Blue"
-"173","Pitch","Color YB","Color YB-Pitch",0.699704576516524,"High Pitch/Low Pitch","Yellow/Blue"
-"174","Shape","Color YB","Color YB-Shape",0.316896281205118,"Jagged/Curvy","Yellow/Blue"
-"175","Size","Color YB","Color YB-Size",0.448941540205851,"Large/Small","Yellow/Blue"
-"176","Speed","Color YB","Color YB-Speed",NA,"Fast/Slow","Yellow/Blue"
-"177","Pitch","Noise","Noise-Pitch",0.207264642696828,"High Pitch/Low Pitch","Noisy/Tonal"
-"178","Shape","Noise","Noise-Shape",NA,"Jagged/Curvy","Noisy/Tonal"
-"179","Size","Noise","Noise-Size",NA,"Large/Small","Noisy/Tonal"
-"180","Speed","Noise","Noise-Speed",0.50222160643898,"Fast/Slow","Noisy/Tonal"
-"181","Shape","Pitch","Pitch-Shape",0.163271452533081,"Jagged/Curvy","High Pitch/Low Pitch"
-"182","Size","Pitch","Pitch-Size",0.304625479271635,"Large/Small","High Pitch/Low Pitch"
-"183","Speed","Pitch","Pitch-Speed",0.958560835337266,"Fast/Slow","High Pitch/Low Pitch"
-"184","Size","Shape","Shape-Size",0.236173738725483,"Large/Small","Jagged/Curvy"
-"185","Speed","Shape","Shape-Speed",NA,"Fast/Slow","Jagged/Curvy"
-"186","Speed","Size","Size-Speed",0.923177028074861,"Fast/Slow","Large/Small"
+"","Inducer","Concurrent","Comparison","Prediction"
+"1","Affect EB","Amplitude","Affect EB-Amplitude",0.912159266
+"2","Affect EB","Brightness","Affect EB-Brightness",0.803834422
+"3","Affect EB","Color RB","Affect EB-Color RB",0.07685468
+"4","Affect EB","Color RG","Affect EB-Color RG",0.485629124
+"5","Affect EB","Color RY","Affect EB-Color RY",0.577831967
+"6","Affect EB","Color YB","Affect EB-Color YB",0.844983541
+"7","Affect EB","Noise","Affect EB-Noise",0.506735461
+"8","Affect EB","Pitch","Affect EB-Pitch",0.723726584
+"9","Affect EB","Shape","Affect EB-Shape",0.537025092
+"10","Affect EB","Size","Affect EB-Size",0.481261372
+"11","Affect EB","Speed","Affect EB-Speed",0.587227031
+"12","Affect HS","Amplitude","Affect HS-Amplitude",0.351349623
+"13","Affect HS","Brightness","Affect HS-Brightness",0.787782738
+"14","Affect HS","Color RB","Affect HS-Color RB",0.347553351
+"15","Affect HS","Color RG","Affect HS-Color RG",0.497043611
+"16","Affect HS","Color RY","Affect HS-Color RY",0.633748881
+"17","Affect HS","Color YB","Affect HS-Color YB",0.563953024
+"18","Affect HS","Noise","Affect HS-Noise",0.536513167
+"19","Affect HS","Pitch","Affect HS-Pitch",0.813161498
+"20","Affect HS","Shape","Affect HS-Shape",0.412682936
+"21","Affect HS","Size","Affect HS-Size",0.779469832
+"22","Affect HS","Speed","Affect HS-Speed",0.298681416
+"23","Affect PD","Amplitude","Affect PD-Amplitude",0.942309832
+"24","Affect PD","Brightness","Affect PD-Brightness",0.239256174
+"25","Affect PD","Color RB","Affect PD-Color RB",0.995760902
+"26","Affect PD","Color RG","Affect PD-Color RG",0.43325903
+"27","Affect PD","Color RY","Affect PD-Color RY",0.177151315
+"28","Affect PD","Color YB","Affect PD-Color YB",0.230667383
+"29","Affect PD","Noise","Affect PD-Noise",0.185775153
+"30","Affect PD","Pitch","Affect PD-Pitch",0.095888236
+"31","Affect PD","Shape","Affect PD-Shape",0.367820983
+"32","Affect PD","Size","Affect PD-Size",0.937934798
+"33","Affect PD","Speed","Affect PD-Speed",0.897053861
+"34","Affect SC","Amplitude","Affect SC-Amplitude",0.538281047
+"35","Affect SC","Brightness","Affect SC-Brightness",0.958254868
+"36","Affect SC","Color RB","Affect SC-Color RB",0.843747719
+"37","Affect SC","Color RG","Affect SC-Color RG",0.614642474
+"38","Affect SC","Color RY","Affect SC-Color RY",0.370843065
+"39","Affect SC","Color YB","Affect SC-Color YB",0.823807962
+"40","Affect SC","Noise","Affect SC-Noise",0.107460711
+"41","Affect SC","Pitch","Affect SC-Pitch",0.466972429
+"42","Affect SC","Shape","Affect SC-Shape",0.167601677
+"43","Affect SC","Size","Affect SC-Size",0.668244273
+"44","Affect SC","Speed","Affect SC-Speed",0.804112243
+"49","Amplitude","Brightness","Amplitude-Brightness",0.809893903
+"50","Amplitude","Color RB","Amplitude-Color RB",0.078523956
+"51","Amplitude","Color RG","Amplitude-Color RG",0.437497303
+"52","Amplitude","Color RY","Amplitude-Color RY",0.061655614
+"53","Amplitude","Color YB","Amplitude-Color YB",0.902108356
+"54","Amplitude","Noise","Amplitude-Noise",0.519537793
+"55","Amplitude","Pitch","Amplitude-Pitch",0.270445548
+"56","Amplitude","Shape","Amplitude-Shape",0.415758734
+"57","Amplitude","Size","Amplitude-Size",0.201711186
+"58","Amplitude","Speed","Amplitude-Speed",0.933070602
+"64","Brightness","Color RB","Brightness-Color RB",0.051538171
+"65","Brightness","Color RG","Brightness-Color RG",0.856505085
+"66","Brightness","Color RY","Brightness-Color RY",0.556351339
+"67","Brightness","Color YB","Brightness-Color YB",0.968398069
+"68","Brightness","Noise","Brightness-Noise",0.764442525
+"69","Brightness","Pitch","Brightness-Pitch",0.854727962
+"70","Brightness","Shape","Brightness-Shape",0.535333082
+"71","Brightness","Size","Brightness-Size",0.526619375
+"72","Brightness","Speed","Brightness-Speed",0.760346417
+"79","Color RB","Noise","Color RB-Noise",0.796782537
+"80","Color RB","Pitch","Color RB-Pitch",0.822705504
+"81","Color RB","Shape","Color RB-Shape",0.931297128
+"82","Color RB","Size","Color RB-Size",0.635413614
+"83","Color RB","Speed","Color RB-Speed",0.189210896
+"90","Color RG","Noise","Color RG-Noise",0.803473195
+"91","Color RG","Pitch","Color RG-Pitch",0.741195346
+"92","Color RG","Shape","Color RG-Shape",0.232270233
+"93","Color RG","Size","Color RG-Size",0.437328299
+"94","Color RG","Speed","Color RG-Speed",0.610786642
+"101","Color RY","Noise","Color RY-Noise",0.125422299
+"102","Color RY","Pitch","Color RY-Pitch",0.304178341
+"103","Color RY","Shape","Color RY-Shape",0.30955951
+"104","Color RY","Size","Color RY-Size",0.693135002
+"105","Color RY","Speed","Color RY-Speed",0.053851941
+"112","Color YB","Noise","Color YB-Noise",0.549646157
+"113","Color YB","Pitch","Color YB-Pitch",0.221424951
+"114","Color YB","Shape","Color YB-Shape",0.017670698
+"115","Color YB","Size","Color YB-Size",0.392441683
+"116","Color YB","Speed","Color YB-Speed",0.978594607
+"127","Noise","Pitch","Noise-Pitch",0.31458572
+"128","Noise","Shape","Noise-Shape",0.801983764
+"129","Noise","Size","Noise-Size",0.202402979
+"130","Noise","Speed","Noise-Speed",0.733262131
+"142","Pitch","Shape","Pitch-Shape",0.951794429
+"143","Pitch","Size","Pitch-Size",0.882218707
+"144","Pitch","Speed","Pitch-Speed",0.016244222
+"157","Shape","Size","Shape-Size",0.706256239
+"158","Shape","Speed","Shape-Speed",0.538858354
+"172","Size","Speed","Size-Speed",0.234299143
