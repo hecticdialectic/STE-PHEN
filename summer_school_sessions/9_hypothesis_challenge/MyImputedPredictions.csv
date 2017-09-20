@@ -1,187 +1,94 @@
-Unnamed: 0,Inducer,Concurrent,Comparison,Prediction,Inducer2,Concurrent2,comparitor,ImputedPrediction
-1,Affect EB,Amp,Affect EB-Amp,0.775628853124,Excited/Bored,Loud/Quiet,Amp,0.775628853124
-2,Affect EB,Brightness,Affect EB-Brightness,0.683649914339,Excited/Bored,Bright/Dark,Brightness,0.683649914339
-3,Affect EB,Color RB,Affect EB-Color RB,0.737292511621,Excited/Bored,Red/Blue,Color RB,0.737292511621
-4,Affect EB,Color RG,Affect EB-Color RG,0.241817056201,Excited/Bored,Red/Green,Color RG,0.241817056201
-5,Affect EB,Color RY,Affect EB-Color RY,0.81913727941,Excited/Bored,Red/Yellow,Color RY,0.81913727941
-6,Affect EB,Color YB,Affect EB-Color YB,0.980192924384,Excited/Bored,Yellow/Blue,Color YB,0.980192924384
-7,Affect EB,Noise,Affect EB-Noise,,Excited/Bored,Noisy/Tonal,Noise,0.471528458778
-8,Affect EB,Pitch,Affect EB-Pitch,0.283611885505,Excited/Bored,High Pitch/Low Pitch,Pitch,0.283611885505
-9,Affect EB,Shape,Affect EB-Shape,0.856857000384,Excited/Bored,Jagged/Curvy,Shape,0.856857000384
-10,Affect EB,Size,Affect EB-Size,0.793106172234,Excited/Bored,Large/Small,Size,0.793106172234
-11,Affect EB,Speed,Affect EB-Speed,,Excited/Bored,Fast/Slow,Speed,0.471528458778
-12,Affect HS,Amp,Affect HS-Amp,0.702382423449,Happy/Sad,Loud/Quiet,Amp,0.702382423449
-13,Affect HS,Brightness,Affect HS-Brightness,0.00584606803022,Happy/Sad,Bright/Dark,Brightness,0.00584606803022
-14,Affect HS,Color RB,Affect HS-Color RB,0.0502413583454,Happy/Sad,Red/Blue,Color RB,0.0502413583454
-15,Affect HS,Color RG,Affect HS-Color RG,,Happy/Sad,Red/Green,Color RG,0.471528458778
-16,Affect HS,Color RY,Affect HS-Color RY,0.818171943771,Happy/Sad,Red/Yellow,Color RY,0.818171943771
-17,Affect HS,Color YB,Affect HS-Color YB,0.329041192541,Happy/Sad,Yellow/Blue,Color YB,0.329041192541
-18,Affect HS,Noise,Affect HS-Noise,0.35324266227,Happy/Sad,Noisy/Tonal,Noise,0.35324266227
-19,Affect HS,Pitch,Affect HS-Pitch,,Happy/Sad,High Pitch/Low Pitch,Pitch,0.471528458778
-20,Affect HS,Shape,Affect HS-Shape,0.736336212605,Happy/Sad,Jagged/Curvy,Shape,0.736336212605
-21,Affect HS,Size,Affect HS-Size,0.756249234313,Happy/Sad,Large/Small,Size,0.756249234313
-22,Affect HS,Speed,Affect HS-Speed,0.317520039389,Happy/Sad,Fast/Slow,Speed,0.317520039389
-23,Affect PD,Amp,Affect PD-Amp,0.308422905626,Pleased/Disgusted,Loud/Quiet,Amp,0.308422905626
-24,Affect PD,Brightness,Affect PD-Brightness,0.20549219544,Pleased/Disgusted,Bright/Dark,Brightness,0.20549219544
-25,Affect PD,Color RB,Affect PD-Color RB,0.507446544245,Pleased/Disgusted,Red/Blue,Color RB,0.507446544245
-26,Affect PD,Color RG,Affect PD-Color RG,0.0252823589835,Pleased/Disgusted,Red/Green,Color RG,0.0252823589835
-27,Affect PD,Color RY,Affect PD-Color RY,0.396960755344,Pleased/Disgusted,Red/Yellow,Color RY,0.396960755344
-28,Affect PD,Color YB,Affect PD-Color YB,0.783307985403,Pleased/Disgusted,Yellow/Blue,Color YB,0.783307985403
-29,Affect PD,Noise,Affect PD-Noise,0.630946665537,Pleased/Disgusted,Noisy/Tonal,Noise,0.630946665537
-30,Affect PD,Pitch,Affect PD-Pitch,0.323299242649,Pleased/Disgusted,High Pitch/Low Pitch,Pitch,0.323299242649
-31,Affect PD,Shape,Affect PD-Shape,0.153072076384,Pleased/Disgusted,Jagged/Curvy,Shape,0.153072076384
-32,Affect PD,Size,Affect PD-Size,0.202923207544,Pleased/Disgusted,Large/Small,Size,0.202923207544
-33,Affect PD,Speed,Affect PD-Speed,0.921854335349,Pleased/Disgusted,Fast/Slow,Speed,0.921854335349
-34,Affect SC,Amp,Affect SC-Amp,0.162090190221,Stressed/Calm,Loud/Quiet,Amp,0.162090190221
-35,Affect SC,Brightness,Affect SC-Brightness,,Stressed/Calm,Bright/Dark,Brightness,0.471528458778
-36,Affect SC,Color RB,Affect SC-Color RB,0.900587288896,Stressed/Calm,Red/Blue,Color RB,0.900587288896
-37,Affect SC,Color RG,Affect SC-Color RG,,Stressed/Calm,Red/Green,Color RG,0.471528458778
-38,Affect SC,Color RY,Affect SC-Color RY,0.240040138597,Stressed/Calm,Red/Yellow,Color RY,0.240040138597
-39,Affect SC,Color YB,Affect SC-Color YB,0.585107653867,Stressed/Calm,Yellow/Blue,Color YB,0.585107653867
-40,Affect SC,Noise,Affect SC-Noise,0.795569280861,Stressed/Calm,Noisy/Tonal,Noise,0.795569280861
-41,Affect SC,Pitch,Affect SC-Pitch,0.526415813714,Stressed/Calm,High Pitch/Low Pitch,Pitch,0.526415813714
-42,Affect SC,Shape,Affect SC-Shape,0.544447976397,Stressed/Calm,Jagged/Curvy,Shape,0.544447976397
-43,Affect SC,Size,Affect SC-Size,0.0264046455268,Stressed/Calm,Large/Small,Size,0.0264046455268
-44,Affect SC,Speed,Affect SC-Speed,0.275974668795,Stressed/Calm,Fast/Slow,Speed,0.275974668795
-45,Amp,Brightness,Amp-Brightness,0.138959350064,Loud/Quiet,Bright/Dark,Amp,0.138959350064
-46,Amp,Color RB,Amp-Color RB,0.775366052054,Loud/Quiet,Red/Blue,Amp,0.775366052054
-47,Amp,Color RG,Amp-Color RG,,Loud/Quiet,Red/Green,Amp,0.471528458778
-48,Amp,Color RY,Amp-Color RY,0.314106098842,Loud/Quiet,Red/Yellow,Amp,0.314106098842
-49,Amp,Color YB,Amp-Color YB,0.169968113769,Loud/Quiet,Yellow/Blue,Amp,0.169968113769
-50,Amp,Noise,Amp-Noise,,Loud/Quiet,Noisy/Tonal,Amp,0.471528458778
-51,Amp,Pitch,Amp-Pitch,,Loud/Quiet,High Pitch/Low Pitch,Amp,0.471528458778
-52,Amp,Shape,Amp-Shape,0.959897467867,Loud/Quiet,Jagged/Curvy,Amp,0.959897467867
-53,Amp,Size,Amp-Size,0.080496374052,Loud/Quiet,Large/Small,Amp,0.080496374052
-54,Amp,Speed,Amp-Speed,0.98148263921,Loud/Quiet,Fast/Slow,Amp,0.98148263921
-55,Brightness,Color RB,Brightness-Color RB,0.931655785767,Bright/Dark,Red/Blue,Brightness,0.931655785767
-56,Brightness,Color RG,Brightness-Color RG,0.244097311515,Bright/Dark,Red/Green,Brightness,0.244097311515
-57,Brightness,Color RY,Brightness-Color RY,0.241447103908,Bright/Dark,Red/Yellow,Brightness,0.241447103908
-58,Brightness,Color YB,Brightness-Color YB,0.788239176618,Bright/Dark,Yellow/Blue,Brightness,0.788239176618
-59,Brightness,Noise,Brightness-Noise,0.511658344418,Bright/Dark,Noisy/Tonal,Brightness,0.511658344418
-60,Brightness,Pitch,Brightness-Pitch,0.153373501264,Bright/Dark,High Pitch/Low Pitch,Brightness,0.153373501264
-61,Brightness,Shape,Brightness-Shape,0.243136275327,Bright/Dark,Jagged/Curvy,Brightness,0.243136275327
-62,Brightness,Size,Brightness-Size,0.408830467379,Bright/Dark,Large/Small,Brightness,0.408830467379
-63,Brightness,Speed,Brightness-Speed,0.274820303079,Bright/Dark,Fast/Slow,Brightness,0.274820303079
-64,Color RB,Noise,Color RB-Noise,0.496471533785,Red/Blue,Noisy/Tonal,Color RB,0.496471533785
-65,Color RB,Pitch,Color RB-Pitch,0.488294328563,Red/Blue,High Pitch/Low Pitch,Color RB,0.488294328563
-66,Color RB,Shape,Color RB-Shape,0.298230975168,Red/Blue,Jagged/Curvy,Color RB,0.298230975168
-67,Color RB,Size,Color RB-Size,0.322784962133,Red/Blue,Large/Small,Color RB,0.322784962133
-68,Color RB,Speed,Color RB-Speed,0.185942885699,Red/Blue,Fast/Slow,Color RB,0.185942885699
-69,Color RG,Noise,Color RG-Noise,0.533966449555,Red/Green,Noisy/Tonal,Color RG,0.533966449555
-70,Color RG,Pitch,Color RG-Pitch,0.651222035289,Red/Green,High Pitch/Low Pitch,Color RG,0.651222035289
-71,Color RG,Shape,Color RG-Shape,,Red/Green,Jagged/Curvy,Color RG,0.471528458778
-72,Color RG,Size,Color RG-Size,0.0715044597164,Red/Green,Large/Small,Color RG,0.0715044597164
-73,Color RG,Speed,Color RG-Speed,0.350449304562,Red/Green,Fast/Slow,Color RG,0.350449304562
-74,Color RY,Noise,Color RY-Noise,,Red/Yellow,Noisy/Tonal,Color RY,0.471528458778
-75,Color RY,Pitch,Color RY-Pitch,,Red/Yellow,High Pitch/Low Pitch,Color RY,0.471528458778
-76,Color RY,Shape,Color RY-Shape,0.266975017963,Red/Yellow,Jagged/Curvy,Color RY,0.266975017963
-77,Color RY,Size,Color RY-Size,0.637338296743,Red/Yellow,Large/Small,Color RY,0.637338296743
-78,Color RY,Speed,Color RY-Speed,0.465235480806,Red/Yellow,Fast/Slow,Color RY,0.465235480806
-79,Color YB,Noise,Color YB-Noise,0.804933388485,Yellow/Blue,Noisy/Tonal,Color YB,0.804933388485
-80,Color YB,Pitch,Color YB-Pitch,0.699704576517,Yellow/Blue,High Pitch/Low Pitch,Color YB,0.699704576517
-81,Color YB,Shape,Color YB-Shape,0.316896281205,Yellow/Blue,Jagged/Curvy,Color YB,0.316896281205
-82,Color YB,Size,Color YB-Size,0.448941540206,Yellow/Blue,Large/Small,Color YB,0.448941540206
-83,Color YB,Speed,Color YB-Speed,,Yellow/Blue,Fast/Slow,Color YB,0.471528458778
-84,Noise,Pitch,Noise-Pitch,0.207264642697,Noisy/Tonal,High Pitch/Low Pitch,Noise,0.207264642697
-85,Noise,Shape,Noise-Shape,,Noisy/Tonal,Jagged/Curvy,Noise,0.471528458778
-86,Noise,Size,Noise-Size,,Noisy/Tonal,Large/Small,Noise,0.471528458778
-87,Noise,Speed,Noise-Speed,0.502221606439,Noisy/Tonal,Fast/Slow,Noise,0.502221606439
-88,Pitch,Shape,Pitch-Shape,0.163271452533,High Pitch/Low Pitch,Jagged/Curvy,Pitch,0.163271452533
-89,Pitch,Size,Pitch-Size,0.304625479272,High Pitch/Low Pitch,Large/Small,Pitch,0.304625479272
-90,Pitch,Speed,Pitch-Speed,0.958560835337,High Pitch/Low Pitch,Fast/Slow,Pitch,0.958560835337
-91,Shape,Size,Shape-Size,0.236173738725,Jagged/Curvy,Large/Small,Shape,0.236173738725
-92,Shape,Speed,Shape-Speed,,Jagged/Curvy,Fast/Slow,Shape,0.471528458778
-93,Size,Speed,Size-Speed,0.923177028075,Large/Small,Fast/Slow,Size,0.923177028075
-94,Amp,Affect EB,Affect EB-Amp,0.775628853124,Loud/Quiet,Excited/Bored,Amp,0.775628853124
-95,Brightness,Affect EB,Affect EB-Brightness,0.683649914339,Bright/Dark,Excited/Bored,Brightness,0.683649914339
-96,Color RB,Affect EB,Affect EB-Color RB,0.737292511621,Red/Blue,Excited/Bored,Color RB,0.737292511621
-97,Color RG,Affect EB,Affect EB-Color RG,0.241817056201,Red/Green,Excited/Bored,Color RG,0.241817056201
-98,Color RY,Affect EB,Affect EB-Color RY,0.81913727941,Red/Yellow,Excited/Bored,Color RY,0.81913727941
-99,Color YB,Affect EB,Affect EB-Color YB,0.980192924384,Yellow/Blue,Excited/Bored,Color YB,0.980192924384
-100,Noise,Affect EB,Affect EB-Noise,,Noisy/Tonal,Excited/Bored,Noise,0.471528458778
-101,Pitch,Affect EB,Affect EB-Pitch,0.283611885505,High Pitch/Low Pitch,Excited/Bored,Pitch,0.283611885505
-102,Shape,Affect EB,Affect EB-Shape,0.856857000384,Jagged/Curvy,Excited/Bored,Shape,0.856857000384
-103,Size,Affect EB,Affect EB-Size,0.793106172234,Large/Small,Excited/Bored,Size,0.793106172234
-104,Speed,Affect EB,Affect EB-Speed,,Fast/Slow,Excited/Bored,Speed,0.471528458778
-105,Amp,Affect HS,Affect HS-Amp,0.702382423449,Loud/Quiet,Happy/Sad,Amp,0.702382423449
-106,Brightness,Affect HS,Affect HS-Brightness,0.00584606803022,Bright/Dark,Happy/Sad,Brightness,0.00584606803022
-107,Color RB,Affect HS,Affect HS-Color RB,0.0502413583454,Red/Blue,Happy/Sad,Color RB,0.0502413583454
-108,Color RG,Affect HS,Affect HS-Color RG,,Red/Green,Happy/Sad,Color RG,0.471528458778
-109,Color RY,Affect HS,Affect HS-Color RY,0.818171943771,Red/Yellow,Happy/Sad,Color RY,0.818171943771
-110,Color YB,Affect HS,Affect HS-Color YB,0.329041192541,Yellow/Blue,Happy/Sad,Color YB,0.329041192541
-111,Noise,Affect HS,Affect HS-Noise,0.35324266227,Noisy/Tonal,Happy/Sad,Noise,0.35324266227
-112,Pitch,Affect HS,Affect HS-Pitch,,High Pitch/Low Pitch,Happy/Sad,Pitch,0.471528458778
-113,Shape,Affect HS,Affect HS-Shape,0.736336212605,Jagged/Curvy,Happy/Sad,Shape,0.736336212605
-114,Size,Affect HS,Affect HS-Size,0.756249234313,Large/Small,Happy/Sad,Size,0.756249234313
-115,Speed,Affect HS,Affect HS-Speed,0.317520039389,Fast/Slow,Happy/Sad,Speed,0.317520039389
-116,Amp,Affect PD,Affect PD-Amp,0.308422905626,Loud/Quiet,Pleased/Disgusted,Amp,0.308422905626
-117,Brightness,Affect PD,Affect PD-Brightness,0.20549219544,Bright/Dark,Pleased/Disgusted,Brightness,0.20549219544
-118,Color RB,Affect PD,Affect PD-Color RB,0.507446544245,Red/Blue,Pleased/Disgusted,Color RB,0.507446544245
-119,Color RG,Affect PD,Affect PD-Color RG,0.0252823589835,Red/Green,Pleased/Disgusted,Color RG,0.0252823589835
-120,Color RY,Affect PD,Affect PD-Color RY,0.396960755344,Red/Yellow,Pleased/Disgusted,Color RY,0.396960755344
-121,Color YB,Affect PD,Affect PD-Color YB,0.783307985403,Yellow/Blue,Pleased/Disgusted,Color YB,0.783307985403
-122,Noise,Affect PD,Affect PD-Noise,0.630946665537,Noisy/Tonal,Pleased/Disgusted,Noise,0.630946665537
-123,Pitch,Affect PD,Affect PD-Pitch,0.323299242649,High Pitch/Low Pitch,Pleased/Disgusted,Pitch,0.323299242649
-124,Shape,Affect PD,Affect PD-Shape,0.153072076384,Jagged/Curvy,Pleased/Disgusted,Shape,0.153072076384
-125,Size,Affect PD,Affect PD-Size,0.202923207544,Large/Small,Pleased/Disgusted,Size,0.202923207544
-126,Speed,Affect PD,Affect PD-Speed,0.921854335349,Fast/Slow,Pleased/Disgusted,Speed,0.921854335349
-127,Amp,Affect SC,Affect SC-Amp,0.162090190221,Loud/Quiet,Stressed/Calm,Amp,0.162090190221
-128,Brightness,Affect SC,Affect SC-Brightness,,Bright/Dark,Stressed/Calm,Brightness,0.471528458778
-129,Color RB,Affect SC,Affect SC-Color RB,0.900587288896,Red/Blue,Stressed/Calm,Color RB,0.900587288896
-130,Color RG,Affect SC,Affect SC-Color RG,,Red/Green,Stressed/Calm,Color RG,0.471528458778
-131,Color RY,Affect SC,Affect SC-Color RY,0.240040138597,Red/Yellow,Stressed/Calm,Color RY,0.240040138597
-132,Color YB,Affect SC,Affect SC-Color YB,0.585107653867,Yellow/Blue,Stressed/Calm,Color YB,0.585107653867
-133,Noise,Affect SC,Affect SC-Noise,0.795569280861,Noisy/Tonal,Stressed/Calm,Noise,0.795569280861
-134,Pitch,Affect SC,Affect SC-Pitch,0.526415813714,High Pitch/Low Pitch,Stressed/Calm,Pitch,0.526415813714
-135,Shape,Affect SC,Affect SC-Shape,0.544447976397,Jagged/Curvy,Stressed/Calm,Shape,0.544447976397
-136,Size,Affect SC,Affect SC-Size,0.0264046455268,Large/Small,Stressed/Calm,Size,0.0264046455268
-137,Speed,Affect SC,Affect SC-Speed,0.275974668795,Fast/Slow,Stressed/Calm,Speed,0.275974668795
-138,Brightness,Amp,Amp-Brightness,0.138959350064,Bright/Dark,Loud/Quiet,Amp,0.138959350064
-139,Color RB,Amp,Amp-Color RB,0.775366052054,Red/Blue,Loud/Quiet,Amp,0.775366052054
-140,Color RG,Amp,Amp-Color RG,,Red/Green,Loud/Quiet,Amp,0.471528458778
-141,Color RY,Amp,Amp-Color RY,0.314106098842,Red/Yellow,Loud/Quiet,Amp,0.314106098842
-142,Color YB,Amp,Amp-Color YB,0.169968113769,Yellow/Blue,Loud/Quiet,Amp,0.169968113769
-143,Noise,Amp,Amp-Noise,,Noisy/Tonal,Loud/Quiet,Amp,0.471528458778
-144,Pitch,Amp,Amp-Pitch,,High Pitch/Low Pitch,Loud/Quiet,Amp,0.471528458778
-145,Shape,Amp,Amp-Shape,0.959897467867,Jagged/Curvy,Loud/Quiet,Amp,0.959897467867
-146,Size,Amp,Amp-Size,0.080496374052,Large/Small,Loud/Quiet,Amp,0.080496374052
-147,Speed,Amp,Amp-Speed,0.98148263921,Fast/Slow,Loud/Quiet,Amp,0.98148263921
-148,Color RB,Brightness,Brightness-Color RB,0.931655785767,Red/Blue,Bright/Dark,Brightness,0.931655785767
-149,Color RG,Brightness,Brightness-Color RG,0.244097311515,Red/Green,Bright/Dark,Brightness,0.244097311515
-150,Color RY,Brightness,Brightness-Color RY,0.241447103908,Red/Yellow,Bright/Dark,Brightness,0.241447103908
-151,Color YB,Brightness,Brightness-Color YB,0.788239176618,Yellow/Blue,Bright/Dark,Brightness,0.788239176618
-152,Noise,Brightness,Brightness-Noise,0.511658344418,Noisy/Tonal,Bright/Dark,Brightness,0.511658344418
-153,Pitch,Brightness,Brightness-Pitch,0.153373501264,High Pitch/Low Pitch,Bright/Dark,Brightness,0.153373501264
-154,Shape,Brightness,Brightness-Shape,0.243136275327,Jagged/Curvy,Bright/Dark,Brightness,0.243136275327
-155,Size,Brightness,Brightness-Size,0.408830467379,Large/Small,Bright/Dark,Brightness,0.408830467379
-156,Speed,Brightness,Brightness-Speed,0.274820303079,Fast/Slow,Bright/Dark,Brightness,0.274820303079
-157,Noise,Color RB,Color RB-Noise,0.496471533785,Noisy/Tonal,Red/Blue,Color RB,0.496471533785
-158,Pitch,Color RB,Color RB-Pitch,0.488294328563,High Pitch/Low Pitch,Red/Blue,Color RB,0.488294328563
-159,Shape,Color RB,Color RB-Shape,0.298230975168,Jagged/Curvy,Red/Blue,Color RB,0.298230975168
-160,Size,Color RB,Color RB-Size,0.322784962133,Large/Small,Red/Blue,Color RB,0.322784962133
-161,Speed,Color RB,Color RB-Speed,0.185942885699,Fast/Slow,Red/Blue,Color RB,0.185942885699
-162,Noise,Color RG,Color RG-Noise,0.533966449555,Noisy/Tonal,Red/Green,Color RG,0.533966449555
-163,Pitch,Color RG,Color RG-Pitch,0.651222035289,High Pitch/Low Pitch,Red/Green,Color RG,0.651222035289
-164,Shape,Color RG,Color RG-Shape,,Jagged/Curvy,Red/Green,Color RG,0.471528458778
-165,Size,Color RG,Color RG-Size,0.0715044597164,Large/Small,Red/Green,Color RG,0.0715044597164
-166,Speed,Color RG,Color RG-Speed,0.350449304562,Fast/Slow,Red/Green,Color RG,0.350449304562
-167,Noise,Color RY,Color RY-Noise,,Noisy/Tonal,Red/Yellow,Color RY,0.471528458778
-168,Pitch,Color RY,Color RY-Pitch,,High Pitch/Low Pitch,Red/Yellow,Color RY,0.471528458778
-169,Shape,Color RY,Color RY-Shape,0.266975017963,Jagged/Curvy,Red/Yellow,Color RY,0.266975017963
-170,Size,Color RY,Color RY-Size,0.637338296743,Large/Small,Red/Yellow,Color RY,0.637338296743
-171,Speed,Color RY,Color RY-Speed,0.465235480806,Fast/Slow,Red/Yellow,Color RY,0.465235480806
-172,Noise,Color YB,Color YB-Noise,0.804933388485,Noisy/Tonal,Yellow/Blue,Color YB,0.804933388485
-173,Pitch,Color YB,Color YB-Pitch,0.699704576517,High Pitch/Low Pitch,Yellow/Blue,Color YB,0.699704576517
-174,Shape,Color YB,Color YB-Shape,0.316896281205,Jagged/Curvy,Yellow/Blue,Color YB,0.316896281205
-175,Size,Color YB,Color YB-Size,0.448941540206,Large/Small,Yellow/Blue,Color YB,0.448941540206
-176,Speed,Color YB,Color YB-Speed,,Fast/Slow,Yellow/Blue,Color YB,0.471528458778
-177,Pitch,Noise,Noise-Pitch,0.207264642697,High Pitch/Low Pitch,Noisy/Tonal,Noise,0.207264642697
-178,Shape,Noise,Noise-Shape,,Jagged/Curvy,Noisy/Tonal,Noise,0.471528458778
-179,Size,Noise,Noise-Size,,Large/Small,Noisy/Tonal,Noise,0.471528458778
-180,Speed,Noise,Noise-Speed,0.502221606439,Fast/Slow,Noisy/Tonal,Noise,0.502221606439
-181,Shape,Pitch,Pitch-Shape,0.163271452533,Jagged/Curvy,High Pitch/Low Pitch,Pitch,0.163271452533
-182,Size,Pitch,Pitch-Size,0.304625479272,Large/Small,High Pitch/Low Pitch,Pitch,0.304625479272
-183,Speed,Pitch,Pitch-Speed,0.958560835337,Fast/Slow,High Pitch/Low Pitch,Pitch,0.958560835337
-184,Size,Shape,Shape-Size,0.236173738725,Large/Small,Jagged/Curvy,Shape,0.236173738725
-185,Speed,Shape,Shape-Speed,,Fast/Slow,Jagged/Curvy,Shape,0.471528458778
-186,Speed,Size,Size-Speed,0.923177028075,Fast/Slow,Large/Small,Size,0.923177028075
+Unnamed: 0,Inducer,Concurrent,Comparison,Prediction,comparitor,ImputedPrediction
+1,Affect EB,Amplitude,Affect EB-Amplitude,0.741044937,Amplitude,0.741044937
+2,Affect EB,Brightness,Affect EB-Brightness,0.168535791,Brightness,0.168535791
+3,Affect EB,Color RB,Affect EB-Color RB,0.650821579,Color RB,0.650821579
+4,Affect EB,Color RG,Affect EB-Color RG,0.702554179,Color RG,0.702554179
+5,Affect EB,Color RY,Affect EB-Color RY,0.399487731,Color RY,0.399487731
+6,Affect EB,Color YB,Affect EB-Color YB,0.685190496,Color YB,0.685190496
+7,Affect EB,Noise,Affect EB-Noise,0.76044551,Noise,0.76044551
+8,Affect EB,Pitch,Affect EB-Pitch,0.628202716,Pitch,0.628202716
+9,Affect EB,Shape,Affect EB-Shape,0.884635296,Shape,0.884635296
+10,Affect EB,Size,Affect EB-Size,0.545782696,Size,0.545782696
+11,Affect EB,Speed,Affect EB-Speed,0.216102391,Speed,0.216102391
+12,Affect HS,Amplitude,Affect HS-Amplitude,,Amplitude,0.520593875909
+13,Affect HS,Brightness,Affect HS-Brightness,0.684782999,Brightness,0.684782999
+14,Affect HS,Color RB,Affect HS-Color RB,0.386561677,Color RB,0.386561677
+15,Affect HS,Color RG,Affect HS-Color RG,,Color RG,0.520593875909
+16,Affect HS,Color RY,Affect HS-Color RY,,Color RY,0.520593875909
+17,Affect HS,Color YB,Affect HS-Color YB,0.8110898,Color YB,0.8110898
+18,Affect HS,Noise,Affect HS-Noise,,Noise,0.520593875909
+19,Affect HS,Pitch,Affect HS-Pitch,0.212597817,Pitch,0.212597817
+20,Affect HS,Shape,Affect HS-Shape,0.076837654,Shape,0.076837654
+21,Affect HS,Size,Affect HS-Size,0.132052723,Size,0.132052723
+22,Affect HS,Speed,Affect HS-Speed,0.494376158,Speed,0.494376158
+23,Affect PD,Amplitude,Affect PD-Amplitude,,Amplitude,0.520593875909
+24,Affect PD,Brightness,Affect PD-Brightness,0.845620723,Brightness,0.845620723
+25,Affect PD,Color RB,Affect PD-Color RB,0.661952195,Color RB,0.661952195
+26,Affect PD,Color RG,Affect PD-Color RG,0.455278897,Color RG,0.455278897
+27,Affect PD,Color RY,Affect PD-Color RY,0.146372832,Color RY,0.146372832
+28,Affect PD,Color YB,Affect PD-Color YB,0.771562124,Color YB,0.771562124
+29,Affect PD,Noise,Affect PD-Noise,,Noise,0.520593875909
+30,Affect PD,Pitch,Affect PD-Pitch,0.125633718,Pitch,0.125633718
+31,Affect PD,Shape,Affect PD-Shape,0.256604146,Shape,0.256604146
+32,Affect PD,Size,Affect PD-Size,0.882969413,Size,0.882969413
+33,Affect PD,Speed,Affect PD-Speed,,Speed,0.520593875909
+34,Affect SC,Amplitude,Affect SC-Amplitude,0.878802528,Amplitude,0.878802528
+35,Affect SC,Brightness,Affect SC-Brightness,0.080732118,Brightness,0.080732118
+36,Affect SC,Color RB,Affect SC-Color RB,0.295404095,Color RB,0.295404095
+37,Affect SC,Color RG,Affect SC-Color RG,,Color RG,0.520593875909
+38,Affect SC,Color RY,Affect SC-Color RY,0.874304301,Color RY,0.874304301
+39,Affect SC,Color YB,Affect SC-Color YB,0.1722857,Color YB,0.1722857
+40,Affect SC,Noise,Affect SC-Noise,0.506314723,Noise,0.506314723
+41,Affect SC,Pitch,Affect SC-Pitch,0.397816206,Pitch,0.397816206
+42,Affect SC,Shape,Affect SC-Shape,0.573490593,Shape,0.573490593
+43,Affect SC,Size,Affect SC-Size,0.464700637,Size,0.464700637
+44,Affect SC,Speed,Affect SC-Speed,0.238827265,Speed,0.238827265
+49,Amplitude,Brightness,Amplitude-Brightness,0.030004558,Amplitude,0.030004558
+50,Amplitude,Color RB,Amplitude-Color RB,0.270022836,Amplitude,0.270022836
+51,Amplitude,Color RG,Amplitude-Color RG,0.003856054,Amplitude,0.003856054
+52,Amplitude,Color RY,Amplitude-Color RY,0.778858077,Amplitude,0.778858077
+53,Amplitude,Color YB,Amplitude-Color YB,0.271650674,Amplitude,0.271650674
+54,Amplitude,Noise,Amplitude-Noise,0.726157499,Amplitude,0.726157499
+55,Amplitude,Pitch,Amplitude-Pitch,0.678939481,Amplitude,0.678939481
+56,Amplitude,Shape,Amplitude-Shape,,Amplitude,0.520593875909
+57,Amplitude,Size,Amplitude-Size,0.549631722,Amplitude,0.549631722
+58,Amplitude,Speed,Amplitude-Speed,0.97041089,Amplitude,0.97041089
+64,Brightness,Color RB,Brightness-Color RB,0.185532541,Brightness,0.185532541
+65,Brightness,Color RG,Brightness-Color RG,0.444400339,Brightness,0.444400339
+66,Brightness,Color RY,Brightness-Color RY,0.325894044,Brightness,0.325894044
+67,Brightness,Color YB,Brightness-Color YB,0.322727324,Brightness,0.322727324
+68,Brightness,Noise,Brightness-Noise,0.183478182,Brightness,0.183478182
+69,Brightness,Pitch,Brightness-Pitch,0.605372623,Brightness,0.605372623
+70,Brightness,Shape,Brightness-Shape,0.177038431,Brightness,0.177038431
+71,Brightness,Size,Brightness-Size,0.816017889,Brightness,0.816017889
+72,Brightness,Speed,Brightness-Speed,0.852484079,Brightness,0.852484079
+79,Color RB,Noise,Color RB-Noise,,Color RB,0.520593875909
+80,Color RB,Pitch,Color RB-Pitch,0.404325629,Color RB,0.404325629
+81,Color RB,Shape,Color RB-Shape,0.410183591,Color RB,0.410183591
+82,Color RB,Size,Color RB-Size,,Color RB,0.520593875909
+83,Color RB,Speed,Color RB-Speed,0.952403012,Color RB,0.952403012
+90,Color RG,Noise,Color RG-Noise,,Color RG,0.520593875909
+91,Color RG,Pitch,Color RG-Pitch,0.183054047,Color RG,0.183054047
+92,Color RG,Shape,Color RG-Shape,0.62107845,Color RG,0.62107845
+93,Color RG,Size,Color RG-Size,,Color RG,0.520593875909
+94,Color RG,Speed,Color RG-Speed,0.312795856,Color RG,0.312795856
+101,Color RY,Noise,Color RY-Noise,0.497109237,Color RY,0.497109237
+102,Color RY,Pitch,Color RY-Pitch,0.950757018,Color RY,0.950757018
+103,Color RY,Shape,Color RY-Shape,0.802013226,Color RY,0.802013226
+104,Color RY,Size,Color RY-Size,0.743833402,Color RY,0.743833402
+105,Color RY,Speed,Color RY-Speed,0.61801057,Color RY,0.61801057
+112,Color YB,Noise,Color YB-Noise,0.294509736,Color YB,0.294509736
+113,Color YB,Pitch,Color YB-Pitch,0.846182588,Color YB,0.846182588
+114,Color YB,Shape,Color YB-Shape,,Color YB,0.520593875909
+115,Color YB,Size,Color YB-Size,0.580536309,Color YB,0.580536309
+116,Color YB,Speed,Color YB-Speed,,Color YB,0.520593875909
+127,Noise,Pitch,Noise-Pitch,0.722123181,Noise,0.722123181
+128,Noise,Shape,Noise-Shape,,Noise,0.520593875909
+129,Noise,Size,Noise-Size,0.812247461,Noise,0.812247461
+130,Noise,Speed,Noise-Speed,0.17533961,Noise,0.17533961
+142,Pitch,Shape,Pitch-Shape,0.72585362,Pitch,0.72585362
+143,Pitch,Size,Pitch-Size,0.899407896,Pitch,0.899407896
+144,Pitch,Speed,Pitch-Speed,0.962060436,Pitch,0.962060436
+157,Shape,Size,Shape-Size,0.644064267,Shape,0.644064267
+158,Shape,Speed,Shape-Speed,0.797409597,Shape,0.797409597
+172,Size,Speed,Size-Speed,0.128178099,Size,0.128178099
