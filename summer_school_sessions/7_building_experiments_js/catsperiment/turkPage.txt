@@ -1,0 +1,23 @@
+
+<div class="panel-body" id="instructionBody">
+<p>We are conducting an experiment to see how people match stimuli such as colors, shapes and sounds. The study takes about 10 minutes.</p>
+
+<p>You will not be able to take part if the display area of your browser is less than 900x640px, so you will not be able to use a smartphone or tablet. The display area does not include tool bars and similar, so even if your screen is large enough, it might be that the display area is too small.</p>
+
+<p>You will also need to be able to hear audio stimuli (preferably with headphones). This will be tested during the practice rounds, and if you answer those questions incorrectly, your work will be rejected, so don&#39;t accept this HIT if you are unable to play/hear audio.</p>
+
+<p><strong>Make sure to leave this window open as you complete the survey. </strong> When you are finished, you will return to this page to paste the code into the box.</p>
+
+<p><a href="http://sapir.psych.wisc.edu/~justin/workshop/assoc.html?condition=${condition}">Click here to go to the study</a></p>
+
+</div>
+
+<div>
+<p><b>Completion code: </b></p>
+
+<p><b><input name="code" type="text" /></b></p>
+
+<p><b><b>Any comments?</b></b></p>
+
+<p><b><input name="code" type="text" /></b></p>
+</div>
