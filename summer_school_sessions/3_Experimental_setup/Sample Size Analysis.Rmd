@@ -27,7 +27,7 @@ Then we will take some descriptive stats on that column to help us decide what a
 
 ```{r Sample Size 2}
 
-RespDataAgg <- read.csv("F:/Google Drive/GitHub Repos/Crossmodality-Toolkit/data/RespDataAgg.csv")
+RespDataAgg <- read.csv("F:/Google Drive/GitHub Repos/Ste-phen/summer_school_sessions/3_experimental_setup/RespDataAgg.csv")
 RespDataSig <- subset(RespDataAgg, pValue < 0.05)
 
 ReqNs <- list()
