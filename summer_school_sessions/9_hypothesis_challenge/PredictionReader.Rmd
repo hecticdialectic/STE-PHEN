@@ -45,6 +45,7 @@ myPLong <- read.csv("F:/Google Drive/GitHub Repos/ste-phen/summer_school_session
 head(myPLong)
 ```
 
+
 So taking a look at the data frame for predictions, we can see that it is a data frame with 2 columns - the first column contains the (order insensitive) comparison, while the second (empty) column contains the Prediction, which will be a Number between 0 and 1 (as described above).
 
 Your task now will be to fill that column. You can do this directly in R (or Python, if you're more comfortable), by making a string of predictions (in the correct order), and then simply putting that vector into the dataframe (if this terminology scares you, don't worry!)
@@ -54,6 +55,7 @@ The comparisons are as follows:
 ```{r Comparions vector}
 as.vector(myPLong$Comparison)
 ```
+
 
 So the R (or python) way to assign our predictions is simply to make an equal length vector of predictions (in the same order), and then paste it into the Predictions column of our data frame.
 
