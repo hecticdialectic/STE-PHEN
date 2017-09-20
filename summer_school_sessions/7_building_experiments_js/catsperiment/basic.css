@@ -1,0 +1,49 @@
+
+/* This is how you mark off comments in CSS */
+
+/*
+This is a multiline comment
+The script below uses a selector to find all the parts of the page between <h1> tags and formats them accordingly
+Uncomment it to get the selector working (CMD+/ or just delete the opening and closing /*)
+*/
+
+h1 {
+  font-family: Helvetica, Arial;
+  font-size: 90px;
+  color: #acacac;
+}
+
+/*For colors, google 'web color'. Some common colors can also be referenced by name. Try make the header red or lime*/
+
+/* Uncomment the following to center align all your paragraphs */
+/*p {
+  text-align: center;
+}*/
+
+/* What if we want to style just one paragraph? We can define custom classes and select them with a full stop
+So all the following begin with . and select classes
+*/
+
+.myDiv {
+  font-size: 40px;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+.pannel {
+  width: 45%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.mainDisplay {
+  width: 70%;
+  height: 500px;
+  margin: auto;
+}

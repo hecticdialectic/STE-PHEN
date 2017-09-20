@@ -1,0 +1,75 @@
+---
+title: "STE:PHEN Skills"
+author: "Alan Nielsen"
+date: "September 19, 2017"
+output: html_document
+---
+
+This R markdown document generates some graphs showing the various distributions of self-assessed skills of attendees
+
+First we load a library and read in the data:
+
+```{r Preparation, message = FALSE, warning = FALSE}
+
+library(tidyverse)
+library(reshape2)
+
+skills <- read.csv("F:/Google Drive/GitHub Repos/Crossmodality-Toolkit/STEPHEN/StephenSkills.csv")
+
+```
+
+Then we need to put the data frame into long format for use by ggplot
+
+```{r Melting, message = FALSE}
+skillstemp <- subset(skills, select = -c(ID))
+moltenskills <- melt(skillstemp, variable.name = "Skillset", id.vars = "Group")
+```
+
+Then we can make some pretty histograms
+
+```{r Histograms, message = FALSE, warning = FALSE}
+
+ggplot(data=moltenskills, aes(moltenskills$value, fill = Skillset, group= Skillset)) + 
+  geom_histogram(binwidth = 1) +
+  ggtitle("Self-Reported Skill Levels of September Tutorial Participants") +
+  labs(x="Rating", y="Count") +
+  theme(axis.title.y = element_text(size=12,  color="#666666")) +
+  theme(axis.text = element_text(size=8)) +
+  theme(plot.title = element_text(size=16, face="bold", hjust=0, color="#666666")) +
+  facet_wrap(~ Skillset, nrow = 2) +
+  theme(legend.position="none") +
+  theme(strip.text.x = element_text(size = 7, colour = "black"))
+
+```
+
+
+
+
+
+
+
+
+That shows us the distribution of skills- but how about what we actually end up with per group
+
+```{r Barplots, warning = FALSE, message = FALSE}
+moltenskills$Skillset <- factor(moltenskills$Skillset, 
+                                  level = c("Bayes.and.Agent.Based.Modelling", "Advanced.Statistics.in.R", "LMER.in.R", "Online.Experiments",
+                                            "JavaScript", "Data.Handling", "Experiment.Design", "Sound.Symbolism"),
+                                labels = c("Bayes and Modelling", "Advanced Statistics in R", "LMER in R", "Online Experiments",
+                                            "JavaScript", "Data Handling", "Experiment Design", "Sound Symbolism"))
+
+
+ggplot(data=moltenskills, aes(x= Skillset, y = value, fill = Skillset, group= Skillset)) + 
+  geom_bar(stat= "summary") +
+  ggtitle("Mean Skill Level by Group") +
+  labs(x="Skillset", y="Mean Skill Level") +
+  theme(axis.title.y = element_text(size=12,  color="#666666")) +
+  theme(axis.text = element_text(size=8)) +
+  theme(axis.text.x = element_text(vjust = 1, hjust = 1))+
+  theme(plot.title = element_text(size=16, face="bold", hjust=0, color="#666666")) +
+  theme(legend.position="none") +
+  theme(strip.text.x = element_text(size = 12, colour = "black")) +
+  facet_wrap(~ Group, nrow = 3) +
+  coord_flip()
+
+```

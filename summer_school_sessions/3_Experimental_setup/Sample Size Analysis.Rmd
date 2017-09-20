@@ -1,0 +1,50 @@
+---
+title: "Power Analysis"
+author: "Alan Nielsen"
+date: "September 20, 2017"
+output: html_document
+---
+
+This tiny chunk of code does a power analysis in R, following the example here:
+https://www.r-bloggers.com/calculating-required-sample-size-in-r-and-sas/
+
+```{r Sample Size Analysis}
+
+library(pwr)
+pwr.t.test(d= 0.34, sig = 0.00054, power = 0.9, type= "one.sample")
+pwr.t.test(d= 0.34, sig = 0.05, power = 0.9, type= "one.sample")
+pwr.t.test(n = 100, d= 0.34, sig = 0.00054, type= "one.sample")
+
+```
+
+Let's read in our Aggregated Effect-Size data from the pilot to get a better idea of sample sizes
+
+Then we'll subset out the non-significant values
+
+Then we create a for loop that runs the power test to compute required N for every row
+
+Then we will take some descriptive stats on that column to help us decide what a good sample size might be.
+
+```{r Sample Size 2}
+
+RespDataAgg <- read.csv("F:/Google Drive/GitHub Repos/Crossmodality-Toolkit/data/RespDataAgg.csv")
+RespDataSig <- subset(RespDataAgg, pValue < 0.05)
+
+ReqNs <- list()
+
+for(i in 1:nrow(RespDataSig)){
+  
+  pwrtest <- pwr.t.test(d = RespDataSig$effsize[i], sig = 0.00054, power = 0.9, type = "one.sample")
+  ReqN <- pwrtest$n
+  ReqNs <- c(ReqNs, ReqN)
+  
+}
+
+RespDataSig$ReqN <- as.numeric(ReqNs)
+
+mean(RespDataSig$ReqN)
+sd(RespDataSig$ReqN)
+range(RespDataSig$ReqN)
+
+```
+
