@@ -1,0 +1,379 @@
+---
+title: "tidyverse"
+author: "Hannah Little"
+date: "12/9/2017"
+output:
+  html_document:
+    keep_md: true
+---
+
+This is a markdown document as an introduction to R and tidying data, and how to tidy data specifically from the Crossmodality Toolkit study.
+
+Starting note: Some of this tutorial is based on materials from Michael C. Frank's tidyverse tutorial here: https://github.com/Data-on-the-Mind/2017-workshop-frank/blob/master/tidyverse_tutorial.Rmd. There is a video of this workshop here: https://www.youtube.com/watch?v=qvPDE4ppAns - This is just the very basics introducing you to the tidyverse and what you need to get the data in shape. This will be QUICK, so if you want to get to grips with this stuff properly you can go back watch Frank's video with his materials (above).
+
+
+![If you're super keen, you can also look up Hadley Wickham's [R for data scientists] (http://r4ds.had.co.nz/).](http://r4ds.had.co.nz/cover.png)
+
+```{r 1}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(pander)
+```
+
+## Tribbles
+
+`tibble` = dataframe
+Each column has a data type. 
+
+# Tidy data
+
+``Tidy datasets are all alike, but every messy dataset is messy in its own way."
+- Hadley Wickham
+
+Tidy data rule:
+every row is a single observation
+every column is a single variable
+
+Why?
+To take a uniform approach to the dataset. Easier to learn the tools with one approach and uniform data organisation. R thrives with data formatted like this.
+
+```{r 2}
+pilotdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/pilotData.csv?token=AXaLGGK7rBWVduR09zl_3xrDg77RIlb1ks5ZymKZwA%3D%3D")
+affectdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/affectData.csv?token=AXaLGBfLgd5jhpB-WjmSC5WTgwYvXS3Oks5Zy3QTwA%3D%3D")
+simdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/SimulatedData.csv?token=AXaLGAKjwbxgrIVgLPHSrYttvUEnIuS6ks5Zy4FRwA%3D%3D")
+```
+
+```{r 3}
+#Creating columns saying what dataset the data came from
+pilotdata$DataSet <- "Pilot"
+affectdata$DataSet <- "Affect"
+simdata$DataSet <- "Simulated"
+```
+
+```{r 4, echo = FALSE}
+pilotdata <- separate(data = pilotdata, col = condition,
+                      into = c('Focal1', 'Focal2', "Focal3", "ParticipantNum"), 
+                      sep = "-", remove = FALSE)
+pilotdata$condition <- paste(pilotdata$Focal1, pilotdata$Focal2, pilotdata$Focal3, sep='-')
+
+affectdata <- separate(data = affectdata, col = condition,
+                      into = c('Focal1', "ParticipantNum"), 
+                      sep = "-", remove = FALSE)
+affectdata$condition <- affectdata$Focal1
+affectdata$Focal2 <- ''
+affectdata$Focal3 <- ''
+
+```
+
+```{r 5}
+SSData <- rbind(pilotdata, affectdata)
+```
+
+
+```{r 6}
+
+pander(head(SSData))
+```
+
+These data are tidy: each row describes a single trial. Each column describes some aspect of tha trial, including their id (`subject`), condition (`condition`), what was displayed on the left in that trail (`InducerL`), what was displayed on the right in that trail (`InducerR`), what was displayed on the top in that trail (`ConcurrentL`), what was displayed on the top in that trail (`ConcurrentR`), and whether the participant matched the `InducerL` with `ConcurrentL` or not ('choice', yes = 0, no = 1)
+
+
+
+## Functions and Pipes
+
+A quick example of a function: 
+
+```{r 7}
+mean(pilotdata$choice)
+```
+
+Pipes are a way to write strings of functions more easily. They bring the first argument of the function to the bedginning. So you can write:
+
+```{r 8}
+pilotdata$choice %>% mean
+```
+How man coniditions do we have?
+
+Unpiped version:
+
+```{r 9}
+length(unique(pilotdata$condition))
+```
+
+Piped version: 
+
+```{r 10}
+pilotdata$condition %>%
+  unique %>%
+  length
+```
+
+Exercise, write a piped function to find the number of participants
+
+```{r 11}
+#write code here
+
+```
+
+We can also work out how many participants are in a condition:
+
+```{r 12}
+#between
+min(table(pilotdata$condition)/96)
+#and
+max(table(pilotdata$condition)/96)
+```
+
+# Cleaning up the data, or only getting the bits we want
+
+We can manipulate the data using functions from `dplyr`. For example:
+
++ `select` - subset columns
++ `filter` - remove rows by some logical condition
++ `mutate` - create new columns
++ `summarize` - apply some function over columns in each group
++ `separate` - splitting a single variable into two (or three or FOUR OR FIVE OR ANY NUMBER)
++ `unite` - paste columns together
++ `gather` (aka `melt`)- takes multiple columns, and gathers them into key-value pairs: it makes ???wide??? data longer
++ `spread` (aka `cast`) - takes two columns (key & value) and spreads in to multiple columns, it makes ???long??? data wider.
+
+
+
+```{r 13}
+summary(SSData)
+```
+
+What if we just want to see the conditions?
+
+```{r 14}
+unique(pilotdata$condition)
+```
+
+
+## Selecting
+
+If you want to add or remove *columns*, you can use `select`. In the above dataset, we don't need the "X" column, which is an artefect of the index from the original csv file. We can delete it using the following code: 
+
+```{r 15, results="hide"}
+SSData <- SSData %>%
+  select(-X)
+```
+
+Let's look at the head of the data again!
+
+```{r 16}
+pander(head(SSData))
+```
+
+## Separating
+
+As we can see, there is a lot of information in the stim names: the variable they test, the type of stim they are, and whether they are high or low.  We might need to `separate` (a function from `dplyr`) this separates info out into seperate columns. 
+
+```{r 17, results="hide"}
+SSData <- SSData %>% 
+  separate(InducerL, c('IndDomainL', 'IndSetL', 'IndTokenL'), sep='-') %>% 
+  separate(ConcurrentL, c('ConDomainL', 'ConSetL', 'ConTokenL')) 
+```
+
+Again, let's see what it looks like now:
+
+```{r 18}
+pander(head(SSData))
+```
+## Mutating
+
+We can also *add columns* using `mutate` - for instance, in our data, we might want a column stating whether the Left Inducer and Left Concurrent are both "high" or both "low".
+
+```{r results="hide"}
+SSData <- SSData %>%
+  mutate(Response = ifelse(IndTokenL==ConTokenL,1,0)) 
+```
+
+Let's see what that's done:
+
+```{r}
+pander(head(SSData))
+```
+
+## Filtering
+
+To remove *rows* from your dataset (maybe to remove outliers, remove participants who clicked on the same thing all the time, selecting subpopulations, etc.) `filter` is function that does this! It takes a data frame as its first argument, and then as its second takes the **condition** you want to filter on.
+
+So if we're only interested in data that involves Affect, we can do the following:
+
+
+```{r, results="hide"}
+affect <- SSData %>%
+  filter(IndDomainL == 'Affect'| ConDomainL == 'Affect')
+```
+
+
+```{r}
+pander(head(SSData))
+```
+
+
+**Exercise**
+
+Filter out only the responses of one participant
+
+```{r}
+#write your code here
+
+```
+
+
+
+## The problem to Affect and Color
+
+For our Affect Tokens, although we have generally tried to pick pairs where one token is high valence/arousal and the other is not, we do not expect participants to treat all High Valence/High Arousal tokens as equivalent- "Happy" has much different connotations than "Stressed" or "Excited", so we need to consider Affect Tokens individually, rather than lumping all of the Affect trials together.
+
+```{R warning = FALSE, message = FALSE}
+
+#1- Code "Affect" and "Color" as Tokens- once for each relevant column
+#(Note we don't need to do this for *all* columns)
+
+SSData <- SSData %>%
+  mutate(IndDomainL2 = ifelse(SSData$IndDomainL == "Affect"|SSData$IndDomainL == "Color", paste(SSData$IndDomainL, SSData$IndSetL, sep = " "), SSData$IndDomainL)) %>%
+  mutate(ConDomainL2 = ifelse(SSData$ConDomainL == "Affect"|SSData$ConDomainL == "Color", 
+                             paste(SSData$ConDomainL, SSData$ConSetL, sep = " "), 
+                       SSData$ConDomainL))
+```
+
+```{r}
+pander(head(SSData))
+```
+
+
+##Final tidying
+
+Select only the columns we are interested in
+```{r}
+SSData <- SSData %>% 
+  select(DataSet, subject, condition, Focal1, Focal2, Focal3, trialNum, IndDomainL2, ConDomainL2, choice, Response)
+```
+
+Remane the columns
+```{r}
+colnames(SSData) <- c("DataSet", "Subject", "Condition", "Focal1", "Focal2", "Focal3", "TrialNum", "Inducer", "Concurrent", "Comparison", "Response")
+```
+
+```{r}
+pander(head(affectdata))
+```
+
+
+##Write the dataset to a file!
+
+```{r}
+#write.csv(SSData, "ste-phen/data/cleandata.csv", row.names = FALSE)
+
+```
+
+
+#Extra stuff that's study dependent
+
+You need to run this code to get the dataset we will be using - or you can just use the cleandata.csv file in the github
+
+Currently we have our Inducer and Concurrent domains coded in the data frame, which would let us look at all of the comparisons we are interested in - but this is likely to be too much - with Color and Affect Broken up there are 186 possible comparisons in the data.
+
+But we don't really think that there will be much of a difference between asking someone whether a blue triangle is high pitched or asking whether a high pitched sound goes best with a blue triangle- that is, we don't suspect there is a difference between whether a domain is an inducer or a concurrent- we expect the data to be symmetrical.
+
+This is something we can test, so we will leave our inducer and concurrent columns in the data set, but we will also code in a "Comparison" column that tells us (insensitive to order) what two domains are being compared (this will also make generating predictions simpler)
+ 
+
+
+```{r Enumerating Comparisons, warning = FALSE, message = FALSE}
+
+Inducers <- unique(SSData$Inducer)       #All possible inducer token sets   
+Concurrents <- unique(SSData$Concurrent)    #All possible concurrent token sets
+
+Combinations <- expand.grid(Inducer = Inducers, Concurrent = Concurrents) # Gives all combinations
+
+
+Combinations <- separate(data=Combinations, col= Inducer,     #split columns back up for subsetting
+                         into= c("IndType", "IndToken"), sep = " ", remove = FALSE)
+Combinations <- separate(data=Combinations, col= Concurrent, 
+                         into= c("ConType", "ConToken"), sep = " ", remove = FALSE)
+
+Combinations <- subset(Combinations, IndType != ConType)  #4- Removing impossible combinations
+
+Combinations$Comparison <- paste(Combinations$Inducer, Combinations$Concurrent, sep = '-') #Make a comparison column
+Combinations <- arrange(Combinations, Comparison)  # Order the data frame alphabetically by the comparison column
+
+delRows = NULL # the rows to be removed
+for(i in 1:nrow(Combinations)){
+  j = which(Combinations$Inducer == Combinations$Concurrent[i] & Combinations$Concurrent == Combinations$Inducer[i])
+  j = j [j > i]
+  if (length(j) > 0){
+    delRows = c(delRows, j)
+  }
+}
+Combinations <- Combinations[-delRows,]
+
+# Code the comparison column into the SSData frame
+SSData$IndCon <- paste(SSData$Inducer, SSData$Concurrent, sep = '-')
+SSData$ConInd <- paste(SSData$Concurrent, SSData$Inducer, sep = '-')
+
+SSData$Comparison <- ifelse(SSData$IndCon %in% Combinations$Comparison,
+                               SSData$IndCon,
+                               SSData$ConInd)
+
+
+#### Now we need to put our SimData into the same format as the rest of the data and attach it to the data frame
+simdata$condition <- paste(simdata$Focal1, simdata$Focal2, simdata$Focal3)
+simdata <- subset(simdata, select = c(DataSet, Id, condition, Focal1, Focal2, Focal3, TrialNum, IndDomainL2, ConDomainL2, Resp2_SIMULATED, IndCon, ConInd, Comparison))
+colnames(simdata) <- c("DataSet", "Subject", "Condition", "Focal1", "Focal2", "Focal3", "TrialNum", "Inducer", "Concurrent", "Response", "IndCon", "ConInd", "Comparison")
+
+SSData <- rbind(SSData, simdata)
+
+```
+
+So now we have a lovely "Comparison" column in the dataframe, which we can use for some statistical tests
+
+The last thing we want to do is code "Correctness" for each trial. Of course in this task there is no such thing as a "correct" answer- participants choose what they want and cannot be wrong.
+
+We do, however, have a series of predictions that can be made about this data- so we can code in "Correctness" according to those sets of predictions
+
+We have made those predictions elsewhere and stored them as ImputedPredictions.csv.
+
+So we simply need to load in those predictions, then use that file to populate some additional columns in our dataframe
+
+We have three sets of predictions in our "Predictions" file
+
+1- Magnitude Symbolism
+2- Predictions generated from a lit review
+3- Predictions imputed from our Affect version of the Experiment- Absolute
+
+
+```{r Coding Predictions}
+library(plyr)
+
+
+Predictions <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/ImputedPredictions.csv?token=AXaLGMmfR3oToUirT7fWqkLwjLY5SKARks5Zy5QjwA%3D%3D")
+
+SSData$Magnitude <- mapvalues(SSData$Comparison,
+                                from = Predictions$Comparison,
+                                to = Predictions$MagSym)
+SSData$LitReview <- mapvalues(SSData$Comparison,
+                                from = Predictions$Comparison,
+                                to = Predictions$Prediction)
+SSData$Affect <- mapvalues(SSData$Comparison,
+                                from = Predictions$Comparison,
+                                to = Predictions$ImputedPrediction)
+```
+
+As it stands this tells us what Response each set predicts, not what is correct - we can recode that fairly simply
+
+```{r Coding Correctness}
+
+SSData$Magnitude <- ifelse(SSData$Magnitude == SSData$Response, 1, 0)
+SSData$LitReview <- ifelse(SSData$LitReview == SSData$Response, 1, 0)
+SSData$Affect <- ifelse(SSData$Affect == SSData$Response, 1, 0)
+
+```
+
+
+
+
