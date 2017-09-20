@@ -163,6 +163,7 @@ ggplot(data= Predictions, aes(x=Concurrent2, y=Inducer2, fill=Prediction)) +
 
 So that is your grpah of your predictions - anything that is pure white you haven't provided a prediction for
 
+#STOP HERE AND CREATE YOUR IMPUTED PREDICTIONS AND SIMULATED DATA
 You can now take that data frame and use it to impute the predictions that you did not provide - to do this you will use the notebook from Bill (Predict and Simulate.ipynb)- once you have imputed your missing values, come back to this Markdown Document!
 
 ------------------------------------------------
