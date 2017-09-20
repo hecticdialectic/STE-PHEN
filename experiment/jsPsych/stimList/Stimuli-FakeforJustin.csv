@@ -1,0 +1,4 @@
+Id,TrialNum,Focal1,Focal2,Focal3,Inducer,Concurrent,InducerL,InducerR,ConcurrentL,ConcurrentR
+Brightness-Amp-Affect-1,1,Brightness,Amp,Affect,Color,Amp,Color-RB-L,Color-RB-H,Amp-Piano-H,Amp-Piano-L
+Brightness-Amp-Affect-1,5,Brightness,Amp,Affect,Speed,Brightness,Speed-SP1-H,Speed-SP1-L,Brightness-Circles-L,Brightness-Circles-H
+Brightness-Amp-Affect-1,6,Brightness,Amp,Affect,Affect,Shape,Affect-HS-L,Affect-HS-H,Shape-BK1-H,Shape-BK1-L

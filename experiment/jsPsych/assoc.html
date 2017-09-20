@@ -1,0 +1,359 @@
+
+<!doctype html>
+<html>
+  <meta charset="UTF-8">
+  <head>
+    <title>My experiment</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="jspsych-5.0.3/jspsych.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-multi-stim-multi-response.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-single-stim.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-button-response.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-button-response.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-survey-likert.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-bio.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-match.js"></script>
+    <script src="jspsych-5.0.3/plugins/jspsych-html.js"></script>
+    <script src="PapaParse-4.3.2/papaparse.js"></script>
+
+    <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>
+    <div style='text-align: center;'>
+      <p style='margin-top: 10%';>Loading...
+      </p>
+    </div>
+  </body>
+
+  <script>
+
+//Set up some basic variables
+  var timeline = [];
+  var experiment_timeline = [];
+  //var conditions = ['Amp-Size-Speed', 'Brightness-Amp-Affect', 'Noise-Brightness-Color', 'Noise-Shape-Speed', 'Pitch-Shape-Affect', 'Pitch-Size-Color'];
+  //var condition = conditions[Math.floor(Math.random()*conditions.length)] + '-' + Math.floor(Math.random()*10+1);
+  //var condition = 'FakeforJustin.csv'; //update to get from URL
+  var condition = jsPsych.data.getURLVariable('condition');
+  //var trialUrl = "http://sapir.psych.wisc.edu/~justin/workshop/stimList/"+condition;
+  var trialUrl = "http://sapir.psych.wisc.edu/~justin/workshop/stimList/Stimuli-"+condition+".csv";
+  console.log(trialUrl);
+
+
+  // Create a unique identifier for each HIT. This will also be their completion code.
+  var makeCode = function(){
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYabcdefghijklmnopqrstuvwxy0123456789";
+
+      for( var i=0; i < 5; i++ ){
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+      return text;
+  };
+  var completion_code = makeCode() + 'iTi' + makeCode()
+
+//Retrieve worker/session info from Turk
+  var turkInfo = jsPsych.turk.turkInfo();
+  jsPsych.data.addProperties({
+  subject: completion_code,
+  condition: condition,
+  workerId: turkInfo.workerId,
+  assignmentId: turkInfo.assignmentId,
+  hitId: turkInfo.hitId
+  });
+
+  var continue_space = "<div class='right small'>(press SPACE to continue, or BACKSPACE to head back)</div>";
+
+  var welcome_block = {
+    type: "text",
+    cont_key: ' ',
+    text: "<p>Welcome to the experiment. You will need to be able to hear audio for this experiment (preferably on headphones). "+
+    "This will be tested during a practice session, so if you are unable to play sounds, please return the HIT now.</p>"+
+    "<p>Please maximize this window, then press SPACE to begin. "+
+    "The experiment will not procede if window <b>display area</b> is less than 640 pixels high or 900 wide.</p>" +
+    "<p>If the experiment doesn't begin when you hit SPACE but you have maximized this window, then your screen may be too small, or you may have too large a toolbar or menubar taking up space. " +
+    "If you're having trouble at this point, please just return the HIT.</p>"
+  };
+
+  // won't allow them to continue unless window is over a certain size
+  var loop_node = {
+    timeline: [welcome_block],
+    loop_function: function() {
+      var wdth = document.documentElement.clientWidth;
+      var hght = document.documentElement.clientHeight;
+      var availWdth = window.screen.availWidth;
+      var availHght = window.screen.availHeight;
+      if (wdth > 900 & hght > 640 ){
+        return false;
+      } else {
+        console.log("height:",hght,"width:",wdth);
+        return true;
+      }
+      }
+  };
+
+  timeline.push(loop_node);
+
+//Set up instructions
+  var instructions = {
+    type: "instructions",
+    key_forward: ' ',
+    key_backward: 8,
+    pages: ["<p><H1>Consent Form</H1></p>"+
+    "<p><b>Please read the information in the following pages. After that, you will be asked if you consent to participate in this experiment.</b></p>"+
+    "<p><b>Study name: </b>Crossmodal Perceptual Biases I</p>"+
+    "<p><b>Affiliation: </b>This study is being conducted by researchers in the Language and Cognition Department at the Max Planck Institute for Psycholinguistics, Nijmegen, The Netherlands</p>"+
+    "<p><b>Task instructions: </b>You will be asked to make associations between various types of stimuli (sounds, pictures, or moving images). "+
+    "For example, you might be shown two pictures (one of a red triangle, and one of a blue triangle), and then presented with two sounds (one loud and one quiet), and asked to match the triangles to the sounds. "+
+    "Effectively, you will be deciding if red triangles subjectively seem louder than blue triangles. "+
+    "Some of these associations might seem immediately obvious to you, while other questions might seem stranger. "+
+    "On each trial you just need to respond in whatever way you feel is best. <b>There are no 'correct' answers, except for an attention check and sound check during the practice trials</b>, before the experiment begins. "+
+    "After these instructions, you will be given some practice trials to familiarize yourself with the task. "+
+    "The experiment takes ~15 minutes to complete.</p>"+
+    "<div, class='right small'>(Press SPACE to continue)</div>",
+    "<p><b>What happens to my data? </b>The results of this research will only be used for scientific purposes. "+
+    "The results of the research can be presented at conferences and can be published in scientific journals. "+
+    "The results may also be published in newspapers, promotional material used by the institute, or on the website of the institute (www.mpi.nl). "+
+    "Finally, the data may be made available publically via the <a href='https://cos.io/' target='_blank'>Open Science Framework</a>. "+
+    "However, the data will NEVER be shown in such a way that you could be personally identified, so it will include a randomly generated code instead of your Turk ID. "+
+    "No personal information will ever be shared or linked to the data that you provide. "+
+    "You may withdraw your data at any time prior to publication. If you wish to withdraw your data, please email us with either your Turk ID or the completion code you'll get at the end of the experiment. "+
+    "If you are dissatisfied with any of these terms, please contact us via email (<a href='mailto:alan.nielsen@mpi.nl' target = '_top'>alan.nielsen@mpi.nl</a>).</p>"+
+    continue_space,
+    "<p><b>Do I get paid for my participation? </b>You will be paid $1.50 (US Dollars) for participation in this research. "+
+    "To collect your full payment, you will need to enter a completion code, which you will receive after the completion of the experiment. "+
+    "Although you are free to withdraw your participation at any time, if you do not complete the experiment after consenting, or if you <b>fail an attention check before the experiment begins</b>, you will only be paid $0.25.</p>"+
+    "<p><b>Can I withdraw at any time? </b>Participation in this experiment is voluntary. "+
+    "You have the right to decide not to participate in this experiment at any time. "+
+    "If you decide not to participate, you have the right to stop at any time without giving a reason.</p>"+
+    "<p> Do you have any questions about any aspects of the study? Feel free to ask the experiment leader by sending an email to <a href='mailto:alan.nielsen@mpi.nl' target = '_top'>alan.nielsen@mpi.nl</a>.</p>"+
+    continue_space
+    ]
+  };
+
+  timeline.push(instructions);
+
+// Set up consent form
+  var consent_form = {
+    type: "survey-multi-choice", // this could also be done with type: 'html'
+    horizontal: true,
+    required: [true, true, true, true, true, true], //Not supported by Safari!
+    questions: ["I have received sufficient information to provide consent",
+              "I understand that I am free to withdraw at any time",
+              "I understand that I may revoke the use of my data at any time up until publication without giving a reason",
+              "I understand that my data may be shared with any other researcher, or publically via the Open Science Framework. "+
+              "My data will be used for research purposes only and will remain anonymous.",
+              "I consent fully and voluntarily to participate in this study."],
+    options: [["Yes", "No"], ["Yes", "No"], ["Yes", "No"], ["Yes", "No"], ["Yes", "No"], ["Yes", "No"]],
+    preamble: "If you wish to take part, please consent fully by answering 'yes' to <b>all</b> the questions below, and then clicking 'submit' to begin the practice trials (you may need to scroll down)."
+  };
+
+  timeline.push(consent_form);
+
+  var endmessage = '';
+
+// Check that they've clicked "Yes" every time on the consent form
+  var number_consents = 0;
+  var consent_if_node = {
+    timeline: experiment_timeline,
+    conditional_function: function(){
+      var consent_responses = JSON.parse(jsPsych.data.getLastTrialData()['responses']);
+      for (i in consent_responses){
+        if (consent_responses[i] == "Yes"){
+          number_consents += 1;
+        }
+      }
+      if (number_consents<5) {//if (number_consents < 5){
+        endmessage = "Either you clicked 'no' to one of the consent questions, or you left one blank. "+
+        "In either case, this means you did not provide full consent and will not take part in the experiment. " +
+        "Please close this window and return the HIT. "
+        return false;
+      } else {
+        endmessage = "Thank you for participating! Your completion code is " +
+        completion_code +
+        ". Copy and paste this in MTurk to get paid. If you have any questions or comments, please email <a href='mailto:alan.nielsen@mpi.nl' target = '_top'>alan.nielsen@mpi.nl</a>. "+
+        " If you want to learn a bit about the experiment you just did, you can read about it <a href='http://sapir.psych.wisc.edu/~justin/workshop/debrief.html' target='_blank'>here</a>."
+        return true;
+      }
+    }
+
+  };
+
+  timeline.push(consent_if_node);
+
+
+// Check if they've read all the instructions
+var task_instructions = {
+  type: 'html',
+  url: 'example1.html',
+  cont_key: 13,
+  check_fn: function(elem){
+    if(can_continue==true){
+      return(true);
+    } else {
+      return(false);
+    }
+  },
+  force_refresh: true
+}
+
+experiment_timeline.push(task_instructions);
+
+var practice_trial1 = {
+  type: 'match',
+  inducer_type: 'Shape',
+  concurrent_type: 'Sound',
+  inducer_stims: ['cat_pic', 'dog_pic'],
+  concurrent_stims: ['cat_sound', 'dog_sound'],
+  is_html: false,
+  prompt: 'Some of the stimuli are audio, in which case you will see these sound icons. Hover over the sound icons with the mouse to listen. You can listen repeatedly if you want. '+
+  'Once listened to, the border will turn green. You can only submit a response once all audio icon borders are green. '+
+  'Match the sound to the picture, then press "Submit". ' +
+  'Although most responses in this experiment will be subjective, we insist on a correct answer for this practice trial as an attention check and to check that you can hear the audio stimuli. '+
+  '<b>If you get this wrong, you will not be able to complete the experiment.</b>',
+  correct: [0,1]
+}
+
+experiment_timeline.push(practice_trial1);
+
+var practice_trial2 = {
+  type: 'match',
+  inducer_type: 'Amp',
+  concurrent_type: 'Amp',
+  inducer_stims: ['Amp-Tone-H', 'Amp-Tone-L'],
+  concurrent_stims: ['Amp-Piano-L', 'Amp-Piano-H'],
+  is_html: false,
+  prompt: 'Some of the audio stimuli will be louder and some softer. Listen to all 4 stimuli below and adjust your sound volume so you can hear everything comfortably. '+
+  'Match the soft to the soft and the loud to the loud in order to pass this practice trial. <b>If you get this wrong, you will not be able to complete the experiment.</b>',
+  correct: [1,0]
+}
+
+experiment_timeline.push(practice_trial2);
+
+
+var practice_trial3 = {
+  type: 'match',
+  inducer_type: 'Brightness',
+  concurrent_type: 'Size',
+  inducer_stims: ['Brightness-Diamonds-H', 'Brightness-Diamonds-L'],
+  concurrent_stims: ['Size-Circles-H', 'Size-Circles-L'],
+  is_html: false,
+  prompt: 'The rest of the tasks you will do are entirely subjective - there are no right or wrong answers from here on. Here, for instance, you just need to pick which of the colors goes best with the large circle, and which with the small circle. '+
+  'Try think if one seems a better match than the other one, and make your choice. '+
+  "If you really can't decide, just go with your gut reaction about which color seems bigger or smaller."
+}
+
+experiment_timeline.push(practice_trial3);
+
+var practice_trial4 = {
+  type: 'match',
+  inducer_type: 'Affect',
+  concurrent_type: 'Speed',
+  inducer_stims: ['Affect-HS-H', 'Affect-HS-L'],
+  concurrent_stims: ['Speed-SP1-L', 'Speed-SP1-H'],
+  is_html: false,
+  prompt: 'Some of the stimuli represent emotions or speed. Pick which speed of movement below seems happier and which sadder. '
+}
+
+experiment_timeline.push(practice_trial4);
+
+var emotion = {
+  type: 'html',
+  url: 'example2.html',
+  cont_key: 13,
+  check_fn: function(){return(true)},
+  force_refresh: true
+}
+
+experiment_timeline.push(emotion);
+
+// Get trial data
+// This uses a callback structure to load the csv with stimuli (because continuing hinges on it being loaded properly, so the callback allows you to do something once loaded)
+// For info on the callback structure, see https://stackoverflow.com/questions/26266459/retrieve-parsed-data-from-csv-in-javascript-object-using-papa-parse
+
+  function parseData(url, callBack) {
+      Papa.parse(url, {
+          download: true,
+          dynamicTyping: true,
+          header: true,
+          complete: function(results) {
+              callBack(results.data);
+          }
+      });
+  }
+
+  // Gets trial data from csv, and uses a callback to call the createTrials function
+  parseData(trialUrl, createTrials);
+
+  //This is the function that gets passed to parseData as its callback
+  // cf. https://stackoverflow.com/questions/23667086/why-is-my-variable-unaltered-after-i-modify-it-inside-of-a-function-asynchron
+  function createTrials(data) {
+      data.forEach(function(trialData){
+        if (trialData.TrialNum) {
+            var trial = {
+              trial_data: trialData,
+              type: 'match',
+              trial_index: trialData.TrialNum,
+              inducer_type: trialData.Inducer,
+              concurrent_type: trialData.Concurrent,
+              inducer_stims: [trialData.InducerL, trialData.InducerR],
+              concurrent_stims: [trialData.ConcurrentL, trialData.ConcurrentR],
+              is_html: false,
+              on_finish: function(trial_data){
+                jsPsych.data.addDataToLastTrial({trialNum: trialData.TrialNum});
+              }
+
+            };
+            experiment_timeline.push(trial);
+          }
+        });
+
+    // Add biographical questions
+    var bio = {
+      type: 'bio',
+    }
+    experiment_timeline.push(bio);
+
+    // Add comments
+    var comments = {
+      type: 'survey-text',
+      questions: ['If you have any comments on the experiment, please let us know.'],
+      rows: [10],
+      columns: [50]
+    }
+
+    experiment_timeline.push(comments);
+
+    // Images to preload
+    var images = ["stims/Affect-EB-H.png", "stims/Affect-EB-L.png", "stims/Affect-HS-H.png", "stims/Affect-HS-L.png", "stims/Affect-PD-H.png", "stims/Affect-PD-L.png", "stims/Affect-SC-H.png", "stims/Affect-SC-L.png", "stims/Amp-Hum-H.mp3", "stims/Amp-Hum-L.mp3", "stims/Amp-Piano-H.mp3", "stims/Amp-Piano-L.mp3", "stims/Amp-Pulse-H.mp3", "stims/Amp-Pulse-L.mp3", "stims/Amp-Tone-H.mp3", "stims/Amp-Tone-L.mp3", "stims/audioPlaceholder.png", "stims/bell-ring-01.mp3", "stims/Brightness-Circles-H.png", "stims/Brightness-Circles-L.png", "stims/Brightness-Diamonds-H.png", "stims/Brightness-Diamonds-L.png", "stims/Brightness-Squares-H.png", "stims/Brightness-Squares-L.png", "stims/Brightness-Triangles-H.png", "stims/Brightness-Triangles-L.png", "stims/cat_pic.png", "stims/cat_sound.mp3", "stims/cat_word.png", "stims/Color-RB-H.png", "stims/Color-RB-L.png", "stims/Color-RG-H.png", "stims/Color-RG-L.png", "stims/Color-RY-H.png", "stims/Color-RY-L.png", "stims/Color-YB-H.png", "stims/Color-YB-L.png", "stims/dog_pic.png", "stims/dog_sound.mp3", "stims/dog_word.png", "stims/Noise-Hum-H.mp3", "stims/Noise-Hum-L.mp3", "stims/Noise-Piano-H.mp3", "stims/Noise-Piano-L.mp3", "stims/Noise-Pulse-H.mp3", "stims/Noise-Pulse-L.mp3", "stims/Noise-Tone-H.mp3", "stims/Noise-Tone-L.mp3", "stims/Pitch-Hum-H.mp3", "stims/Pitch-Hum-L.mp3", "stims/Pitch-Piano-H.mp3", "stims/Pitch-Piano-L.mp3", "stims/Pitch-Pulse-H.mp3", "stims/Pitch-Pulse-L.mp3", "stims/Pitch-Tone-H.mp3", "stims/Pitch-Tone-L.mp3", "stims/Shape-BK1-H.png", "stims/Shape-BK1-L.png", "stims/Shape-BK2-H.png", "stims/Shape-BK2-L.png", "stims/Shape-BK3-H.png", "stims/Shape-BK3-L.png", "stims/Shape-BK4-H.png", "stims/Shape-BK4-L.png", "stims/Size-Circles-H.png", "stims/Size-Circles-L.png", "stims/Size-Diamonds-H.png", "stims/Size-Diamonds-L.png", "stims/Size-Squares-H.png", "stims/Size-Squares-L.png", "stims/Size-Triangles-H.png", "stims/Size-Triangles-L.png", "stims/Speed-SP1-H.gif", "stims/Speed-SP1-L.gif", "stims/Speed-SP2-H.gif", "stims/Speed-SP2-L.gif", "stims/Speed-SP3-H.gif", "stims/Speed-SP3-L.gif", "stims/Speed-SP4-H.gif", "stims/Speed-SP4-L.gif"];
+
+    //Start experiment once images preloaded
+    jsPsych.pluginAPI.preloadImages(images, function(){ startExperiment(); });
+
+    function startExperiment(){
+    jsPsych.init({
+      default_iti: 0,
+      timeline: timeline,
+      on_finish: function(data){
+        jsPsych.endExperiment(endmessage);
+        saveData(completion_code+".csv", jsPsych.data.dataAsCSV())
+      }
+    });
+  }}
+
+function saveData(filename, filedata){
+$.ajax({
+   type:'post',
+   cache: false,
+   url: 'saveData.php',
+   data: {
+     filename: filename,
+     filedata: filedata}
+});
+}
+
+  </script>
+</html>

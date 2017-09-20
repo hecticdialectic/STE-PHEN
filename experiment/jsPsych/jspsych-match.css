@@ -1,0 +1,141 @@
+.instructions {
+  height: auto!important;
+  height: 100px;
+  min-height: 30px;
+  width: 900px;
+  margin: auto;
+  margin-top: 2px;
+  font-size: 14px;
+  padding-bottom: 2px;
+}
+
+.stim_display{
+  width: 800px;
+  margin: auto;
+  height: 550px;
+  clear: both;
+}
+
+.inducer {
+  display: flex;
+  justify-content: space-between;
+  height: 210px;
+}
+
+.concurrent {
+  height: 215px;
+}
+
+.break {
+  clear: both;
+  width: 100%;
+  height: 5px;
+}
+
+.column {
+  float: left;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.inducer .column.outside{
+  width: 300px;
+}
+
+.inducer .column.center{
+  width: 80px;
+}
+
+.concurrent .row{
+  display: flex;
+  justify-content: space-between;
+  height: 155px;
+}
+
+.concurrent .column.outside{
+  width: 240px;
+  position: relative;
+}
+.concurrent .column.center{
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+  border: 1px solid black;
+}
+
+.inducer img {
+  width: 200px;
+  height: 200px;
+}
+
+.concurrent img {
+  width: 150px;
+  height: 150px;
+}
+
+.left img {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.right img {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.control {
+	font-size: 18px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.control_indicator {
+	position: absolute;
+	top: 80px;
+	width: 24px;
+	height: 24px;
+	background: #e6e6e6;
+}
+
+.right .control_indicator {
+  left: 50px;
+}
+
+.left .control_indicator {
+  right: 50px;
+}
+
+/* Hovering on radio buttons*/
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+	background: #909090;
+}
+
+/* Checked state */
+.control input:checked ~ .control_indicator {
+	background: black;
+}
+
+/* Disabled state */
+.control input:disabled ~ .control_indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: #e6e6e6;
+}

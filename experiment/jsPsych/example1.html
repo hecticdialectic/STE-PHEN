@@ -1,0 +1,176 @@
+
+<!doctype html>
+<html>
+<!-- load css -->
+<link href="jspsych-match.css" rel="stylesheet" type="text/css"></link>
+
+<!-- Load jquery-->
+
+<body>
+<div class='instructions'>
+    <span class='current_instructions'>Each task looks like this. There are two stimuli on top (here, two pictures) and two stimuli below (here, the words "dog" and "cat"). Stimuli can also be sounds or gifs.
+    </span>
+</div>
+
+<div class='stim_display'>
+
+  <div class='inducer'>
+    <div class='column left outside'>
+      <div class='content'>
+        <img src='stims/cat_pic.png' id='inducer_stim_0' class='inducer_stim'>
+      </div>
+    </div>
+    <div class='column center'>
+    </div>
+    <div class='column right outside'>
+      <div class='content'>
+        <img src="stims/dog_pic.png" id='inducer_stim_1' class='inducer_stim'>
+      </div>
+    </div>
+  </div>
+  <div class='break'>
+  </div>
+
+  <div class='concurrent'>
+    <div class='row first'>
+      <div class='column left outside'>
+        <div class='content'>
+          <label class="control control-radio">
+            <input type="radio" class="myRadio" name="radio1" value=0 row=0 />
+            <div class="control_indicator"></div>
+          </label>
+        </div>
+      </div>
+      <div class='column center'>
+        <img src="stims/dog_word.png">
+      </div>
+      <div class='column right outside'>
+        <div class='content'>
+          <label class="control control-radio">
+            <input type="radio" class="myRadio" name="radio1" value=1 row=0 />
+            <div class="control_indicator"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class='row second'>
+      <div class='column left outside'>
+        <div class='content'>
+          <label class="control control-radio">
+            <input type="radio" class="myRadio" name="radio2" value=0 row=1 />
+            <div class="control_indicator"></div>
+          </label>
+        </div>
+      </div>
+      <div class='column center'>
+        <img src="stims/cat_word.png">
+      </div>
+      <div class='column right outside'>
+        <div class='content'>
+          <label class="control control-radio">
+            <input type="radio" class="myRadio" name="radio2" name="radio2" value=1 row=1 />
+            <div class="control_indicator"></div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='continue_instructions right small'>
+(Press SPACE to continue)
+</div>
+</body>
+
+<script>
+
+// event handler for radio buttons
+$(".myRadio").on("click", setButtons);
+
+/* if choice made for one inducer, sets choice for other
+and prevents same concurrent being selected for both inducers*/
+function setButtons() {
+  //ensure only one checked per side, auto-check other side
+  var row = this.getAttribute('row');
+  var value = this.getAttribute('value');
+  $(".myRadio[row="+Math.abs(row-1)+"][value="+Math.abs(value-1)+"]").prop("checked",true);
+}
+
+// Display these instructions one by one
+
+var instructions = [
+  'Each task looks like this. There are two stimuli on top (here, two pictures) and two stimuli below (here, the words "dog" and "cat"). Stimuli can also be sounds or gifs.',
+  'The task is to match each of the bottom stimuli with one of the top stimuli.',
+  'There are 4 buttons (now in black) that you can click to match a stimulus on the bottom with one from the top.',
+  'Clicking <b>this</b> button means the word "dog" goes with the picture of a dog.',
+  'Conversely, clicking <b>here</b> means the word "cat" goes with the picture of a cat.',
+  "Once you've made one choice, the opposite pairing will be selected, so if you match 'dog' with the dog you don't need to click again to match 'cat' with the cat - that will happen automatically."]
+
+var constinue = ['Press SPACE to continue.', 'Press SPACE to continue or BACKSPACE to go back'];
+var instruction_index = 0;
+var can_continue = false;
+
+// Add event handler for keys: when space pressed, go forward, when backspace pressed, go back
+
+document.addEventListener('keydown', function(event) {
+  // Scroll backwards and forwards through instructions
+
+    if (event.keyCode == 32 & instruction_index<instructions.length) {
+      instruction_index+=1;
+    }
+
+    if (event.keyCode == 8 & instruction_index > 0) {
+      instruction_index-=1;
+    }
+
+    $(".current_instructions").html(instructions[instruction_index]);
+    switch(instruction_index){
+      case 0:
+        $('.myRadio').prop("checked", false);
+        break;
+      case 1:
+        $('.myRadio').prop("checked", false);
+        break;
+      case 2:
+        $('.control_indicator').css('background','black');
+        break;
+      case 3:
+        $('.control_indicator').css('background','#e6e6e6');
+        $('input[row=0][value=1] ~ .control_indicator').css('background','black');
+        break;
+      case 4:
+        $('.control_indicator').css('background','#e6e6e6');
+        $('input[row=1][value=0] ~ .control_indicator').css('background','black');
+        break;
+      case 5:
+        $('input[row=0][value=1] ~ .control_indicator').css('background','black');
+        $('input[row=1][value=0] ~ .control_indicator').css('background','black');
+        can_continue = true;
+        break;
+    }
+
+    if(instruction_index>0){
+      if(instruction_index>=5){
+        $(".continue_instructions").html('Press ENTER to try some practice examples.');
+      } else {
+        $(".continue_instructions").html('Press SPACE to continue or BACKSPACE to go back.');
+      }
+    } else {
+      $(".continue_instructions").html('Press SPACE to continue.');
+    }
+    // Update what boxes are highlighted
+
+  });
+
+// Another key handler, to alert them when they're pushing space inappropriately.
+// I've put it here, rather than with the above event handler, so that the following can be removed when the instructions are done.
+
+var continue_handler = function (event) {
+  if (event.keyCode == 32 & instruction_index == 6) {
+    alert("Please read the instructions carefully. The instructions at the bottom right are telling you what to press to continue.")
+  }
+}
+
+$(document).bind('keydown', continue_handler);
+
+</script>
+</html>
