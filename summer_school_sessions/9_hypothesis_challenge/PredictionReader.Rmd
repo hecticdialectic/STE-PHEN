@@ -294,6 +294,9 @@ ggplot(data= TheOne, aes(x=Concurrent2, y=Inducer2, fill=value)) +
   facet_wrap(~Source, nrow =3)
   coord_fixed()
 
+TheOne$Student <- "YOURNAMEGOESHERE"
+
+write.csv(TheOne, "F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/TheOne-YOURNAME.csv")
 
 ```
 
