@@ -1,0 +1,28 @@
+Instructions for predict.py:
+
+1) Make sure your predictions file is in this folder
+2) Open a terminal and move into this directory
+3) Run the command: 
+
+python predict.py -f YOURFILENAMEGOESHERE
+
+replacing "YOURFILENAMEGOESHERE" with the name of your predictions file.
+
+
+
+-------
+
+
+Instructions for simulate.py:
+
+1) Make sure your ImputedPredictions file is in this folder
+2) Open a terminal and move into this directory
+3) Run the command: 
+
+python simulate.py -f YOURFILENAMEGOESHERE
+
+replacing "YOURFILENAMEGOESHERE" with the name of your ImputedPredictions file.
+
+
+
+
