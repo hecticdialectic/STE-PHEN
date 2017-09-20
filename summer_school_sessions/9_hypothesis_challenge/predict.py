@@ -4,11 +4,11 @@ import numpy as np
 
 import argparse
 
-def main(filename):
+def predict(filename):
 
 	predictions = pd.read_csv(filename)
 
-	print "- Succesfully read predictions dataframe."
+	print("- Succesfully read predictions dataframe.")
 
 	covered_comparisons = predictions[predictions.Prediction.notnull()].Comparison.values
 
@@ -25,8 +25,8 @@ def main(filename):
 
 	predictions['comparitor'] = predictions.apply(get_comparitor, axis = 1)
 
-	print "- Deteced {0} predictions.".format(covered_comparisons.shape[0])
-	print "- Imputing {0} remaining predictions now.".format(all_comparisons.shape[0] - covered_comparisons.shape[0])
+	print("- Deteced {0} predictions.".format(covered_comparisons.shape[0]))
+	print("- Imputing {0} remaining predictions now.".format(all_comparisons.shape[0] - covered_comparisons.shape[0]))
 
 	def impute_prediction(row):
 
@@ -51,12 +51,12 @@ def main(filename):
 
 	predictions['ImputedPrediction'] = predictions.apply(impute_prediction, axis = 1)
 
-	print "- Finished imputing predictions."
-	print "- Saving data to MyImputedPredictions.csv"
+	print("- Finished imputing predictions.")
+	print("- Saving data to MyImputedPredictions.csv")
 
 	predictions.to_csv('MyImputedPredictions.csv', index = False)
 
-	print "- Complete."
+	print("- Complete.")
 
 
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-f', '--filename')
 	args = parser.parse_args()
-	main(args.filename)
+	predict(args.filename)
 
 
 

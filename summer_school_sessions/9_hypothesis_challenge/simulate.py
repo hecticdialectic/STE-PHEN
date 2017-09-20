@@ -4,12 +4,12 @@ import numpy as np
 
 import argparse
 
-def main(filename):
+def simulate(filename):
 
 	predictions = pd.read_csv(filename)
 
-	print "- Succesfully read in predictions."
-	print "- Simulating data now."
+	print("- Succesfully read in predictions.")
+	print("- Simulating data now.")
 
 	results_dataframe = pd.read_csv('SimTrials.csv')
 
@@ -20,18 +20,18 @@ def main(filename):
 
 	results_dataframe['ResponseSimulated'] = results_dataframe.apply(simulate_data, axis = 1)    
 
-	print "- Simulation complete."
+	print("- Simulation complete.")
 
 	results_dataframe.to_csv('SimDataFilled.csv', index = False)
 
-	print "- Saved simulated data to SimDataFilled.csv"
+	print("- Saved simulated data to SimDataFilled.csv")
 
 	
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-f', '--filename')
 	args = parser.parse_args()
-	main(args.filename)
+	simulate(args.filename)
 
 
 
