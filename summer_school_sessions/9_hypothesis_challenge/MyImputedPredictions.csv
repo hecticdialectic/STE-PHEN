@@ -1,5 +1,5 @@
 Unnamed: 0,Inducer,Concurrent,Comparison,Prediction,comparitor,ImputedPrediction
-1,Affect EB,Amplitude,Affect EB-Amplitude,0.741044937,Amplitude,0.741044937
+1,Affect EB,Amp,Affect EB-Amp,0.741044937,Amp,0.741044937
 2,Affect EB,Brightness,Affect EB-Brightness,0.168535791,Brightness,0.168535791
 3,Affect EB,Color RB,Affect EB-Color RB,0.650821579,Color RB,0.650821579
 4,Affect EB,Color RG,Affect EB-Color RG,0.702554179,Color RG,0.702554179
@@ -10,7 +10,7 @@ Unnamed: 0,Inducer,Concurrent,Comparison,Prediction,comparitor,ImputedPrediction
 9,Affect EB,Shape,Affect EB-Shape,0.884635296,Shape,0.884635296
 10,Affect EB,Size,Affect EB-Size,0.545782696,Size,0.545782696
 11,Affect EB,Speed,Affect EB-Speed,0.216102391,Speed,0.216102391
-12,Affect HS,Amplitude,Affect HS-Amplitude,,Amplitude,0.520593875909
+12,Affect HS,Amp,Affect HS-Amp,,Amp,0.520593875909
 13,Affect HS,Brightness,Affect HS-Brightness,0.684782999,Brightness,0.684782999
 14,Affect HS,Color RB,Affect HS-Color RB,0.386561677,Color RB,0.386561677
 15,Affect HS,Color RG,Affect HS-Color RG,,Color RG,0.520593875909
@@ -21,7 +21,7 @@ Unnamed: 0,Inducer,Concurrent,Comparison,Prediction,comparitor,ImputedPrediction
 20,Affect HS,Shape,Affect HS-Shape,0.076837654,Shape,0.076837654
 21,Affect HS,Size,Affect HS-Size,0.132052723,Size,0.132052723
 22,Affect HS,Speed,Affect HS-Speed,0.494376158,Speed,0.494376158
-23,Affect PD,Amplitude,Affect PD-Amplitude,,Amplitude,0.520593875909
+23,Affect PD,Amp,Affect PD-Amp,,Amp,0.520593875909
 24,Affect PD,Brightness,Affect PD-Brightness,0.845620723,Brightness,0.845620723
 25,Affect PD,Color RB,Affect PD-Color RB,0.661952195,Color RB,0.661952195
 26,Affect PD,Color RG,Affect PD-Color RG,0.455278897,Color RG,0.455278897
@@ -32,7 +32,7 @@ Unnamed: 0,Inducer,Concurrent,Comparison,Prediction,comparitor,ImputedPrediction
 31,Affect PD,Shape,Affect PD-Shape,0.256604146,Shape,0.256604146
 32,Affect PD,Size,Affect PD-Size,0.882969413,Size,0.882969413
 33,Affect PD,Speed,Affect PD-Speed,,Speed,0.520593875909
-34,Affect SC,Amplitude,Affect SC-Amplitude,0.878802528,Amplitude,0.878802528
+34,Affect SC,Amp,Affect SC-Amp,0.878802528,Amp,0.878802528
 35,Affect SC,Brightness,Affect SC-Brightness,0.080732118,Brightness,0.080732118
 36,Affect SC,Color RB,Affect SC-Color RB,0.295404095,Color RB,0.295404095
 37,Affect SC,Color RG,Affect SC-Color RG,,Color RG,0.520593875909
@@ -43,16 +43,16 @@ Unnamed: 0,Inducer,Concurrent,Comparison,Prediction,comparitor,ImputedPrediction
 42,Affect SC,Shape,Affect SC-Shape,0.573490593,Shape,0.573490593
 43,Affect SC,Size,Affect SC-Size,0.464700637,Size,0.464700637
 44,Affect SC,Speed,Affect SC-Speed,0.238827265,Speed,0.238827265
-49,Amplitude,Brightness,Amplitude-Brightness,0.030004558,Amplitude,0.030004558
-50,Amplitude,Color RB,Amplitude-Color RB,0.270022836,Amplitude,0.270022836
-51,Amplitude,Color RG,Amplitude-Color RG,0.003856054,Amplitude,0.003856054
-52,Amplitude,Color RY,Amplitude-Color RY,0.778858077,Amplitude,0.778858077
-53,Amplitude,Color YB,Amplitude-Color YB,0.271650674,Amplitude,0.271650674
-54,Amplitude,Noise,Amplitude-Noise,0.726157499,Amplitude,0.726157499
-55,Amplitude,Pitch,Amplitude-Pitch,0.678939481,Amplitude,0.678939481
-56,Amplitude,Shape,Amplitude-Shape,,Amplitude,0.520593875909
-57,Amplitude,Size,Amplitude-Size,0.549631722,Amplitude,0.549631722
-58,Amplitude,Speed,Amplitude-Speed,0.97041089,Amplitude,0.97041089
+49,Amp,Brightness,Amp-Brightness,0.030004558,Amp,0.030004558
+50,Amp,Color RB,Amp-Color RB,0.270022836,Amp,0.270022836
+51,Amp,Color RG,Amp-Color RG,0.003856054,Amp,0.003856054
+52,Amp,Color RY,Amp-Color RY,0.778858077,Amp,0.778858077
+53,Amp,Color YB,Amp-Color YB,0.271650674,Amp,0.271650674
+54,Amp,Noise,Amp-Noise,0.726157499,Amp,0.726157499
+55,Amp,Pitch,Amp-Pitch,0.678939481,Amp,0.678939481
+56,Amp,Shape,Amp-Shape,,Amp,0.520593875909
+57,Amp,Size,Amp-Size,0.549631722,Amp,0.549631722
+58,Amp,Speed,Amp-Speed,0.97041089,Amp,0.97041089
 64,Brightness,Color RB,Brightness-Color RB,0.185532541,Brightness,0.185532541
 65,Brightness,Color RG,Brightness-Color RG,0.444400339,Brightness,0.444400339
 66,Brightness,Color RY,Brightness-Color RY,0.325894044,Brightness,0.325894044
