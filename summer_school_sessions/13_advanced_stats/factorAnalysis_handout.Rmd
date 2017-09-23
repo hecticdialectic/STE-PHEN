@@ -1,0 +1,333 @@
+---
+title: "Factor Analyses"
+author: "Justin Sulik"
+date: "September 22, 2017"
+output:
+    html_document:
+        keep_md: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+out.width = "400px"
+```
+
+```{r}
+library(tidyverse)
+library(corrplot)
+library(psych)
+library(GPArotation)
+```
+
+http://personality-project.org/r/psych/HowTo/factor.pdf
+
+# What kinds of things might you want from your data?
+
+So far we've looked at:
+
+- Summary statistics
+- Regressions
+
+But what if we just want to know how all the domains are related to each other? It seems silly to regress each one on all the others.
+
+### Example 1:
+
+Get student performances on tests in physics, maths, English literature, history Do you think performance will reflect general intelligence? Or is there a science intelligence and a humanities one? Or are physics and math scores driven be a science ability, and English lit. and history scores separate things?
+
+### Example 2:
+
+We wanted some individual differences tests to use in a survey. There were lots to choose from. We wanted to see how they clustered together so we could pick 1 from each cluster:
+
+[http://sapir.psych.wisc.edu/~justin/cognitive-styles/interactivePlot.html](http://sapir.psych.wisc.edu/~justin/cognitive-styles/interactivePlot.html)
+
+### Example 3:
+
+We have too many comparisons to make and it would reduce our alpha immensely. If we somehow reduce our range of variables to more fundamental constructs, we have to make fewer comparisons. 
+
+# How to answer these questions?
+
+A correlation table gets us somewhere.
+
+```{r}
+# Read in data (correlation table for all pairs of domains)
+# Here's one I made earlier
+
+corData <- read_csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/data/corData_pilot.csv", 
+    col_types = cols(X1 = col_skip()))
+
+# Transform long table to square one
+corTable <- corData %>%
+  spread(Concurrent,r) 
+
+# Rename rows
+rownames(corTable) <- corTable$Inducer
+
+# Delete unnecessary column that duplicates row names
+
+corTable %<>% ungroup %>% select(-Inducer)
+
+# Transform into a matrix (which we'll need later)
+corMatrix <- corTable %>% as.matrix
+
+# Set diagonals to 1 (all NA values because these weren't in corTable)
+corMatrix[is.na(corMatrix)] <- 1
+
+# Plot
+corrplot(corMatrix, order = "hclust", tl.col='black', tl.cex=.75) 
+```
+
+Notice that (some) variables seem to cluster or group together. What if we want to know more about these groupings? Are they really there or are we imagining it? How many are there? 
+
+Can you spot any cases where we can't just eyeball the groupings?
+
+**Exercise: What information do you think would be sensible to consider when making these decisions?**
+
+In particular, can you think of values that you'd want to maximise/minimise when assigning these to clusters?
+
+In other words: how should this plot look different to convince you about where the groups are?
+
+# Dimension reduction
+
+If we want to reduce our 9 domains to a smaller set of groups/clusters, we are essentially reducing the number of dimensions we're working with. We're trying to reduce the complexity of the observed data or posit fewer things (e.g. in our experiment: fewer distinct biases in our minds). We're trying to discover underlying structure. 
+
+There are multiple ways to do this: factor analysis, principal components analysis, cluster analysis. These are all quite similar (especially 1st two). 
+
+We'll not worry about the difference much, except to say that FA acts as though there is some underlying reality to the groupings. A factor is an unobserved/unobservable thing that causes the data. 
+
+For example, perhaps all our pilot data could be explained by 4 psychological biases. Or succes in classes determined by general intelligence, not by distinct science/humanities abilities?
+
+# Question 1: How many groups are there really? 
+
+**Take-home message 1: there really is no objective answer to this question. It's all about the interpretation**
+
+There are a number of methods. They often produce conflicting results. They are open to interpretation. So make sure you interpret sensibly! This is one of the greatest challenges in FA. 
+
+For this simple intro, we're just going to focus on some common eye-balling methods
+
+Method 1: A simple scree plot {.myImagePage}
+
+![scree](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Yamnuska_bottom_cliff.jpg/1200px-Yamnuska_bottom_cliff.jpg)
+
+The "elbow" is where the mountain and scree meet (where structure meets noise).
+
+```{r}
+# sat.act is a dataset. Explore it with ?sat.act. We're looking at the 3 measures in columns 4 to 6.
+
+# Looking for 'elbow' (and optional arbitrary rule of thumb: >1)
+# We'll discuss Eigen values shortly
+VSS.scree(sat.act[4:6])
+```
+
+Method 2: A scree plot with some comparison to a random matrix
+
+```{r}
+
+# Looking for number of points above the relevant red line (PCA vs FA)
+# Better than 'arbitrary' cutoff of 1
+
+fa.parallel(sat.act[4:6])
+```
+
+Method 3: Very Simple Structure criterion
+
+```{r}
+
+# Looking for maxima!
+# We'll discuss "complexity" shortly
+
+vss(sat.act[4:6])
+```
+
+For a few more options, try `nfactors(sat.act)` or see `?vss` but we won't cover these today. 
+
+**Exercise: try the above methods with two datasets: `bfi` and our `corMatrix` **
+
+- Use columns 1:25 of the bfi dataset, and `?bfi` to find out more about it
+
+- What seems easy or difficult about each method (in terms of straightforwardness of eyeballing it)?
+
+- So no straightforward answer?!? What was take-home message 1? 
+
+- This is called "Exploratory FA" 
+
+- Interpretation/uncertainty is fine!
+
+# Question 2: What are the groups?
+
+A factor analysis will print out (amongst other things):
+
+- The variables and their loadings on each factor
+
+- Their communalities and uniquenesses 
+
+## Loadings
+
+```{r}
+fit1 <- fa(bfi[1:25],nfactors=5)
+fit1
+
+print(fit1$loadings, cutoff=0.3)
+```
+
+Columns - Factors MR1:MR5
+Rows - variables
+Values - loadings
+
+What you want: 
+
+- variables to load high on one factor, and not much on others
+- each factor to have some high loadings
+- factors to be interpretable!
+
+```{r}
+fit2 <- fa(bfi[1:25],nfactors=6)
+fit2
+
+print(fit2$loadings, cutoff=0.3)
+```
+
+Does a 6th factor get us much? No? How do we tell from looking at the values?
+
+For thresholds, see [here](http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/thresholds). A standard cutoff in the literature is 0.4 but that's an arbitrary rule of thumb. What was take-home message 1?
+
+## Communalities
+
+h2 - communality = the amount of variance in the variable explained by *all* the factors. Ideally most of the variance in a variable should be explained by our factors. 
+
+u2 - uniqueness = 1 - communality
+
+com - complexity
+
+**Exercise: Find a variable with high complexity and one with low complexity. Try puzzle out what the difference between them is. **
+
+# Question 3: To rotate or not to rotate?
+
+Our aim is to uncover simple, interpretable factors (ones that have some psychological plausibility/might plausibly play a causal role in observed data)
+
+Rotation can make the relationship between data and theoretical factors more straightforward/clearer
+
+```{r}
+
+a = runif(100, -3, 3)
+b = rnorm(100, 0, 1)
+c = runif(100, -3, 3)
+d = rnorm(100, 0, 1)
+data = data.frame(x=c(a,c),y=c(a+b,-1*(c+d)),group=c(rep('a',100),rep('b',100)))
+```
+
+```{r}
+data %>% ggplot(aes(x=x,y=y)) + geom_point()
+```
+
+
+```{r}
+data %>% ggplot(aes(x=x,y=y,color=group)) + geom_point() + stat_smooth(method=lm)
+```
+
+To maximise distinctiveness of factors: assume them to be orthogonal
+
+If factors are themselves correlated: they are oblique
+
+Factor analysis offers a number of rotations to force orthogonal vs. oblique factors
+
+See [here](http://www.theanalysisfactor.com/rotations-factor-analysis/)
+
+Simply pass `rotation=` to the `fa` function where the most common options are `varimax` for orthogonal and `oblimin` for oblique rotations. 
+
+# Question 4: What can go wrong? Plenty!
+
+This was a prime example of a case where I should have simulated data before deciding I was going to try a FA. 
+
+It turns out it was a pretty poor fit for our pilot data. 
+
+Oh well, it's a learning moment. 
+
+What went wrong? Lots! Let's get diagnosing. 
+
+Try:
+
+```{r, warning=TRUE}
+fa.parallel(corMatrix)
+```
+
+Lots of warnings! Let's parse `Matrix was not positive definite, smoothing was done`. It will involve understanding Eigenvalues, but first let's see if we can spot the problem. 
+
+```{r}
+ev <- eigen(corMatrix)
+ev$values
+```
+
+`Not positive definite` means there are some negative Eigen values. So what are those? 
+
+![From wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Mona_Lisa_eigenvector_grid.png/320px-Mona_Lisa_eigenvector_grid.png)
+
+## What caused it?
+
+(see [here](http://www2.gsu.edu/~mkteer/npdmatri.html))
+
+Some possibilities:
+
+1) Redundant/collinear variables 
+
+2) Pairwise correlation matrix/missing values
+
+3) Being naughty about binary variables representing continuous relationships
+
+2 and 3 apply here: no participant rated all pairwise combinations of domains, and we've used a binary outcome 'match' but don't think the relationships are binary.
+
+## What to do about it?
+
+Well, it's a problem. But we can sidestep the issue with some smoothing (let's make the matrix symmetric while we're at it). More complex solutions (tetrachoric correlations) are beyond the scope of today's session. 
+
+```{r}
+isSymmetric(corMatrix)
+
+corSym <- corMatrix
+
+ind <- lower.tri(corSym)
+corSym[ind] <- t(corSym)[ind]
+diag(corSym) <- 1
+isSymmetric(corSym)
+
+corSmooth <- cor.smooth(corSym,eig.tol=10^-12)
+eigen(corSmooth)$values
+```
+
+Try again:
+
+```{r, warning=TRUE}
+fa.parallel(corSmooth)
+```
+
+Still not happy! Try some rotation. 
+
+```{r warning=TRUE}
+fa(corSmooth, rotate='varimax',nfactors=3)
+```
+
+Ultra-Heywood case? It's a communality > 1. The factors can't explain more than 100% of the variance here!
+
+```{r}
+
+fa(corSmooth, rotate='varimax',nfactors=3, fm='mle')
+```
+
+Happy? Well, noise has very low communality, so not well predicted by our factors. 
+
+```{r}
+#Drop 'noise'
+corSmooth2 <- corSmooth[-5,-5]
+
+fit <- fa(corSmooth2, rotate='varimax',nfactors=3, fm='mle')
+print(fit$loadings,cutoff=0.3)
+```
+
+How well does this fit our intuitions from the correlation plot? And from what we thought would help decide clusters?
+
+**Exercise: let's try the new data!**
+
+```{r}
+corData <- read_csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/data/corData_main.csv", 
+    col_types = cols(X1 = col_skip()))
+```
+
