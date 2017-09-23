@@ -61,7 +61,7 @@ To that end, you'll need to run the script below (don't worry about how it works
 
 ```{r Wide Format Data Transformation, message = FALSE, warning = FALSE}
 colnames(myPWide) <- c("Inducer", "Affect EB", "Affect HS", "Affect PD", "Affect SC",
-                       "Pitch", "Amplitude", "Noise", "Size", "Shape", "Speed", "Brightness",
+                       "Pitch", "Amp", "Noise", "Size", "Shape", "Speed", "Brightness",
                        "Color RB", "Color RG", "Color RY", "Color YB")
 
 myPLong <- melt(myPWide,
@@ -294,6 +294,9 @@ ggplot(data= TheOne, aes(x=Concurrent2, y=Inducer2, fill=value)) +
   facet_wrap(~Source, nrow =3)
   coord_fixed()
 
+TheOne$Student <- "YOURNAMEGOESHERE"
+
+write.csv(TheOne, "F:/Google Drive/GitHub Repos/ste-phen/summer_school_sessions/9_Hypothesis_Challenge/TheOne-YOURNAME.csv")
 
 ```
 

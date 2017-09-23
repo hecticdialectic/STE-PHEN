@@ -1,10 +1,10 @@
-,Affect EB,Affect HS,Affect PD,Affect SC,Pitch,Amplitude,Noise,Size,Shape,Speed,Brightness,Color RB,Color RG,Color RY,Color YB
+,Affect EB,Affect HS,Affect PD,Affect SC,Pitch,Amp,Noise,Size,Shape,Speed,Brightness,Color RB,Color RG,Color RY,Color YB
 Affect EB,,,,,,,,,,,,,,,
 Affect HS,,,,,,,,,,,,,,,
 Affect PD,,,,,,,,,,,,,,,
 Affect SC,,,,,,,,,,,,,,,
 Pitch,0,0,0,0,,,,,,,,,,,
-Amplitude,0,0,0,0,0,,,,,,,,,,
+Amp,0,0,0,0,0,,,,,,,,,,
 Noise,0,0,0,0,0,0,,,,,,,,,
 Size,0,0,0,0,0,0,0,,,,,,,,
 Shape,0,0,0,0,0,0,0,0,,,,,,,

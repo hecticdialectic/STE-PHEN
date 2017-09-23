@@ -14,7 +14,7 @@ def predict(filename):
 
 	global_mean = predictions.Prediction.mean()
 
-	all_comparisons = pd.read_csv('_Predictions.csv').Comparison.copy()
+	all_comparisons = predictions.Comparison.copy()
 
 	def get_comparitor(row):
 		c = row['Comparison']
