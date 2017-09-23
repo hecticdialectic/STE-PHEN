@@ -1,0 +1,44 @@
+---
+title: "STEPHEN LMER"
+author: Ashley Micklos
+output: html_document
+keep_md: true
+---
+
+We are going to run a linear mixed effects model now. But first, let's make sure we have the required libraries and data (from the correct source) loaded:
+
+```{}
+library(tidyverse)
+library(reshape2)
+library(plyr)
+library(doBy)
+library(scales)
+library(lme4)
+
+setwd("/Users/ashleymicklos/Documents/GitHub/STE-PHEN/summer_school_sessions/10_data_prep")
+
+cleandata=read.csv("cleandata.csv")
+```
+
+Ok, so we have the data file loaded. We need to fix it up just a little bit. 
+
+First, we are going to change the response column to make values for correctness. Then aggregate the data. 
+
+```{r Preparing Dataframe for Correctness Analysis}
+# Getting rid of numerical response column that we aren't using
+CorrData <- subset(cleandata, select = -c(Response))
+
+# Melting data
+CorrData <- melt(CorrData,
+                 variable.name = "Prediction",
+                 id.vars = c("DataSet", "Subject", "Condition", "TrialNum", "Inducer",
+                             "Concurrent", "Comparison"))
+
+# Aggregating Data
+
+CorrDataAgg <- aggregate(value ~ Prediction + Subject + Condition + Inducer + Concurrent + Comparison,
+                         CorrData, mean)
+
+```
+
+Now we can run some models!
