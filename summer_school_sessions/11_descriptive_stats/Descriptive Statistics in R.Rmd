@@ -15,7 +15,7 @@ Let's start by loading in our clean data and some libraries:
 
 ```{r Libraries and Data, message = FALSE, warning = FALSE}
 cleandata <- read.csv(
-"F:/Google Drive/GitHub Repos/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandata.csv")
+"F:/Google Drive/GitHub Repos/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandataN.csv")
 
 library(plyr)
 library(tidyverse)
@@ -154,7 +154,7 @@ So there are heatmaps- one for the Pilot Data and one for the Full Data - the fi
 
 ```{r Subtracting the dataframe}
 
-DiffDataAgg <- FullDataAgg
+DiffDataAgg <- MainDataAgg
 
 DiffDataAgg$DataSet <- "Difference"
 
@@ -182,7 +182,7 @@ To that end we are going to do a t-test for every one of our 93 comparisons agai
 FullData <- summaryBy(Response ~ 
                        Subject + DataSet + Condition +
                        Inducer + Concurrent + Comparison,
-                     data= data, Fun = c(mean))
+                     data= maindata, Fun = c(mean))
 
 library(powerAnalysis)
 comparisons <- sort(unique(FullData$Comparison))
@@ -208,15 +208,15 @@ for(comparison in comparisons){
   
 }
 
-FullDataAgg$pValue <- as.numeric(pvals)
-FullDataAgg$ZValue <- as.numeric(zvals)
-FullDataAgg$effsize <- as.numeric(statvals)
+MainDataAgg$pValue <- as.numeric(pvals)
+MainDataAgg$ZValue <- as.numeric(zvals)
+MainDataAgg$effsize <- as.numeric(statvals)
 
-FullDataAgg$effsize <- ifelse(FullDataAgg$Response < 0.5,
-                              FullDataAgg$effsize * -1,
-                              FullDataAgg$effsize)
+MainDataAgg$effsize <- ifelse(MainDataAgg$Response < 0.5,
+                              MainDataAgg$effsize * -1,
+                              MainDataAgg$effsize)
 
-ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize)) +
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize)) +
   geom_tile(color = "white") +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
                        name="Effect Size") +
@@ -234,14 +234,14 @@ So this is all of our effect sizes- some are obviously very small and some are v
 
 ```{r Correcting p for multiple comparisons}
 
-FullDataAgg$correctedP <- FullDataAgg$pValue * 93
+MainDataAgg$correctedP <- MainDataAgg$pValue * 93
 
-FullDataAgg$effsize2 <- as.numeric(ifelse(FullDataAgg$correctedP > 0.05,
+MainDataAgg$effsize2 <- as.numeric(ifelse(MainDataAgg$correctedP > 0.05,
                                "NA",
-                               FullDataAgg$effsize))
+                               MainDataAgg$effsize))
 
 
-ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
   geom_tile(color = "white") +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
                        name="Effect Size") +
