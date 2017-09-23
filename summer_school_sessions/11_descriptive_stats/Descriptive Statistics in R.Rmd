@@ -1,0 +1,257 @@
+---
+title: "Descriptive Statistics"
+author: "Alan Nielsen"
+date: "12/9/2017"
+output:
+  html_document:
+    keep_md: true
+---
+
+Days have past and it's finally here- our very first look at the data.
+
+Although this section is labelled "Descriptive Statistics", it quickly became clear that there just aren't that many descriptive statistics to be done on this data that are of any real interest, so we're going to focus slightly more broadly on visualising and quanitfying our data.
+
+Let's start by loading in our clean data and some libraries:
+
+```{r Libraries and Data, message = FALSE, warning = FALSE}
+cleandata <- read.csv(
+"F:/Google Drive/GitHub Repos/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandata.csv")
+
+library(plyr)
+library(tidyverse)
+library(doBy)
+
+maindata <- subset(cleandata, DataSet == "Main")
+pilotdata <- subset(cleandata, DataSet == "Pilot")
+```
+
+There are lots of very basic statistics that we might want to take a look at first - in many experiments we'll want to know super simple things, like the grand mean response (or response-correctness). It's not particularly informative for our purposes, but the mean response in this dataset is `r mean(maindata$Response)` - which means that "High" stimuli were paired with other "High" stimuli `r mean(maindata$Response)*100`% of the time.
+
+#Normality
+
+Most often we will want to start by looking at the normality of the distributions of our data- in this case because the data is binomial and the number of trials is very low we know things won't be normally distributed, but lets take a look at the raw data anyways.
+
+There are tons of tests of the normality of data in R, but I generally prefer visual inspection of a qqplot to any of them.
+
+```{r qqplot of Data}
+
+ggplot(maindata, aes(sample = Response, colour= Condition)) + 
+  stat_qq(aes(shape = Condition))+
+  ggtitle("qq Plots of Data by Condition") +
+  labs(x="", y="") +
+  theme(axis.title.y = element_text(size=12,  color="#666666")) +
+  theme(axis.text = element_text(size=8)) +
+  theme(plot.title = element_text(size=16, face="bold", hjust=0, color="#666666")) +
+  theme(strip.text.x = element_text(size = 8, colour = "black"))
+
+```
+
+Not exactly normal (or possible to be normal) when looking at the raw data- obviously it is all 0s or 1s, so we need to aggregate the data in a number of ways and look at how its normality changes.
+
+Below we'll aggregate the data per comparison and per subject, then output a new qqplot.
+
+We'll also aggregate just per-subject and look at the same plot (and per-comparison)
+
+```{r QQPlot 2}
+dataagg1 <- aggregate(Response ~ Comparison + Condition + Subject, data = maindata, mean)
+
+ggplot(dataagg1, aes(sample = Response, colour= Condition)) + 
+  stat_qq(aes(shape = Condition))+
+  ggtitle("qq Plots of Data by Condition") +
+  labs(x="", y="") +
+  theme(axis.title.y = element_text(size=12,  color="#666666")) +
+  theme(axis.text = element_text(size=8)) +
+  theme(plot.title = element_text(size=16, face="bold", hjust=0, color="#666666")) +
+  theme(strip.text.x = element_text(size = 8, colour = "black"))
+
+dataagg2 <- aggregate(Response ~ Condition + Subject, data = maindata, mean)
+
+ggplot(dataagg2, aes(sample = Response, colour= Condition)) + 
+  stat_qq(aes(shape = Condition))+
+  ggtitle("qq Plots of Data by Condition") +
+  labs(x="", y="") +
+  theme(axis.title.y = element_text(size=12,  color="#666666")) +
+  theme(axis.text = element_text(size=8)) +
+  theme(plot.title = element_text(size=16, face="bold", hjust=0, color="#666666")) +
+  theme(strip.text.x = element_text(size = 8, colour = "black"))
+
+dataagg3 <- aggregate(Response ~ Comparison + Condition, data = maindata, mean)
+ggplot(dataagg3, aes(sample = Response, colour= Condition)) + 
+  stat_qq(aes(shape = Condition))+
+  ggtitle("qq Plots of Data by Condition") +
+  labs(x="", y="") +
+  theme(axis.title.y = element_text(size=12,  color="#666666")) +
+  theme(axis.text = element_text(size=8)) +
+  theme(plot.title = element_text(size=16, face="bold", hjust=0, color="#666666")) +
+  theme(strip.text.x = element_text(size = 8, colour = "black"))
+```
+
+So we have data in more bins now- there are possible values in our dataframe other than 0 and 1- but our distribution still isn't anywhere close to normal.
+
+When we collapse to data aggregated per participant we get something slightly closer to a normal distribution, and finally when we collapse across participants and only look at Data from Condition and Comparison we are closer still, but obviously still have a hump at "1" and a smaller hump at "0".
+
+
+#Means
+
+Okay, with that slightly pointless test of normality out of the way, we can start to look at the actual data- we already know the grand mean is `r mean(data$Response)`, but what did participants associate with what?
+
+The first way we can look at this is just as a table of means
+
+```{r xtabs}
+
+dataagg4 <- aggregate(Response~Comparison, data=maindata, mean)
+means<- as.data.frame(xtabs(Response ~ Comparison, data=dataagg4))
+
+means
+
+```
+
+So we can look at that table of means- it's nice but not that exciting- what we instead want to do is look at a heatmap of our results - 
+
+```{r First Heatmap}
+
+CleanDataAgg <- aggregate(Response ~ DataSet + Inducer + Concurrent + Comparison,
+                     data= cleandata, mean)
+
+Domains <- sort(unique(CleanDataAgg$Inducer))
+HighValues <- c("Excited/Bored", "Happy/Sad", "Pleased/Disgusted", "Stressed/Calm",
+                "Loud/Quiet", "Bright/Dark", "Red/Blue", "Red/Green", "Red/Yellow",
+                "Yellow/Blue", "Noisy/Tonal", "High Pitch/Low Pitch", "Jagged/Curvy", 
+                "Large/Small", "Fast/Slow")
+
+CleanDataAgg$Inducer2 <- mapvalues(CleanDataAgg$Inducer, from = Domains, to= HighValues)
+CleanDataAgg$Concurrent2 <- mapvalues(CleanDataAgg$Concurrent, from = Domains, to= HighValues)
+
+PilotDataAgg <- subset(CleanDataAgg, DataSet == "Pilot")
+
+ggplot(data= PilotDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
+  geom_tile(color = "white") +
+  ggtitle("Biases - Pilot Data") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
+                       midpoint = 0.5, limit = c(0,1),
+                       name="Direction and Strength of Associaton") +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed() 
+
+MainDataAgg <- subset(CleanDataAgg, DataSet == "Main")
+
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
+  geom_tile(color = "white") +
+  ggtitle("Biases - Main Data") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
+                       midpoint = 0.5, limit = c(0,1),
+                       name="Direction and Strength of Associaton") +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed() 
+
+
+
+```
+
+So there are heatmaps- one for the Pilot Data and one for the Full Data - the first sensible thing to check is how well the two aligned with each other, which we can do by substracting the heatmaps
+
+```{r Subtracting the dataframe}
+
+DiffDataAgg <- FullDataAgg
+
+DiffDataAgg$DataSet <- "Difference"
+
+DiffDataAgg$Response <- abs(MainDataAgg$Response - PilotDataAgg$Response)
+
+ggplot(data= DiffDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
+  geom_tile(color = "white") +
+  ggtitle("Biases - Mismatch Between Imputed and Actual Values") +
+  scale_fill_gradient2(low = "white", high = "red", 
+                       name="Mismatch") +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed()
+
+```
+
+
+So we know how our data lines up with our pilot data, and we know the mean responses per cell- surprisingly these findings alone are basically the whole purpose of the experiment. But for some rigor, we want more than just means in cells- we want something that gives us an estimate of how strong biases are and how confident we are about our data.
+
+
+To that end we are going to do a t-test for every one of our 93 comparisons against chance- because our data aren't normally distributed we want to use a nonparametic statistic- in this case a signed-ranks test.
+
+```{r Wilcoxon}
+
+FullData <- summaryBy(Response ~ 
+                       Subject + DataSet + Condition +
+                       Inducer + Concurrent + Comparison,
+                     data= data, Fun = c(mean))
+
+library(powerAnalysis)
+comparisons <- sort(unique(FullData$Comparison))
+pvals <- list()
+zvals <- list()
+statvals <- list()
+rm(comparison)
+
+
+for(comparison in comparisons){
+  testdata <- subset(FullData, Comparison == comparison)
+  
+  testres <- wilcox.test(testdata$Response, mu= 0.5, alternative = "two.sided")
+  
+  pval <- testres$p.value
+  pvals <- c(pvals, pval)
+  
+  testZ <- qnorm(pval/2)
+  zvals <- c(zvals, testZ)
+  
+  teststat <- abs(testZ / (sqrt(nrow(testdata))))
+  statvals <- c(statvals, teststat)
+  
+}
+
+FullDataAgg$pValue <- as.numeric(pvals)
+FullDataAgg$ZValue <- as.numeric(zvals)
+FullDataAgg$effsize <- as.numeric(statvals)
+
+FullDataAgg$effsize <- ifelse(FullDataAgg$Response < 0.5,
+                              FullDataAgg$effsize * -1,
+                              FullDataAgg$effsize)
+
+ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
+                       name="Effect Size") +
+  geom_text(aes(label = round(effsize, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed() 
+
+
+
+```
+
+
+So this is all of our effect sizes- some are obviously very small and some are very large - but we might want to only consider the ones that are significant- to do that we can subset the data or look at it in some other way 
+
+```{r Correcting p for multiple comparisons}
+
+FullDataAgg$correctedP <- FullDataAgg$pValue * 93
+
+FullDataAgg$effsize2 <- as.numeric(ifelse(FullDataAgg$correctedP > 0.05,
+                               "NA",
+                               FullDataAgg$effsize))
+
+
+ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
+                       name="Effect Size") +
+  geom_text(aes(label = round(effsize, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed() 
+
+```
+
+
+
+
