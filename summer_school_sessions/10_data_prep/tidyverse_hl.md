@@ -11,6 +11,11 @@ Starting note: Some of this tutorial is based on materials from Michael C. Frank
 
 
 ```r
+# install.packages(tidyr)
+# install.packages(dplyr)
+# install.packages(ggplot2)
+# install.packages(pander)
+
 library(tidyr)
 library(dplyr)
 ```
@@ -56,15 +61,15 @@ To take a uniform approach to the dataset. Easier to learn the tools with one ap
 
 
 ```r
-pilotdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/pilotData.csv?token=AXaLGGK7rBWVduR09zl_3xrDg77RIlb1ks5ZymKZwA%3D%3D")
-affectdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/affectData.csv?token=AXaLGBfLgd5jhpB-WjmSC5WTgwYvXS3Oks5Zy3QTwA%3D%3D")
-simdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/SimulatedData.csv?token=AXaLGAKjwbxgrIVgLPHSrYttvUEnIuS6ks5Zy4FRwA%3D%3D")
+datamain <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/summer_school_sessions/10_data_prep/datamain.csv")
+affectdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/summer_school_sessions/10_data_prep/affectdata.csv")
+simdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/summer_school_sessions/10_data_prep/simdata.csv")
 ```
 
 
 ```r
 #Creating columns saying what dataset the data came from
-pilotdata$DataSet <- "Pilot"
+datamain$DataSet <- "Pilot"
 affectdata$DataSet <- "Affect"
 simdata$DataSet <- "Simulated"
 ```
@@ -73,7 +78,7 @@ simdata$DataSet <- "Simulated"
 
 
 ```r
-SSData <- rbind(pilotdata, affectdata)
+SSData <- rbind(datamain, affectdata)
 ```
 
 
@@ -83,59 +88,59 @@ pander(head(SSData))
 ```
 
 
-------------------------------------------------------------------------
- X   trialNum    rt     subject         condition       Focal1   Focal2 
---- ---------- ------ ------------ ------------------- -------- --------
- 0      1       9226   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape  
+--------------------------------------------------------------------------------
+ X   trialNum    rt     subject           condition           Focal1     Focal2 
+--- ---------- ------ ------------ ----------------------- ------------ --------
+ 0      1       5820   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
- 1      2       7482   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape  
+ 1      2       3725   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
- 2      3       6335   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape  
+ 2      3       2765   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
- 3      4       6459   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape  
+ 3      4       4058   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
- 4      5       6483   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape  
+ 4      5       5037   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
- 5      6       8374   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape  
-------------------------------------------------------------------------
-
-Table: Table continues below
-
- 
------------------------------------------------------------------------
- Focal3   ParticipantNum         InducerL               InducerR       
--------- ---------------- ---------------------- ----------------------
- Speed          10             Affect-EB-H            Affect-EB-L      
-
- Speed          10             Noise-Hum-L            Noise-Hum-H      
-
- Speed          10         Brightness-Squares-L   Brightness-Squares-H 
-
- Speed          10             Amp-Pulse-L            Amp-Pulse-H      
-
- Speed          10             Noise-Hum-H            Noise-Hum-L      
-
- Speed          10            Noise-Pulse-L          Noise-Pulse-H     
------------------------------------------------------------------------
+ 5      6       2997   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
+--------------------------------------------------------------------------------
 
 Table: Table continues below
 
  
---------------------------------------------------
-  ConcurrentL     ConcurrentR    choice   DataSet 
---------------- --------------- -------- ---------
- Noise-Piano-H   Noise-Piano-L     1       Pilot  
+---------------------------------------------------------------------------
+ Focal3   ParticipantNum          InducerL                 InducerR        
+-------- ---------------- ------------------------ ------------------------
+ Affect         12             Noise-Pulse-L            Noise-Pulse-H      
 
-  Speed-SP3-L     Speed-SP3-H      1       Pilot  
+ Affect         12         Brightness-Triangles-L   Brightness-Triangles-H 
 
-  Speed-SP2-H     Speed-SP2-L      1       Pilot  
+ Affect         12              Affect-SC-H              Affect-SC-L       
 
-  Speed-SP3-H     Speed-SP3-L      1       Pilot  
+ Affect         12         Brightness-Triangles-H   Brightness-Triangles-L 
 
-  Speed-SP2-L     Speed-SP2-H      1       Pilot  
+ Affect         12             Size-Squares-H           Size-Squares-L     
 
- Pitch-Piano-L   Pitch-Piano-H     0       Pilot  
---------------------------------------------------
+ Affect         12          Brightness-Circles-L     Brightness-Circles-H  
+---------------------------------------------------------------------------
+
+Table: Table continues below
+
+ 
+----------------------------------------------------------------
+     ConcurrentL            ConcurrentR        choice   DataSet 
+---------------------- ---------------------- -------- ---------
+ Brightness-Squares-L   Brightness-Squares-H     1       Pilot  
+
+     Speed-SP1-H            Speed-SP1-L          1       Pilot  
+
+ Brightness-Circles-L   Brightness-Circles-H     1       Pilot  
+
+     Amp-Pulse-L            Amp-Pulse-H          1       Pilot  
+
+     Affect-HS-L            Affect-HS-H          1       Pilot  
+
+     Affect-EB-L            Affect-EB-H          0       Pilot  
+----------------------------------------------------------------
 
 These data are tidy: each row describes a single trial. Each column describes some aspect of tha trial, including their id (`subject`), condition (`condition`), what was displayed on the left in that trail (`InducerL`), what was displayed on the right in that trail (`InducerR`), what was displayed on the top in that trail (`ConcurrentL`), what was displayed on the top in that trail (`ConcurrentR`), and whether the participant matched the `InducerL` with `ConcurrentL` or not ('choice', yes = 0, no = 1)
 
@@ -147,22 +152,22 @@ A quick example of a function:
 
 
 ```r
-mean(pilotdata$choice)
+mean(datamain$choice)
 ```
 
 ```
-## [1] 0.482582
+## [1] 0.4887153
 ```
 
 Pipes are a way to write strings of functions more easily. They bring the first argument of the function to the bedginning. So you can write:
 
 
 ```r
-pilotdata$choice %>% mean
+datamain$choice %>% mean
 ```
 
 ```
-## [1] 0.482582
+## [1] 0.4887153
 ```
 How man coniditions do we have?
 
@@ -170,7 +175,7 @@ Unpiped version:
 
 
 ```r
-length(unique(pilotdata$condition))
+length(unique(datamain$condition))
 ```
 
 ```
@@ -181,7 +186,7 @@ Piped version:
 
 
 ```r
-pilotdata$condition %>%
+datamain$condition %>%
   unique %>%
   length
 ```
@@ -202,20 +207,20 @@ We can also work out how many participants are in a condition:
 
 ```r
 #between
-min(table(pilotdata$condition)/96)
+min(table(datamain$condition)/96)
 ```
 
 ```
-## [1] 10
+## [1] 23
 ```
 
 ```r
 #and
-max(table(pilotdata$condition)/96)
+max(table(datamain$condition)/96)
 ```
 
 ```
-## [1] 11
+## [1] 25
 ```
 
 # Cleaning up the data, or only getting the bits we want
@@ -239,45 +244,45 @@ summary(SSData)
 ```
 
 ```
-##        X            trialNum           rt               subject    
-##  Min.   : 0.00   Min.   : 1.00   Min.   :   917   0BwAB3cQny:  96  
-##  1st Qu.:20.00   1st Qu.:21.00   1st Qu.:  3640   2fgfNXCWoW:  96  
-##  Median :40.00   Median :41.00   Median :  4877   4EYlfayMb2:  96  
-##  Mean   :41.49   Mean   :42.49   Mean   :  6568   5Iv1RE0roc:  96  
-##  3rd Qu.:60.00   3rd Qu.:61.00   3rd Qu.:  6862   5P5Px641Uv:  96  
-##  Max.   :95.00   Max.   :96.00   Max.   :680669   5eNXA6XYSE:  96  
-##                                                   (Other)   :8800  
+##        X            trialNum           rt               subject     
+##  Min.   : 0.00   Min.   : 1.00   Min.   :   716   07v6VRVWrL:   96  
+##  1st Qu.:21.00   1st Qu.:22.00   1st Qu.:  3740   0QKSdtytYo:   96  
+##  Median :43.00   Median :44.00   Median :  4935   0hyFge02V3:   96  
+##  Mean   :44.25   Mean   :45.25   Mean   :  6726   0n9FgftmIS:   96  
+##  3rd Qu.:65.00   3rd Qu.:66.00   3rd Qu.:  6731   14Kcp8eWnj:   96  
+##  Max.   :95.00   Max.   :96.00   Max.   :912412   14wn5Hs9h1:   96  
+##                                                   (Other)   :16768  
 ##   condition            Focal1             Focal2         
-##  Length:9376        Length:9376        Length:9376       
+##  Length:17344       Length:17344       Length:17344      
 ##  Class :character   Class :character   Class :character  
 ##  Mode  :character   Mode  :character   Mode  :character  
 ##                                                          
 ##                                                          
 ##                                                          
 ##                                                          
-##     Focal3          ParticipantNum            InducerL   
-##  Length:9376        Length:9376        Affect-SC-H: 352  
-##  Class :character   Class :character   Affect-EB-H: 344  
-##  Mode  :character   Mode  :character   Affect-HS-L: 333  
-##                                        Affect-PD-L: 321  
-##                                        Affect-HS-H: 295  
-##                                        Affect-EB-L: 290  
-##                                        (Other)    :7441  
-##         InducerR         ConcurrentL        ConcurrentR       choice      
-##  Affect-SC-L: 352   Affect-PD-L: 357   Affect-PD-H: 357   Min.   :0.0000  
-##  Affect-EB-L: 344   Affect-EB-H: 342   Affect-EB-L: 342   1st Qu.:0.0000  
-##  Affect-HS-H: 333   Affect-SC-H: 334   Affect-SC-L: 334   Median :0.0000  
-##  Affect-PD-H: 321   Affect-HS-H: 306   Affect-HS-L: 306   Mean   :0.4806  
-##  Affect-HS-L: 295   Affect-HS-L: 298   Affect-HS-H: 298   3rd Qu.:1.0000  
-##  Affect-EB-H: 290   Affect-EB-L: 284   Affect-EB-H: 284   Max.   :1.0000  
-##  (Other)    :7441   (Other)    :7455   (Other)    :7455                   
-##    DataSet         
-##  Length:9376       
-##  Class :character  
-##  Mode  :character  
-##                    
-##                    
-##                    
+##     Focal3          ParticipantNum            InducerL    
+##  Length:17344       Length:17344       Affect-EB-H:  476  
+##  Class :character   Class :character   Affect-SC-H:  444  
+##  Mode  :character   Mode  :character   Affect-PD-L:  442  
+##                                        Affect-HS-L:  424  
+##                                        Affect-EB-L:  416  
+##                                        Affect-HS-H:  398  
+##                                        (Other)    :14744  
+##         InducerR          ConcurrentL         ConcurrentR   
+##  Affect-EB-L:  476   Affect-EB-H:  486   Affect-EB-L:  486  
+##  Affect-SC-L:  444   Affect-PD-L:  448   Affect-PD-H:  448  
+##  Affect-PD-H:  442   Affect-SC-H:  428   Affect-SC-L:  428  
+##  Affect-HS-H:  424   Affect-HS-L:  426   Affect-HS-H:  426  
+##  Affect-EB-H:  416   Affect-HS-H:  420   Affect-HS-L:  420  
+##  Affect-HS-L:  398   Affect-EB-L:  414   Affect-EB-H:  414  
+##  (Other)    :14744   (Other)    :14722   (Other)    :14722  
+##      choice         DataSet         
+##  Min.   :0.0000   Length:17344      
+##  1st Qu.:0.0000   Class :character  
+##  Median :0.0000   Mode  :character  
+##  Mean   :0.4864                     
+##  3rd Qu.:1.0000                     
+##  Max.   :1.0000                     
 ## 
 ```
 
@@ -285,13 +290,13 @@ What if we just want to see the conditions?
 
 
 ```r
-unique(pilotdata$condition)
+unique(datamain$condition)
 ```
 
 ```
-## [1] "Noise-Shape-Speed"      "Pitch-Size-Color"      
-## [3] "Brightness-Amp-Affect"  "Noise-Brightness-Color"
-## [5] "Pitch-Shape-Affect"     "Amp-Size-Speed"
+## [1] "Brightness-Amp-Affect"  "Amp-Size-Speed"        
+## [3] "Noise-Brightness-Color" "Pitch-Shape-Affect"    
+## [5] "Pitch-Size-Color"       "Noise-Shape-Speed"
 ```
 
 
@@ -313,59 +318,59 @@ pander(head(SSData))
 ```
 
 
------------------------------------------------------------------------------
- trialNum    rt     subject         condition       Focal1   Focal2   Focal3 
----------- ------ ------------ ------------------- -------- -------- --------
-    1       9226   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+----------------------------------------------------------------------------
+ trialNum    rt     subject           condition           Focal1     Focal2 
+---------- ------ ------------ ----------------------- ------------ --------
+    1       5820   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    2       7482   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    2       3725   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    3       6335   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    3       2765   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    4       6459   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    4       4058   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    5       6483   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    5       5037   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    6       8374   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
------------------------------------------------------------------------------
-
-Table: Table continues below
-
- 
-------------------------------------------------------------------------------
- ParticipantNum         InducerL               InducerR          ConcurrentL  
----------------- ---------------------- ---------------------- ---------------
-       10             Affect-EB-H            Affect-EB-L        Noise-Piano-H 
-
-       10             Noise-Hum-L            Noise-Hum-H         Speed-SP3-L  
-
-       10         Brightness-Squares-L   Brightness-Squares-H    Speed-SP2-H  
-
-       10             Amp-Pulse-L            Amp-Pulse-H         Speed-SP3-H  
-
-       10             Noise-Hum-H            Noise-Hum-L         Speed-SP2-L  
-
-       10            Noise-Pulse-L          Noise-Pulse-H       Pitch-Piano-L 
-------------------------------------------------------------------------------
+    6       2997   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
+----------------------------------------------------------------------------
 
 Table: Table continues below
 
  
-----------------------------------
-  ConcurrentR    choice   DataSet 
---------------- -------- ---------
- Noise-Piano-L     1       Pilot  
+---------------------------------------------------------------------------
+ Focal3   ParticipantNum          InducerL                 InducerR        
+-------- ---------------- ------------------------ ------------------------
+ Affect         12             Noise-Pulse-L            Noise-Pulse-H      
 
-  Speed-SP3-H      1       Pilot  
+ Affect         12         Brightness-Triangles-L   Brightness-Triangles-H 
 
-  Speed-SP2-L      1       Pilot  
+ Affect         12              Affect-SC-H              Affect-SC-L       
 
-  Speed-SP3-L      1       Pilot  
+ Affect         12         Brightness-Triangles-H   Brightness-Triangles-L 
 
-  Speed-SP2-H      1       Pilot  
+ Affect         12             Size-Squares-H           Size-Squares-L     
 
- Pitch-Piano-H     0       Pilot  
-----------------------------------
+ Affect         12          Brightness-Circles-L     Brightness-Circles-H  
+---------------------------------------------------------------------------
+
+Table: Table continues below
+
+ 
+----------------------------------------------------------------
+     ConcurrentL            ConcurrentR        choice   DataSet 
+---------------------- ---------------------- -------- ---------
+ Brightness-Squares-L   Brightness-Squares-H     1       Pilot  
+
+     Speed-SP1-H            Speed-SP1-L          1       Pilot  
+
+ Brightness-Circles-L   Brightness-Circles-H     1       Pilot  
+
+     Amp-Pulse-L            Amp-Pulse-H          1       Pilot  
+
+     Affect-HS-L            Affect-HS-H          1       Pilot  
+
+     Affect-EB-L            Affect-EB-H          0       Pilot  
+----------------------------------------------------------------
 
 ## Separating
 
@@ -386,59 +391,78 @@ pander(head(SSData))
 ```
 
 
------------------------------------------------------------------------------
- trialNum    rt     subject         condition       Focal1   Focal2   Focal3 
----------- ------ ------------ ------------------- -------- -------- --------
-    1       9226   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+----------------------------------------------------------------------------
+ trialNum    rt     subject           condition           Focal1     Focal2 
+---------- ------ ------------ ----------------------- ------------ --------
+    1       5820   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    2       7482   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    2       3725   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    3       6335   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    3       2765   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    4       6459   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    4       4058   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    5       6483   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    5       5037   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    6       8374   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
------------------------------------------------------------------------------
-
-Table: Table continues below
-
- 
---------------------------------------------------------------------------
- ParticipantNum   IndDomainL   IndSetL   IndTokenL         InducerR       
----------------- ------------ --------- ----------- ----------------------
-       10           Affect       EB          H           Affect-EB-L      
-
-       10           Noise        Hum         L           Noise-Hum-H      
-
-       10         Brightness   Squares       L       Brightness-Squares-H 
-
-       10            Amp        Pulse        L           Amp-Pulse-H      
-
-       10           Noise        Hum         H           Noise-Hum-L      
-
-       10           Noise       Pulse        L          Noise-Pulse-H     
---------------------------------------------------------------------------
+    6       2997   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
+----------------------------------------------------------------------------
 
 Table: Table continues below
 
  
----------------------------------------------------------------------
- ConDomainL   ConSetL   ConTokenL    ConcurrentR    choice   DataSet 
------------- --------- ----------- --------------- -------- ---------
-   Noise       Piano        H       Noise-Piano-L     1       Pilot  
+--------------------------------------------------------------
+ Focal3   ParticipantNum   IndDomainL    IndSetL    IndTokenL 
+-------- ---------------- ------------ ----------- -----------
+ Affect         12           Noise        Pulse         L     
 
-   Speed        SP3         L        Speed-SP3-H      1       Pilot  
+ Affect         12         Brightness   Triangles       L     
 
-   Speed        SP2         H        Speed-SP2-L      1       Pilot  
+ Affect         12           Affect        SC           H     
 
-   Speed        SP3         H        Speed-SP3-L      1       Pilot  
+ Affect         12         Brightness   Triangles       H     
 
-   Speed        SP2         L        Speed-SP2-H      1       Pilot  
+ Affect         12            Size       Squares        H     
 
-   Pitch       Piano        L       Pitch-Piano-H     0       Pilot  
----------------------------------------------------------------------
+ Affect         12         Brightness    Circles        L     
+--------------------------------------------------------------
+
+Table: Table continues below
+
+ 
+-----------------------------------------------------------
+        InducerR          ConDomainL   ConSetL   ConTokenL 
+------------------------ ------------ --------- -----------
+     Noise-Pulse-H        Brightness   Squares       L     
+
+ Brightness-Triangles-H     Speed        SP1         H     
+
+      Affect-SC-L         Brightness   Circles       L     
+
+ Brightness-Triangles-L      Amp        Pulse        L     
+
+     Size-Squares-L         Affect       HS          L     
+
+  Brightness-Circles-H      Affect       EB          L     
+-----------------------------------------------------------
+
+Table: Table continues below
+
+ 
+-----------------------------------------
+     ConcurrentR        choice   DataSet 
+---------------------- -------- ---------
+ Brightness-Squares-H     1       Pilot  
+
+     Speed-SP1-L          1       Pilot  
+
+ Brightness-Circles-H     1       Pilot  
+
+     Amp-Pulse-H          1       Pilot  
+
+     Affect-HS-H          1       Pilot  
+
+     Affect-EB-H          0       Pilot  
+-----------------------------------------
 ## Mutating
 
 We can also *add columns* using `mutate` - for instance, in our data, we might want a column stating whether the Left Inducer and Left Concurrent are both "high" or both "low".
@@ -457,59 +481,78 @@ pander(head(SSData))
 ```
 
 
------------------------------------------------------------------------------
- trialNum    rt     subject         condition       Focal1   Focal2   Focal3 
----------- ------ ------------ ------------------- -------- -------- --------
-    1       9226   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+----------------------------------------------------------------------------
+ trialNum    rt     subject           condition           Focal1     Focal2 
+---------- ------ ------------ ----------------------- ------------ --------
+    1       5820   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    2       7482   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    2       3725   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    3       6335   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    3       2765   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    4       6459   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    4       4058   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    5       6483   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    5       5037   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    6       8374   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
------------------------------------------------------------------------------
-
-Table: Table continues below
-
- 
---------------------------------------------------------------------------
- ParticipantNum   IndDomainL   IndSetL   IndTokenL         InducerR       
----------------- ------------ --------- ----------- ----------------------
-       10           Affect       EB          H           Affect-EB-L      
-
-       10           Noise        Hum         L           Noise-Hum-H      
-
-       10         Brightness   Squares       L       Brightness-Squares-H 
-
-       10            Amp        Pulse        L           Amp-Pulse-H      
-
-       10           Noise        Hum         H           Noise-Hum-L      
-
-       10           Noise       Pulse        L          Noise-Pulse-H     
---------------------------------------------------------------------------
+    6       2997   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
+----------------------------------------------------------------------------
 
 Table: Table continues below
 
  
---------------------------------------------------------------------------------
- ConDomainL   ConSetL   ConTokenL    ConcurrentR    choice   DataSet   Response 
------------- --------- ----------- --------------- -------- --------- ----------
-   Noise       Piano        H       Noise-Piano-L     1       Pilot       1     
+--------------------------------------------------------------
+ Focal3   ParticipantNum   IndDomainL    IndSetL    IndTokenL 
+-------- ---------------- ------------ ----------- -----------
+ Affect         12           Noise        Pulse         L     
 
-   Speed        SP3         L        Speed-SP3-H      1       Pilot       1     
+ Affect         12         Brightness   Triangles       L     
 
-   Speed        SP2         H        Speed-SP2-L      1       Pilot       0     
+ Affect         12           Affect        SC           H     
 
-   Speed        SP3         H        Speed-SP3-L      1       Pilot       0     
+ Affect         12         Brightness   Triangles       H     
 
-   Speed        SP2         L        Speed-SP2-H      1       Pilot       0     
+ Affect         12            Size       Squares        H     
 
-   Pitch       Piano        L       Pitch-Piano-H     0       Pilot       1     
---------------------------------------------------------------------------------
+ Affect         12         Brightness    Circles        L     
+--------------------------------------------------------------
+
+Table: Table continues below
+
+ 
+-----------------------------------------------------------
+        InducerR          ConDomainL   ConSetL   ConTokenL 
+------------------------ ------------ --------- -----------
+     Noise-Pulse-H        Brightness   Squares       L     
+
+ Brightness-Triangles-H     Speed        SP1         H     
+
+      Affect-SC-L         Brightness   Circles       L     
+
+ Brightness-Triangles-L      Amp        Pulse        L     
+
+     Size-Squares-L         Affect       HS          L     
+
+  Brightness-Circles-H      Affect       EB          L     
+-----------------------------------------------------------
+
+Table: Table continues below
+
+ 
+----------------------------------------------------
+     ConcurrentR        choice   DataSet   Response 
+---------------------- -------- --------- ----------
+ Brightness-Squares-H     1       Pilot       1     
+
+     Speed-SP1-L          1       Pilot       0     
+
+ Brightness-Circles-H     1       Pilot       0     
+
+     Amp-Pulse-H          1       Pilot       0     
+
+     Affect-HS-H          1       Pilot       0     
+
+     Affect-EB-H          0       Pilot       1     
+----------------------------------------------------
 
 ## Filtering
 
@@ -531,59 +574,78 @@ pander(head(SSData))
 ```
 
 
------------------------------------------------------------------------------
- trialNum    rt     subject         condition       Focal1   Focal2   Focal3 
----------- ------ ------------ ------------------- -------- -------- --------
-    1       9226   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+----------------------------------------------------------------------------
+ trialNum    rt     subject           condition           Focal1     Focal2 
+---------- ------ ------------ ----------------------- ------------ --------
+    1       5820   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    2       7482   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    2       3725   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    3       6335   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    3       2765   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    4       6459   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    4       4058   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    5       6483   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    5       5037   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    6       8374   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
------------------------------------------------------------------------------
-
-Table: Table continues below
-
- 
---------------------------------------------------------------------------
- ParticipantNum   IndDomainL   IndSetL   IndTokenL         InducerR       
----------------- ------------ --------- ----------- ----------------------
-       10           Affect       EB          H           Affect-EB-L      
-
-       10           Noise        Hum         L           Noise-Hum-H      
-
-       10         Brightness   Squares       L       Brightness-Squares-H 
-
-       10            Amp        Pulse        L           Amp-Pulse-H      
-
-       10           Noise        Hum         H           Noise-Hum-L      
-
-       10           Noise       Pulse        L          Noise-Pulse-H     
---------------------------------------------------------------------------
+    6       2997   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
+----------------------------------------------------------------------------
 
 Table: Table continues below
 
  
---------------------------------------------------------------------------------
- ConDomainL   ConSetL   ConTokenL    ConcurrentR    choice   DataSet   Response 
------------- --------- ----------- --------------- -------- --------- ----------
-   Noise       Piano        H       Noise-Piano-L     1       Pilot       1     
+--------------------------------------------------------------
+ Focal3   ParticipantNum   IndDomainL    IndSetL    IndTokenL 
+-------- ---------------- ------------ ----------- -----------
+ Affect         12           Noise        Pulse         L     
 
-   Speed        SP3         L        Speed-SP3-H      1       Pilot       1     
+ Affect         12         Brightness   Triangles       L     
 
-   Speed        SP2         H        Speed-SP2-L      1       Pilot       0     
+ Affect         12           Affect        SC           H     
 
-   Speed        SP3         H        Speed-SP3-L      1       Pilot       0     
+ Affect         12         Brightness   Triangles       H     
 
-   Speed        SP2         L        Speed-SP2-H      1       Pilot       0     
+ Affect         12            Size       Squares        H     
 
-   Pitch       Piano        L       Pitch-Piano-H     0       Pilot       1     
---------------------------------------------------------------------------------
+ Affect         12         Brightness    Circles        L     
+--------------------------------------------------------------
+
+Table: Table continues below
+
+ 
+-----------------------------------------------------------
+        InducerR          ConDomainL   ConSetL   ConTokenL 
+------------------------ ------------ --------- -----------
+     Noise-Pulse-H        Brightness   Squares       L     
+
+ Brightness-Triangles-H     Speed        SP1         H     
+
+      Affect-SC-L         Brightness   Circles       L     
+
+ Brightness-Triangles-L      Amp        Pulse        L     
+
+     Size-Squares-L         Affect       HS          L     
+
+  Brightness-Circles-H      Affect       EB          L     
+-----------------------------------------------------------
+
+Table: Table continues below
+
+ 
+----------------------------------------------------
+     ConcurrentR        choice   DataSet   Response 
+---------------------- -------- --------- ----------
+ Brightness-Squares-H     1       Pilot       1     
+
+     Speed-SP1-L          1       Pilot       0     
+
+ Brightness-Circles-H     1       Pilot       0     
+
+     Amp-Pulse-H          1       Pilot       0     
+
+     Affect-HS-H          1       Pilot       0     
+
+     Affect-EB-H          0       Pilot       1     
+----------------------------------------------------
 
 
 **Exercise**
@@ -619,78 +681,78 @@ pander(head(SSData))
 ```
 
 
------------------------------------------------------------------------------
- trialNum    rt     subject         condition       Focal1   Focal2   Focal3 
----------- ------ ------------ ------------------- -------- -------- --------
-    1       9226   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+----------------------------------------------------------------------------
+ trialNum    rt     subject           condition           Focal1     Focal2 
+---------- ------ ------------ ----------------------- ------------ --------
+    1       5820   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    2       7482   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    2       3725   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    3       6335   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    3       2765   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    4       6459   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    4       4058   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    5       6483   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
+    5       5037   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
 
-    6       8374   0BwAB3cQny   Noise-Shape-Speed   Noise    Shape    Speed  
------------------------------------------------------------------------------
+    6       2997   07v6VRVWrL   Brightness-Amp-Affect   Brightness    Amp   
+----------------------------------------------------------------------------
 
 Table: Table continues below
 
  
---------------------------------------------------------------------------
- ParticipantNum   IndDomainL   IndSetL   IndTokenL         InducerR       
----------------- ------------ --------- ----------- ----------------------
-       10           Affect       EB          H           Affect-EB-L      
+--------------------------------------------------------------
+ Focal3   ParticipantNum   IndDomainL    IndSetL    IndTokenL 
+-------- ---------------- ------------ ----------- -----------
+ Affect         12           Noise        Pulse         L     
 
-       10           Noise        Hum         L           Noise-Hum-H      
+ Affect         12         Brightness   Triangles       L     
 
-       10         Brightness   Squares       L       Brightness-Squares-H 
+ Affect         12           Affect        SC           H     
 
-       10            Amp        Pulse        L           Amp-Pulse-H      
+ Affect         12         Brightness   Triangles       H     
 
-       10           Noise        Hum         H           Noise-Hum-L      
+ Affect         12            Size       Squares        H     
 
-       10           Noise       Pulse        L          Noise-Pulse-H     
---------------------------------------------------------------------------
+ Affect         12         Brightness    Circles        L     
+--------------------------------------------------------------
+
+Table: Table continues below
+
+ 
+-----------------------------------------------------------
+        InducerR          ConDomainL   ConSetL   ConTokenL 
+------------------------ ------------ --------- -----------
+     Noise-Pulse-H        Brightness   Squares       L     
+
+ Brightness-Triangles-H     Speed        SP1         H     
+
+      Affect-SC-L         Brightness   Circles       L     
+
+ Brightness-Triangles-L      Amp        Pulse        L     
+
+     Size-Squares-L         Affect       HS          L     
+
+  Brightness-Circles-H      Affect       EB          L     
+-----------------------------------------------------------
 
 Table: Table continues below
 
  
 --------------------------------------------------------------------------------
- ConDomainL   ConSetL   ConTokenL    ConcurrentR    choice   DataSet   Response 
------------- --------- ----------- --------------- -------- --------- ----------
-   Noise       Piano        H       Noise-Piano-L     1       Pilot       1     
+     ConcurrentR        choice   DataSet   Response   IndDomainL2   ConDomainL2 
+---------------------- -------- --------- ---------- ------------- -------------
+ Brightness-Squares-H     1       Pilot       1          Noise      Brightness  
 
-   Speed        SP3         L        Speed-SP3-H      1       Pilot       1     
+     Speed-SP1-L          1       Pilot       0       Brightness       Speed    
 
-   Speed        SP2         H        Speed-SP2-L      1       Pilot       0     
+ Brightness-Circles-H     1       Pilot       0        Affect SC    Brightness  
 
-   Speed        SP3         H        Speed-SP3-L      1       Pilot       0     
+     Amp-Pulse-H          1       Pilot       0       Brightness        Amp     
 
-   Speed        SP2         L        Speed-SP2-H      1       Pilot       0     
+     Affect-HS-H          1       Pilot       0          Size        Affect HS  
 
-   Pitch       Piano        L       Pitch-Piano-H     0       Pilot       1     
+     Affect-EB-H          0       Pilot       1       Brightness     Affect EB  
 --------------------------------------------------------------------------------
-
-Table: Table continues below
-
- 
----------------------------
- IndDomainL2   ConDomainL2 
-------------- -------------
-  Affect EB       Noise    
-
-    Noise         Speed    
-
- Brightness       Speed    
-
-     Amp          Speed    
-
-    Noise         Speed    
-
-    Noise         Pitch    
----------------------------
 
 
 ##Final tidying
@@ -883,7 +945,7 @@ library(plyr)
 ```
 
 ```r
-Predictions <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/ImputedPredictions.csv?token=AXaLGMmfR3oToUirT7fWqkLwjLY5SKARks5Zy5QjwA%3D%3D")
+Predictions <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/ImputedPredictions.csv?token=AXaLGIC9rHBR9lDDkH6_HF7JuQj_HMUAks5ZzONIwA%3D%3D")
 
 SSData$Magnitude <- mapvalues(SSData$Comparison,
                                 from = Predictions$Comparison,
@@ -905,6 +967,11 @@ SSData$LitReview <- ifelse(SSData$LitReview == SSData$Response, 1, 0)
 SSData$Affect <- ifelse(SSData$Affect == SSData$Response, 1, 0)
 ```
 
+
+
+```r
+write.csv(SSData, "cleandata.csv", row.names = FALSE)
+```
 
 
 

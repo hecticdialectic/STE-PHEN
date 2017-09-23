@@ -2,9 +2,7 @@
 title: "tidyverse"
 author: "Hannah Little"
 date: "12/9/2017"
-output:
-  html_document:
-    keep_md: true
+output: html_document
 ---
 
 This is a markdown document as an introduction to R and tidying data, and how to tidy data specifically from the Crossmodality Toolkit study.
@@ -15,6 +13,11 @@ Starting note: Some of this tutorial is based on materials from Michael C. Frank
 ![If you're super keen, you can also look up Hadley Wickham's [R for data scientists] (http://r4ds.had.co.nz/).](http://r4ds.had.co.nz/cover.png)
 
 ```{r 1}
+# install.packages(tidyr)
+# install.packages(dplyr)
+# install.packages(ggplot2)
+# install.packages(pander)
+
 library(tidyr)
 library(dplyr)
 library(ggplot2)
@@ -39,23 +42,23 @@ Why?
 To take a uniform approach to the dataset. Easier to learn the tools with one approach and uniform data organisation. R thrives with data formatted like this.
 
 ```{r 2}
-pilotdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/pilotData.csv?token=AXaLGGK7rBWVduR09zl_3xrDg77RIlb1ks5ZymKZwA%3D%3D")
-affectdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/affectData.csv?token=AXaLGBfLgd5jhpB-WjmSC5WTgwYvXS3Oks5Zy3QTwA%3D%3D")
-simdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/SimulatedData.csv?token=AXaLGAKjwbxgrIVgLPHSrYttvUEnIuS6ks5Zy4FRwA%3D%3D")
+datamain <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/summer_school_sessions/10_data_prep/datamain.csv")
+affectdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/summer_school_sessions/10_data_prep/affectdata.csv")
+simdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/summer_school_sessions/10_data_prep/simdata.csv")
 ```
 
 ```{r 3}
 #Creating columns saying what dataset the data came from
-pilotdata$DataSet <- "Pilot"
+datamain$DataSet <- "Pilot"
 affectdata$DataSet <- "Affect"
 simdata$DataSet <- "Simulated"
 ```
 
 ```{r 4, echo = FALSE}
-pilotdata <- separate(data = pilotdata, col = condition,
+datamain <- separate(data = datamain, col = condition,
                       into = c('Focal1', 'Focal2', "Focal3", "ParticipantNum"), 
                       sep = "-", remove = FALSE)
-pilotdata$condition <- paste(pilotdata$Focal1, pilotdata$Focal2, pilotdata$Focal3, sep='-')
+datamain$condition <- paste(datamain$Focal1, datamain$Focal2, datamain$Focal3, sep='-')
 
 affectdata <- separate(data = affectdata, col = condition,
                       into = c('Focal1', "ParticipantNum"), 
@@ -67,7 +70,7 @@ affectdata$Focal3 <- ''
 ```
 
 ```{r 5}
-SSData <- rbind(pilotdata, affectdata)
+SSData <- rbind(datamain, affectdata)
 ```
 
 
@@ -85,26 +88,26 @@ These data are tidy: each row describes a single trial. Each column describes so
 A quick example of a function: 
 
 ```{r 7}
-mean(pilotdata$choice)
+mean(datamain$choice)
 ```
 
 Pipes are a way to write strings of functions more easily. They bring the first argument of the function to the bedginning. So you can write:
 
 ```{r 8}
-pilotdata$choice %>% mean
+datamain$choice %>% mean
 ```
 How man coniditions do we have?
 
 Unpiped version:
 
 ```{r 9}
-length(unique(pilotdata$condition))
+length(unique(datamain$condition))
 ```
 
 Piped version: 
 
 ```{r 10}
-pilotdata$condition %>%
+datamain$condition %>%
   unique %>%
   length
 ```
@@ -120,9 +123,9 @@ We can also work out how many participants are in a condition:
 
 ```{r 12}
 #between
-min(table(pilotdata$condition)/96)
+min(table(datamain$condition)/96)
 #and
-max(table(pilotdata$condition)/96)
+max(table(datamain$condition)/96)
 ```
 
 # Cleaning up the data, or only getting the bits we want
@@ -147,7 +150,7 @@ summary(SSData)
 What if we just want to see the conditions?
 
 ```{r 14}
-unique(pilotdata$condition)
+unique(datamain$condition)
 ```
 
 
@@ -351,7 +354,7 @@ We have three sets of predictions in our "Predictions" file
 library(plyr)
 
 
-Predictions <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/ImputedPredictions.csv?token=AXaLGMmfR3oToUirT7fWqkLwjLY5SKARks5Zy5QjwA%3D%3D")
+Predictions <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/ImputedPredictions.csv?token=AXaLGIC9rHBR9lDDkH6_HF7JuQj_HMUAks5ZzONIwA%3D%3D")
 
 SSData$Magnitude <- mapvalues(SSData$Comparison,
                                 from = Predictions$Comparison,
@@ -374,6 +377,11 @@ SSData$Affect <- ifelse(SSData$Affect == SSData$Response, 1, 0)
 
 ```
 
+
+```{r}
+write.csv(SSData, "cleandata.csv", row.names = FALSE)
+
+```
 
 
 
