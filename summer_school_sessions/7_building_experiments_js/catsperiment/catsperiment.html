@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <head>
     <title>My experiment</title>
-    <!-- add script tags for the main jspsych script
-    as well as some plugins:
-    single-stim
-    instructions
-    and the jspsych style sheet-->
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/basic2.js"></script>
+    <script src='jspsych-5.0.3/jspsych.js'></script>
+    <script src='jspsych-5.0.3/plugins/jspsych-instructions.js'></script>
+    <script src='jspsych-5.0.3/plugins/jspsych-single-stim.js'></script>
+    <link href="jspsych-5.0.3/css/jspsych.css" rel="stylesheet" type="text/css"></link>
   </head>
 
   <body>
@@ -19,16 +20,36 @@
 
 <!-- Don't uncomment the following yet! Wait until told-->
 
-<!-- <script>
+<script>
 var catTimeline = [];
 
 var instructions = {
-  type = 'instructions'
-  pages = ['instructions1', 'instructions2', 'instructions3']
-  key_forward = ' '
-  key_backward = 8
+  type: 'instructions',
+  pages: ['instructions1', 'instructions2', 'instructions3'],
+  key_forward: ' ',
+  key_backward: 8,
 };
-</script> -->
+
+catTimeline.push(instructions);
+
+var test_block = {
+  type: 'single-stim',
+  choices: ['J','F'],
+  randomize_order: true,
+  timeline: [
+    {stimulus: 'stimuli/cat1.jpg'},
+    {stimulus: 'stimuli/cat2.jpg'}
+  ]
+}
+
+catTimeline.push(test_block);
+
+jsPsych.init({
+       timeline: catTimeline
+   })
+
+
+</script>
 
 
 
