@@ -1,13 +1,15 @@
 ---
 title: "STEPHEN LMER"
-author: Ashley Micklos
-output: html_document
-keep_md: true
+author: "Ashley Micklos"
+output:
+  pdf_document: default
+  html_document: default
+keep_md: yes
 ---
 
 We are going to run a linear mixed effects model now. But first, let's make sure we have the required libraries and data (from the correct source) loaded:
 
-```{}
+```{r}
 library(tidyverse)
 library(reshape2)
 library(plyr)
@@ -15,9 +17,11 @@ library(doBy)
 library(scales)
 library(lme4)
 
-setwd("/Users/ashleymicklos/Documents/GitHub/STE-PHEN/summer_school_sessions/10_data_prep")
+setwd("/Users/ashleymicklos/Documents/GitHub/STE-PHEN/summer_school_sessions/12_linear_models")
 
-cleandata=read.csv("cleandata.csv")
+cleandata=read.csv("CleanDataN.csv")
+maindata <- subset(cleandata, DataSet == "Main")
+pilotdata <- subset(cleandata, DataSet == "Pilot")
 ```
 
 Ok, so we have the data file loaded. We need to fix it up just a little bit. 
@@ -25,8 +29,9 @@ Ok, so we have the data file loaded. We need to fix it up just a little bit.
 First, we are going to change the response column to make values for correctness. Then aggregate the data. 
 
 ```{r Preparing Dataframe for Correctness Analysis}
+
 # Getting rid of numerical response column that we aren't using
-CorrData <- subset(cleandata, select = -c(Response))
+CorrData <- subset(maindata, select = -c(Response))
 
 # Melting data
 CorrData <- melt(CorrData,
@@ -42,3 +47,92 @@ CorrDataAgg <- aggregate(value ~ Prediction + Subject + Condition + Inducer + Co
 ```
 
 Now we can run some models!
+
+Because we are predicting a binomial variable (e.g. yes/no, 1/0), we will use a Generalized Linear Mixed Effects Model, which uses this call function "glmer" in R. Remember to name each model, so that you can easily name them in the ANOVA you will run to compare different models (remember that you do not get p-values in the summary output from mixed effects models, you need to do a model comparison to determine which is best explaining your data).
+
+We also know that we need a mixed effects model because we have a random effect of Subject (that is, we collected multiple observations per subject). We also have fixed effects, most importantly Prediction (or, the source of our cross-modal hypotheses) and Condition (which we set ourselves).
+
+We don't have random slope for Prediction here. That is because we do not expect individuals to perform differently based on that factor. We might be able to include a random slope of Condition as we might expect to participants to vary based on the Condition they would be in. 
+
+Here are the models we ran, and their outputs:
+
+```{r Linear Mixed Effects Models}
+
+##Start minimal and build up; keep effects if they signficantly improve the model
+
+model0=glmer(value~1+(1|Subject), data=CorrDataAgg, family="binomial")
+model1=glmer(value~Prediction+(1|Subject), data=CorrDataAgg, family="binomial")
+
+anova(model0, model1)
+
+```
+
+Here is the first model comparison:
+
+Data: CorrDataAgg
+Models:
+model0: value ~ 1 + (1 | Subject)
+model1: value ~ Prediction + (1 | Subject)
+       Df   AIC   BIC logLik deviance Chisq Chi Df Pr(>Chisq)  
+model0  2 32255 32271 -16125    32251                          
+model1  4 32253 32285 -16122    32245 5.805      2    0.05489 .
+
+Including the fixed effect Prediction is a better fit; that is, it predicts the outcome "value" (or, correctness).
+
+Here is another model we might want to test:
+
+```{r Linear Mixed Effects Models}
+
+##Let's add more of our Fixed Effects
+
+model0=glmer(value~1+(1|Subject), data=CorrDataAgg, family="binomial")
+model1=glmer(value~Prediction+(1|Subject), data=CorrDataAgg, family="binomial")
+model2=glmer(value~Prediction+Condition+(1|Subject), data=CorrDataAgg, family="binomial")
+
+anova(model0, model1, model2)
+
+```
+
+And here is the comparison output:
+
+Data: CorrDataAgg
+Models:
+model0: value ~ 1 + (1 | Subject)
+model1: value ~ Prediction + (1 | Subject)
+model2: value ~ Prediction + Condition + (1 | Subject)
+       Df   AIC   BIC logLik deviance   Chisq Chi Df Pr(>Chisq)    
+model0  2 32255 32271 -16125    32251                              
+model1  4 32253 32285 -16122    32245   5.805      2    0.05489 .  
+model2  9 32053 32126 -16018    32035 209.822      5    < 2e-16 ***
+
+So, model2 is a better fit than model1. That is, Condition matters as well. But does it matter in how it interacts with Prediction?
+
+We can test that too!
+
+```{r Linear Mixed Effects Models}
+
+##Let's add a model for the interaction between the fixed effects Prediction and Condition
+
+model1=glmer(value~Prediction+(1|Subject), data=CorrDataAgg, family="binomial")
+model2=glmer(value~Prediction+Condition+(1|Subject), data=CorrDataAgg, family="binomial")
+model2=glmer(value~Prediction*Condition+(1|Subject), data=CorrDataAgg, family="binomial")
+
+anova(model1, model2, model3)
+
+```
+
+Here is the output:
+
+Data: CorrDataAgg
+Models:
+model1: value ~ Prediction + (1 | Subject)
+model2: value ~ Prediction + Condition + (1 | Subject)
+model3: value ~ Prediction * Condition + (1 | Subject)
+       Df   AIC   BIC logLik deviance   Chisq Chi Df Pr(>Chisq)    
+model1  4 32253 32285 -16122    32245                              
+model2  9 32053 32126 -16018    32035 209.822      5  < 2.2e-16 ***
+model3 19 32046 32199 -16004    32008  27.414     10   0.002239 ** 
+
+Both models show significance...we would have to calculate effect size to determine more precisely what is going on here. 
+
+NOTE: Remember that linear mixed effects models are not ideal for running with this experiment/data. So, there will be more effective ways of looking at this data. 
