@@ -35,7 +35,7 @@ def simulate(biases):
 
 	print("	- Population reached {0}% communicative alignment.".format(pop.score_population() * 100))
 
-	print("	** Simulation completed successfully. **")
+	print("** Simulation completed successfully. **")
 
 	return convention
 
