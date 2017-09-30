@@ -2,7 +2,7 @@
 title: "tidyverse"
 author: "Hannah Little"
 date: "12/9/2017"
-output: html_document
+output: md_document
 ---
 
 This is a markdown document as an introduction to R and tidying data, and how to tidy data specifically from the Crossmodality Toolkit study.
@@ -13,7 +13,7 @@ Starting note: Some of this tutorial is based on materials from Michael C. Frank
 ![If you're super keen, you can also look up Hadley Wickham's [R for data scientists] (http://r4ds.had.co.nz/).](http://r4ds.had.co.nz/cover.png)
 
 ```{r 1}
-# install.packages(tidyr)
+# install.packages("tidyr")
 # install.packages(dplyr)
 # install.packages(ggplot2)
 # install.packages(pander)
@@ -49,7 +49,7 @@ simdata <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/
 
 ```{r 3}
 #Creating columns saying what dataset the data came from
-datamain$DataSet <- "Pilot"
+datamain$DataSet <- "Main"
 affectdata$DataSet <- "Affect"
 simdata$DataSet <- "Simulated"
 ```
@@ -76,7 +76,8 @@ SSData <- rbind(datamain, affectdata)
 
 ```{r 6}
 
-pander(head(SSData))
+SSData
+
 ```
 
 These data are tidy: each row describes a single trial. Each column describes some aspect of tha trial, including their id (`subject`), condition (`condition`), what was displayed on the left in that trail (`InducerL`), what was displayed on the right in that trail (`InducerR`), what was displayed on the top in that trail (`ConcurrentL`), what was displayed on the top in that trail (`ConcurrentR`), and whether the participant matched the `InducerL` with `ConcurrentL` or not ('choice', yes = 0, no = 1)
@@ -190,7 +191,8 @@ We can also *add columns* using `mutate` - for instance, in our data, we might w
 
 ```{r results="hide"}
 SSData <- SSData %>%
-  mutate(Response = ifelse(IndTokenL==ConTokenL,1,0)) 
+  mutate(aligned = ifelse(IndTokenL==ConTokenL,1,0)) %>% 
+  mutate(Response = as.numeric(xor(choice,aligned)))
 ```
 
 Let's see what that's done:
@@ -213,7 +215,7 @@ affect <- SSData %>%
 
 
 ```{r}
-pander(head(SSData))
+pander(head(affect))
 ```
 
 
@@ -264,14 +266,6 @@ colnames(SSData) <- c("DataSet", "Subject", "Condition", "Focal1", "Focal2", "Fo
 
 ```{r}
 pander(head(affectdata))
-```
-
-
-##Write the dataset to a file!
-
-```{r}
-#write.csv(SSData, "ste-phen/data/cleandata.csv", row.names = FALSE)
-
 ```
 
 
@@ -354,7 +348,7 @@ We have three sets of predictions in our "Predictions" file
 library(plyr)
 
 
-Predictions <- read.csv("https://raw.githubusercontent.com/hecticdialectic/Crossmodality-Toolkit/master/data/ImputedPredictions.csv?token=AXaLGIC9rHBR9lDDkH6_HF7JuQj_HMUAks5ZzONIwA%3D%3D")
+Predictions <- read.csv("https://raw.githubusercontent.com/hecticdialectic/STE-PHEN/master/summer_school_sessions/10_data_prep/inputedpredictions.csv")
 
 SSData$Magnitude <- mapvalues(SSData$Comparison,
                                 from = Predictions$Comparison,
