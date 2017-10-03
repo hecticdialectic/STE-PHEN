@@ -1,0 +1,94 @@
+,Inducer,Concurrent,Comparison,Prediction
+1,Affect EB,Amp,Affect EB-Amp,0
+2,Affect EB,Brightness,Affect EB-Brightness,0.9
+3,Affect EB,Color RB,Affect EB-Color RB,0.6
+4,Affect EB,Color RG,Affect EB-Color RG,0.6
+5,Affect EB,Color RY,Affect EB-Color RY,0.6
+6,Affect EB,Color YB,Affect EB-Color YB,0.6
+7,Affect EB,Noise,Affect EB-Noise,0
+8,Affect EB,Pitch,Affect EB-Pitch,0.8
+9,Affect EB,Shape,Affect EB-Shape,NA
+10,Affect EB,Size,Affect EB-Size,NA
+11,Affect EB,Speed,Affect EB-Speed,0.8
+12,Affect HS,Amp,Affect HS-Amp,0
+13,Affect HS,Brightness,Affect HS-Brightness,0.9
+14,Affect HS,Color RB,Affect HS-Color RB,0.6
+15,Affect HS,Color RG,Affect HS-Color RG,0.6
+16,Affect HS,Color RY,Affect HS-Color RY,0.6
+17,Affect HS,Color YB,Affect HS-Color YB,0.6
+18,Affect HS,Noise,Affect HS-Noise,0
+19,Affect HS,Pitch,Affect HS-Pitch,0.8
+20,Affect HS,Shape,Affect HS-Shape,NA
+21,Affect HS,Size,Affect HS-Size,NA
+22,Affect HS,Speed,Affect HS-Speed,0.8
+23,Affect PD,Amp,Affect PD-Amp,0
+24,Affect PD,Brightness,Affect PD-Brightness,0.9
+25,Affect PD,Color RB,Affect PD-Color RB,0.6
+26,Affect PD,Color RG,Affect PD-Color RG,0.6
+27,Affect PD,Color RY,Affect PD-Color RY,0.6
+28,Affect PD,Color YB,Affect PD-Color YB,0.6
+29,Affect PD,Noise,Affect PD-Noise,0
+30,Affect PD,Pitch,Affect PD-Pitch,0.8
+31,Affect PD,Shape,Affect PD-Shape,NA
+32,Affect PD,Size,Affect PD-Size,NA
+33,Affect PD,Speed,Affect PD-Speed,0.8
+34,Affect SC,Amp,Affect SC-Amp,0
+35,Affect SC,Brightness,Affect SC-Brightness,0.9
+36,Affect SC,Color RB,Affect SC-Color RB,0.6
+37,Affect SC,Color RG,Affect SC-Color RG,0.6
+38,Affect SC,Color RY,Affect SC-Color RY,0.6
+39,Affect SC,Color YB,Affect SC-Color YB,0.6
+40,Affect SC,Noise,Affect SC-Noise,0
+41,Affect SC,Pitch,Affect SC-Pitch,0.8
+42,Affect SC,Shape,Affect SC-Shape,NA
+43,Affect SC,Size,Affect SC-Size,NA
+44,Affect SC,Speed,Affect SC-Speed,0.8
+49,Amp,Brightness,Amp-Brightness,0
+50,Amp,Color RB,Amp-Color RB,0
+51,Amp,Color RG,Amp-Color RG,0
+52,Amp,Color RY,Amp-Color RY,0
+53,Amp,Color YB,Amp-Color YB,0
+54,Amp,Noise,Amp-Noise,NA
+55,Amp,Pitch,Amp-Pitch,0
+56,Amp,Shape,Amp-Shape,NA
+57,Amp,Size,Amp-Size,0
+58,Amp,Speed,Amp-Speed,0
+64,Brightness,Color RB,Brightness-Color RB,0.7
+65,Brightness,Color RG,Brightness-Color RG,0.7
+66,Brightness,Color RY,Brightness-Color RY,0.7
+67,Brightness,Color YB,Brightness-Color YB,0.7
+68,Brightness,Noise,Brightness-Noise,0
+69,Brightness,Pitch,Brightness-Pitch,0.7
+70,Brightness,Shape,Brightness-Shape,NA
+71,Brightness,Size,Brightness-Size,NA
+72,Brightness,Speed,Brightness-Speed,0.5
+79,Color RB,Noise,Color RB-Noise,0
+80,Color RB,Pitch,Color RB-Pitch,0.4
+81,Color RB,Shape,Color RB-Shape,0.5
+82,Color RB,Size,Color RB-Size,0
+83,Color RB,Speed,Color RB-Speed,0
+90,Color RG,Noise,Color RG-Noise,0
+91,Color RG,Pitch,Color RG-Pitch,0.4
+92,Color RG,Shape,Color RG-Shape,0.5
+93,Color RG,Size,Color RG-Size,0
+94,Color RG,Speed,Color RG-Speed,0
+101,Color RY,Noise,Color RY-Noise,0
+102,Color RY,Pitch,Color RY-Pitch,0.4
+103,Color RY,Shape,Color RY-Shape,0.5
+104,Color RY,Size,Color RY-Size,0
+105,Color RY,Speed,Color RY-Speed,0
+112,Color YB,Noise,Color YB-Noise,0
+113,Color YB,Pitch,Color YB-Pitch,0.4
+114,Color YB,Shape,Color YB-Shape,0.5
+115,Color YB,Size,Color YB-Size,0
+116,Color YB,Speed,Color YB-Speed,0
+127,Noise,Pitch,Noise-Pitch,0.5
+128,Noise,Shape,Noise-Shape,0
+129,Noise,Size,Noise-Size,0
+130,Noise,Speed,Noise-Speed,0
+142,Pitch,Shape,Pitch-Shape,NA
+143,Pitch,Size,Pitch-Size,0.75
+144,Pitch,Speed,Pitch-Speed,0.9
+157,Shape,Size,Shape-Size,0.95
+158,Shape,Speed,Shape-Speed,0.95
+172,Size,Speed,Size-Speed,0.95

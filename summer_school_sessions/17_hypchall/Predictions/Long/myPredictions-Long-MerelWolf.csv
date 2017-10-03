@@ -1,0 +1,94 @@
+"","Inducer","Concurrent","Comparison","Prediction"
+"1","Affect EB","Amp","Affect EB-Amp",0.741044937
+"2","Affect EB","Brightness","Affect EB-Brightness",0.168535791
+"3","Affect EB","Color RB","Affect EB-Color RB",0.650821579
+"4","Affect EB","Color RG","Affect EB-Color RG",0.702554179
+"5","Affect EB","Color RY","Affect EB-Color RY",0.399487731
+"6","Affect EB","Color YB","Affect EB-Color YB",0.685190496
+"7","Affect EB","Noise","Affect EB-Noise",0.76044551
+"8","Affect EB","Pitch","Affect EB-Pitch",0.628202716
+"9","Affect EB","Shape","Affect EB-Shape",0.884635296
+"10","Affect EB","Size","Affect EB-Size",0.545782696
+"11","Affect EB","Speed","Affect EB-Speed",0.216102391
+"12","Affect HS","Amp","Affect HS-Amp",NA
+"13","Affect HS","Brightness","Affect HS-Brightness",0.684782999
+"14","Affect HS","Color RB","Affect HS-Color RB",0.386561677
+"15","Affect HS","Color RG","Affect HS-Color RG",NA
+"16","Affect HS","Color RY","Affect HS-Color RY",NA
+"17","Affect HS","Color YB","Affect HS-Color YB",0.8110898
+"18","Affect HS","Noise","Affect HS-Noise",NA
+"19","Affect HS","Pitch","Affect HS-Pitch",0.212597817
+"20","Affect HS","Shape","Affect HS-Shape",0.076837654
+"21","Affect HS","Size","Affect HS-Size",0.132052723
+"22","Affect HS","Speed","Affect HS-Speed",0.494376158
+"23","Affect PD","Amp","Affect PD-Amp",NA
+"24","Affect PD","Brightness","Affect PD-Brightness",0.845620723
+"25","Affect PD","Color RB","Affect PD-Color RB",0.661952195
+"26","Affect PD","Color RG","Affect PD-Color RG",0.455278897
+"27","Affect PD","Color RY","Affect PD-Color RY",0.146372832
+"28","Affect PD","Color YB","Affect PD-Color YB",0.771562124
+"29","Affect PD","Noise","Affect PD-Noise",NA
+"30","Affect PD","Pitch","Affect PD-Pitch",0.125633718
+"31","Affect PD","Shape","Affect PD-Shape",0.256604146
+"32","Affect PD","Size","Affect PD-Size",0.882969413
+"33","Affect PD","Speed","Affect PD-Speed",NA
+"34","Affect SC","Amp","Affect SC-Amp",0.878802528
+"35","Affect SC","Brightness","Affect SC-Brightness",0.080732118
+"36","Affect SC","Color RB","Affect SC-Color RB",0.295404095
+"37","Affect SC","Color RG","Affect SC-Color RG",NA
+"38","Affect SC","Color RY","Affect SC-Color RY",0.874304301
+"39","Affect SC","Color YB","Affect SC-Color YB",0.1722857
+"40","Affect SC","Noise","Affect SC-Noise",0.506314723
+"41","Affect SC","Pitch","Affect SC-Pitch",0.397816206
+"42","Affect SC","Shape","Affect SC-Shape",0.573490593
+"43","Affect SC","Size","Affect SC-Size",0.464700637
+"44","Affect SC","Speed","Affect SC-Speed",0.238827265
+"49","Amp","Brightness","Amp-Brightness",0.030004558
+"50","Amp","Color RB","Amp-Color RB",0.270022836
+"51","Amp","Color RG","Amp-Color RG",0.003856054
+"52","Amp","Color RY","Amp-Color RY",0.778858077
+"53","Amp","Color YB","Amp-Color YB",0.271650674
+"54","Amp","Noise","Amp-Noise",0.726157499
+"55","Amp","Pitch","Amp-Pitch",0.678939481
+"56","Amp","Shape","Amp-Shape",NA
+"57","Amp","Size","Amp-Size",0.549631722
+"58","Amp","Speed","Amp-Speed",0.97041089
+"64","Brightness","Color RB","Brightness-Color RB",0.185532541
+"65","Brightness","Color RG","Brightness-Color RG",0.444400339
+"66","Brightness","Color RY","Brightness-Color RY",0.325894044
+"67","Brightness","Color YB","Brightness-Color YB",0.322727324
+"68","Brightness","Noise","Brightness-Noise",0.183478182
+"69","Brightness","Pitch","Brightness-Pitch",0.605372623
+"70","Brightness","Shape","Brightness-Shape",0.177038431
+"71","Brightness","Size","Brightness-Size",0.816017889
+"72","Brightness","Speed","Brightness-Speed",0.852484079
+"79","Color RB","Noise","Color RB-Noise",NA
+"80","Color RB","Pitch","Color RB-Pitch",0.404325629
+"81","Color RB","Shape","Color RB-Shape",0.410183591
+"82","Color RB","Size","Color RB-Size",NA
+"83","Color RB","Speed","Color RB-Speed",0.952403012
+"90","Color RG","Noise","Color RG-Noise",NA
+"91","Color RG","Pitch","Color RG-Pitch",0.183054047
+"92","Color RG","Shape","Color RG-Shape",0.62107845
+"93","Color RG","Size","Color RG-Size",NA
+"94","Color RG","Speed","Color RG-Speed",0.312795856
+"101","Color RY","Noise","Color RY-Noise",0.497109237
+"102","Color RY","Pitch","Color RY-Pitch",0.950757018
+"103","Color RY","Shape","Color RY-Shape",0.802013226
+"104","Color RY","Size","Color RY-Size",0.743833402
+"105","Color RY","Speed","Color RY-Speed",0.61801057
+"112","Color YB","Noise","Color YB-Noise",0.294509736
+"113","Color YB","Pitch","Color YB-Pitch",0.846182588
+"114","Color YB","Shape","Color YB-Shape",NA
+"115","Color YB","Size","Color YB-Size",0.580536309
+"116","Color YB","Speed","Color YB-Speed",NA
+"127","Noise","Pitch","Noise-Pitch",0.722123181
+"128","Noise","Shape","Noise-Shape",NA
+"129","Noise","Size","Noise-Size",0.812247461
+"130","Noise","Speed","Noise-Speed",0.17533961
+"142","Pitch","Shape","Pitch-Shape",0.72585362
+"143","Pitch","Size","Pitch-Size",0.899407896
+"144","Pitch","Speed","Pitch-Speed",0.962060436
+"157","Shape","Size","Shape-Size",0.644064267
+"158","Shape","Speed","Shape-Speed",0.797409597
+"172","Size","Speed","Size-Speed",0.128178099

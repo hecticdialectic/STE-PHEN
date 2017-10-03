@@ -1,0 +1,373 @@
+,Inducer2,Concurrent2,Source,value,Student
+1,Excited/Bored,Loud/Quiet,Prediction,1,Kat
+2,Loud/Quiet,Excited/Bored,Prediction,1,Kat
+3,Excited/Bored,Bright/Dark,Prediction,0.7,Kat
+4,Bright/Dark,Excited/Bored,Prediction,0.7,Kat
+5,Excited/Bored,Red/Blue,Prediction,1,Kat
+6,Red/Blue,Excited/Bored,Prediction,1,Kat
+7,Excited/Bored,Red/Green,Prediction,0.9,Kat
+8,Red/Green,Excited/Bored,Prediction,0.9,Kat
+9,Excited/Bored,Red/Yellow,Prediction,0.9,Kat
+10,Red/Yellow,Excited/Bored,Prediction,0.9,Kat
+11,Excited/Bored,Yellow/Blue,Prediction,0.6,Kat
+12,Yellow/Blue,Excited/Bored,Prediction,0.6,Kat
+13,Excited/Bored,Noisy/Tonal,Prediction,0.8,Kat
+14,Noisy/Tonal,Excited/Bored,Prediction,0.8,Kat
+15,Excited/Bored,High Pitch/Low Pitch,Prediction,1,Kat
+16,High Pitch/Low Pitch,Excited/Bored,Prediction,1,Kat
+17,Excited/Bored,Jagged/Curvy,Prediction,0.8,Kat
+18,Jagged/Curvy,Excited/Bored,Prediction,0.8,Kat
+19,Excited/Bored,Large/Small,Prediction,0.6,Kat
+20,Large/Small,Excited/Bored,Prediction,0.6,Kat
+21,Excited/Bored,Fast/Slow,Prediction,1,Kat
+22,Fast/Slow,Excited/Bored,Prediction,1,Kat
+23,Happy/Sad,Loud/Quiet,Prediction,0.6,Kat
+24,Loud/Quiet,Happy/Sad,Prediction,0.6,Kat
+25,Happy/Sad,Bright/Dark,Prediction,0.9,Kat
+26,Bright/Dark,Happy/Sad,Prediction,0.9,Kat
+27,Happy/Sad,Red/Blue,Prediction,0.9,Kat
+28,Red/Blue,Happy/Sad,Prediction,0.9,Kat
+29,Happy/Sad,Red/Green,Prediction,0.6,Kat
+30,Red/Green,Happy/Sad,Prediction,0.6,Kat
+31,Happy/Sad,Red/Yellow,Prediction,0.2,Kat
+32,Red/Yellow,Happy/Sad,Prediction,0.2,Kat
+33,Happy/Sad,Yellow/Blue,Prediction,0.9,Kat
+34,Yellow/Blue,Happy/Sad,Prediction,0.9,Kat
+35,Happy/Sad,Noisy/Tonal,Prediction,0.5,Kat
+36,Noisy/Tonal,Happy/Sad,Prediction,0.5,Kat
+37,Happy/Sad,High Pitch/Low Pitch,Prediction,1,Kat
+38,High Pitch/Low Pitch,Happy/Sad,Prediction,1,Kat
+39,Happy/Sad,Jagged/Curvy,Prediction,0.3,Kat
+40,Jagged/Curvy,Happy/Sad,Prediction,0.3,Kat
+41,Happy/Sad,Large/Small,Prediction,0.5,Kat
+42,Large/Small,Happy/Sad,Prediction,0.5,Kat
+43,Happy/Sad,Fast/Slow,Prediction,0.9,Kat
+44,Fast/Slow,Happy/Sad,Prediction,0.9,Kat
+45,Pleased/Disgusted,Loud/Quiet,Prediction,0.4,Kat
+46,Loud/Quiet,Pleased/Disgusted,Prediction,0.4,Kat
+47,Pleased/Disgusted,Bright/Dark,Prediction,0.9,Kat
+48,Bright/Dark,Pleased/Disgusted,Prediction,0.9,Kat
+49,Pleased/Disgusted,Red/Blue,Prediction,0.1,Kat
+50,Red/Blue,Pleased/Disgusted,Prediction,0.1,Kat
+51,Pleased/Disgusted,Red/Green,Prediction,0.2,Kat
+52,Red/Green,Pleased/Disgusted,Prediction,0.2,Kat
+53,Pleased/Disgusted,Red/Yellow,Prediction,0.1,Kat
+54,Red/Yellow,Pleased/Disgusted,Prediction,0.1,Kat
+55,Pleased/Disgusted,Yellow/Blue,Prediction,0.4,Kat
+56,Yellow/Blue,Pleased/Disgusted,Prediction,0.4,Kat
+57,Pleased/Disgusted,Noisy/Tonal,Prediction,0.8,Kat
+58,Noisy/Tonal,Pleased/Disgusted,Prediction,0.8,Kat
+59,Pleased/Disgusted,High Pitch/Low Pitch,Prediction,0.3,Kat
+60,High Pitch/Low Pitch,Pleased/Disgusted,Prediction,0.3,Kat
+61,Pleased/Disgusted,Jagged/Curvy,Prediction,0.2,Kat
+62,Jagged/Curvy,Pleased/Disgusted,Prediction,0.2,Kat
+63,Pleased/Disgusted,Large/Small,Prediction,NA,Kat
+64,Large/Small,Pleased/Disgusted,Prediction,NA,Kat
+65,Pleased/Disgusted,Fast/Slow,Prediction,NA,Kat
+66,Fast/Slow,Pleased/Disgusted,Prediction,NA,Kat
+67,Stressed/Calm,Loud/Quiet,Prediction,1,Kat
+68,Loud/Quiet,Stressed/Calm,Prediction,1,Kat
+69,Stressed/Calm,Bright/Dark,Prediction,0.6,Kat
+70,Bright/Dark,Stressed/Calm,Prediction,0.6,Kat
+71,Stressed/Calm,Red/Blue,Prediction,1,Kat
+72,Red/Blue,Stressed/Calm,Prediction,1,Kat
+73,Stressed/Calm,Red/Green,Prediction,0.9,Kat
+74,Red/Green,Stressed/Calm,Prediction,0.9,Kat
+75,Stressed/Calm,Red/Yellow,Prediction,0.9,Kat
+76,Red/Yellow,Stressed/Calm,Prediction,0.9,Kat
+77,Stressed/Calm,Yellow/Blue,Prediction,0.5,Kat
+78,Yellow/Blue,Stressed/Calm,Prediction,0.5,Kat
+79,Stressed/Calm,Noisy/Tonal,Prediction,0.8,Kat
+80,Noisy/Tonal,Stressed/Calm,Prediction,0.8,Kat
+81,Stressed/Calm,High Pitch/Low Pitch,Prediction,0.9,Kat
+82,High Pitch/Low Pitch,Stressed/Calm,Prediction,0.9,Kat
+83,Stressed/Calm,Jagged/Curvy,Prediction,0.9,Kat
+84,Jagged/Curvy,Stressed/Calm,Prediction,0.9,Kat
+85,Stressed/Calm,Large/Small,Prediction,0.7,Kat
+86,Large/Small,Stressed/Calm,Prediction,0.7,Kat
+87,Stressed/Calm,Fast/Slow,Prediction,0.9,Kat
+88,Fast/Slow,Stressed/Calm,Prediction,0.9,Kat
+89,Loud/Quiet,Bright/Dark,Prediction,NA,Kat
+90,Bright/Dark,Loud/Quiet,Prediction,NA,Kat
+91,Loud/Quiet,Red/Blue,Prediction,NA,Kat
+92,Red/Blue,Loud/Quiet,Prediction,NA,Kat
+93,Loud/Quiet,Red/Green,Prediction,NA,Kat
+94,Red/Green,Loud/Quiet,Prediction,NA,Kat
+95,Loud/Quiet,Red/Yellow,Prediction,NA,Kat
+96,Red/Yellow,Loud/Quiet,Prediction,NA,Kat
+97,Loud/Quiet,Yellow/Blue,Prediction,NA,Kat
+98,Yellow/Blue,Loud/Quiet,Prediction,NA,Kat
+99,Loud/Quiet,Noisy/Tonal,Prediction,NA,Kat
+100,Noisy/Tonal,Loud/Quiet,Prediction,NA,Kat
+101,Loud/Quiet,High Pitch/Low Pitch,Prediction,NA,Kat
+102,High Pitch/Low Pitch,Loud/Quiet,Prediction,NA,Kat
+103,Loud/Quiet,Jagged/Curvy,Prediction,0.9,Kat
+104,Jagged/Curvy,Loud/Quiet,Prediction,0.9,Kat
+105,Loud/Quiet,Large/Small,Prediction,0.7,Kat
+106,Large/Small,Loud/Quiet,Prediction,0.7,Kat
+107,Loud/Quiet,Fast/Slow,Prediction,NA,Kat
+108,Fast/Slow,Loud/Quiet,Prediction,NA,Kat
+109,Bright/Dark,Red/Blue,Prediction,NA,Kat
+110,Red/Blue,Bright/Dark,Prediction,NA,Kat
+111,Bright/Dark,Red/Green,Prediction,NA,Kat
+112,Red/Green,Bright/Dark,Prediction,NA,Kat
+113,Bright/Dark,Red/Yellow,Prediction,NA,Kat
+114,Red/Yellow,Bright/Dark,Prediction,NA,Kat
+115,Bright/Dark,Yellow/Blue,Prediction,NA,Kat
+116,Yellow/Blue,Bright/Dark,Prediction,NA,Kat
+117,Bright/Dark,Noisy/Tonal,Prediction,NA,Kat
+118,Noisy/Tonal,Bright/Dark,Prediction,NA,Kat
+119,Bright/Dark,High Pitch/Low Pitch,Prediction,0.8,Kat
+120,High Pitch/Low Pitch,Bright/Dark,Prediction,0.8,Kat
+121,Bright/Dark,Jagged/Curvy,Prediction,NA,Kat
+122,Jagged/Curvy,Bright/Dark,Prediction,NA,Kat
+123,Bright/Dark,Large/Small,Prediction,1.1,Kat
+124,Large/Small,Bright/Dark,Prediction,1.1,Kat
+125,Bright/Dark,Fast/Slow,Prediction,NA,Kat
+126,Fast/Slow,Bright/Dark,Prediction,NA,Kat
+127,Red/Blue,Noisy/Tonal,Prediction,NA,Kat
+128,Noisy/Tonal,Red/Blue,Prediction,NA,Kat
+129,Red/Blue,High Pitch/Low Pitch,Prediction,0.8,Kat
+130,High Pitch/Low Pitch,Red/Blue,Prediction,0.8,Kat
+131,Red/Blue,Jagged/Curvy,Prediction,NA,Kat
+132,Jagged/Curvy,Red/Blue,Prediction,NA,Kat
+133,Red/Blue,Large/Small,Prediction,NA,Kat
+134,Large/Small,Red/Blue,Prediction,NA,Kat
+135,Red/Blue,Fast/Slow,Prediction,NA,Kat
+136,Fast/Slow,Red/Blue,Prediction,NA,Kat
+137,Red/Green,Noisy/Tonal,Prediction,NA,Kat
+138,Noisy/Tonal,Red/Green,Prediction,NA,Kat
+139,Red/Green,High Pitch/Low Pitch,Prediction,0.8,Kat
+140,High Pitch/Low Pitch,Red/Green,Prediction,0.8,Kat
+141,Red/Green,Jagged/Curvy,Prediction,NA,Kat
+142,Jagged/Curvy,Red/Green,Prediction,NA,Kat
+143,Red/Green,Large/Small,Prediction,NA,Kat
+144,Large/Small,Red/Green,Prediction,NA,Kat
+145,Red/Green,Fast/Slow,Prediction,NA,Kat
+146,Fast/Slow,Red/Green,Prediction,NA,Kat
+147,Red/Yellow,Noisy/Tonal,Prediction,NA,Kat
+148,Noisy/Tonal,Red/Yellow,Prediction,NA,Kat
+149,Red/Yellow,High Pitch/Low Pitch,Prediction,0.8,Kat
+150,High Pitch/Low Pitch,Red/Yellow,Prediction,0.8,Kat
+151,Red/Yellow,Jagged/Curvy,Prediction,NA,Kat
+152,Jagged/Curvy,Red/Yellow,Prediction,NA,Kat
+153,Red/Yellow,Large/Small,Prediction,NA,Kat
+154,Large/Small,Red/Yellow,Prediction,NA,Kat
+155,Red/Yellow,Fast/Slow,Prediction,NA,Kat
+156,Fast/Slow,Red/Yellow,Prediction,NA,Kat
+157,Yellow/Blue,Noisy/Tonal,Prediction,NA,Kat
+158,Noisy/Tonal,Yellow/Blue,Prediction,NA,Kat
+159,Yellow/Blue,High Pitch/Low Pitch,Prediction,0.6,Kat
+160,High Pitch/Low Pitch,Yellow/Blue,Prediction,0.6,Kat
+161,Yellow/Blue,Jagged/Curvy,Prediction,NA,Kat
+162,Jagged/Curvy,Yellow/Blue,Prediction,NA,Kat
+163,Yellow/Blue,Large/Small,Prediction,NA,Kat
+164,Large/Small,Yellow/Blue,Prediction,NA,Kat
+165,Yellow/Blue,Fast/Slow,Prediction,NA,Kat
+166,Fast/Slow,Yellow/Blue,Prediction,NA,Kat
+167,Noisy/Tonal,High Pitch/Low Pitch,Prediction,0.8,Kat
+168,High Pitch/Low Pitch,Noisy/Tonal,Prediction,0.8,Kat
+169,Noisy/Tonal,Jagged/Curvy,Prediction,NA,Kat
+170,Jagged/Curvy,Noisy/Tonal,Prediction,NA,Kat
+171,Noisy/Tonal,Large/Small,Prediction,NA,Kat
+172,Large/Small,Noisy/Tonal,Prediction,NA,Kat
+173,Noisy/Tonal,Fast/Slow,Prediction,NA,Kat
+174,Fast/Slow,Noisy/Tonal,Prediction,NA,Kat
+175,High Pitch/Low Pitch,Jagged/Curvy,Prediction,0.9,Kat
+176,Jagged/Curvy,High Pitch/Low Pitch,Prediction,0.9,Kat
+177,High Pitch/Low Pitch,Large/Small,Prediction,0.7,Kat
+178,Large/Small,High Pitch/Low Pitch,Prediction,0.7,Kat
+179,High Pitch/Low Pitch,Fast/Slow,Prediction,NA,Kat
+180,Fast/Slow,High Pitch/Low Pitch,Prediction,NA,Kat
+181,Jagged/Curvy,Large/Small,Prediction,NA,Kat
+182,Large/Small,Jagged/Curvy,Prediction,NA,Kat
+183,Jagged/Curvy,Fast/Slow,Prediction,0.9,Kat
+184,Fast/Slow,Jagged/Curvy,Prediction,0.9,Kat
+185,Large/Small,Fast/Slow,Prediction,0.5,Kat
+186,Fast/Slow,Large/Small,Prediction,0.5,Kat
+187,Excited/Bored,Loud/Quiet,SimData,0.811594203,Kat
+188,Loud/Quiet,Excited/Bored,SimData,0.769230769,Kat
+189,Excited/Bored,Bright/Dark,SimData,0.157303371,Kat
+190,Bright/Dark,Excited/Bored,SimData,0.141176471,Kat
+191,Excited/Bored,Red/Blue,SimData,0.619047619,Kat
+192,Red/Blue,Excited/Bored,SimData,0.55,Kat
+193,Excited/Bored,Red/Green,SimData,0.583333333,Kat
+194,Red/Green,Excited/Bored,SimData,0.695652174,Kat
+195,Excited/Bored,Red/Yellow,SimData,0.619047619,Kat
+196,Red/Yellow,Excited/Bored,SimData,0.263157895,Kat
+197,Excited/Bored,Yellow/Blue,SimData,0.789473684,Kat
+198,Yellow/Blue,Excited/Bored,SimData,0.526315789,Kat
+199,Excited/Bored,Noisy/Tonal,SimData,0.808988764,Kat
+200,Noisy/Tonal,Excited/Bored,SimData,0.741176471,Kat
+201,Excited/Bored,High Pitch/Low Pitch,SimData,0.591549296,Kat
+202,High Pitch/Low Pitch,Excited/Bored,SimData,0.701492537,Kat
+203,Excited/Bored,Jagged/Curvy,SimData,0.84,Kat
+204,Jagged/Curvy,Excited/Bored,SimData,0.929577465,Kat
+205,Excited/Bored,Large/Small,SimData,0.569230769,Kat
+206,Large/Small,Excited/Bored,SimData,0.606557377,Kat
+207,Excited/Bored,Fast/Slow,SimData,0.130434783,Kat
+208,Fast/Slow,Excited/Bored,SimData,0.246153846,Kat
+209,Happy/Sad,Loud/Quiet,SimData,0.550724638,Kat
+210,Loud/Quiet,Happy/Sad,SimData,0.479452055,Kat
+211,Happy/Sad,Bright/Dark,SimData,0.656716418,Kat
+212,Bright/Dark,Happy/Sad,SimData,0.549295775,Kat
+213,Happy/Sad,Red/Blue,SimData,0.263157895,Kat
+214,Red/Blue,Happy/Sad,SimData,0.307692308,Kat
+215,Happy/Sad,Red/Green,SimData,0.47826087,Kat
+216,Red/Green,Happy/Sad,SimData,0.533333333,Kat
+217,Happy/Sad,Red/Yellow,SimData,0.454545455,Kat
+218,Red/Yellow,Happy/Sad,SimData,0.65,Kat
+219,Happy/Sad,Yellow/Blue,SimData,0.9,Kat
+220,Yellow/Blue,Happy/Sad,SimData,0.894736842,Kat
+221,Happy/Sad,Noisy/Tonal,SimData,0.565217391,Kat
+222,Noisy/Tonal,Happy/Sad,SimData,0.534246575,Kat
+223,Happy/Sad,High Pitch/Low Pitch,SimData,0.2,Kat
+224,High Pitch/Low Pitch,Happy/Sad,SimData,0.289855072,Kat
+225,Happy/Sad,Jagged/Curvy,SimData,0.028169014,Kat
+226,Jagged/Curvy,Happy/Sad,SimData,0.106666667,Kat
+227,Happy/Sad,Large/Small,SimData,0.138461538,Kat
+228,Large/Small,Happy/Sad,SimData,0.144927536,Kat
+229,Happy/Sad,Fast/Slow,SimData,0.408450704,Kat
+230,Fast/Slow,Happy/Sad,SimData,0.506666667,Kat
+231,Pleased/Disgusted,Loud/Quiet,SimData,0.527777778,Kat
+232,Loud/Quiet,Pleased/Disgusted,SimData,0.6,Kat
+233,Pleased/Disgusted,Bright/Dark,SimData,0.916666667,Kat
+234,Bright/Dark,Pleased/Disgusted,SimData,0.862068966,Kat
+235,Pleased/Disgusted,Red/Blue,SimData,0.4375,Kat
+236,Red/Blue,Pleased/Disgusted,SimData,0.571428571,Kat
+237,Pleased/Disgusted,Red/Green,SimData,0.272727273,Kat
+238,Red/Green,Pleased/Disgusted,SimData,0.642857143,Kat
+239,Pleased/Disgusted,Red/Yellow,SimData,0,Kat
+240,Red/Yellow,Pleased/Disgusted,SimData,0.238095238,Kat
+241,Pleased/Disgusted,Yellow/Blue,SimData,0.625,Kat
+242,Yellow/Blue,Pleased/Disgusted,SimData,0.636363636,Kat
+243,Pleased/Disgusted,Noisy/Tonal,SimData,0.611111111,Kat
+244,Noisy/Tonal,Pleased/Disgusted,SimData,0.519230769,Kat
+245,Pleased/Disgusted,High Pitch/Low Pitch,SimData,0.081081081,Kat
+246,High Pitch/Low Pitch,Pleased/Disgusted,SimData,0.111111111,Kat
+247,Pleased/Disgusted,Jagged/Curvy,SimData,0.287878788,Kat
+248,Jagged/Curvy,Pleased/Disgusted,SimData,0.28125,Kat
+249,Pleased/Disgusted,Large/Small,SimData,0.945945946,Kat
+250,Large/Small,Pleased/Disgusted,SimData,0.861111111,Kat
+251,Pleased/Disgusted,Fast/Slow,SimData,0.590909091,Kat
+252,Fast/Slow,Pleased/Disgusted,SimData,0.578125,Kat
+253,Stressed/Calm,Loud/Quiet,SimData,0.857142857,Kat
+254,Loud/Quiet,Stressed/Calm,SimData,0.916666667,Kat
+255,Stressed/Calm,Bright/Dark,SimData,0.03125,Kat
+256,Bright/Dark,Stressed/Calm,SimData,0.075757576,Kat
+257,Stressed/Calm,Red/Blue,SimData,0.2,Kat
+258,Red/Blue,Stressed/Calm,SimData,0.35,Kat
+259,Stressed/Calm,Red/Green,SimData,0.631578947,Kat
+260,Red/Green,Stressed/Calm,SimData,0.545454545,Kat
+261,Stressed/Calm,Red/Yellow,SimData,1,Kat
+262,Red/Yellow,Stressed/Calm,SimData,0.866666667,Kat
+263,Stressed/Calm,Yellow/Blue,SimData,0.176470588,Kat
+264,Yellow/Blue,Stressed/Calm,SimData,0.133333333,Kat
+265,Stressed/Calm,Noisy/Tonal,SimData,0.573529412,Kat
+266,Noisy/Tonal,Stressed/Calm,SimData,0.528571429,Kat
+267,Stressed/Calm,High Pitch/Low Pitch,SimData,0.428571429,Kat
+268,High Pitch/Low Pitch,Stressed/Calm,SimData,0.444444444,Kat
+269,Stressed/Calm,Jagged/Curvy,SimData,0.558823529,Kat
+270,Jagged/Curvy,Stressed/Calm,SimData,0.5,Kat
+271,Stressed/Calm,Large/Small,SimData,0.328947368,Kat
+272,Large/Small,Stressed/Calm,SimData,0.525641026,Kat
+273,Stressed/Calm,Fast/Slow,SimData,0.283783784,Kat
+274,Fast/Slow,Stressed/Calm,SimData,0.184210526,Kat
+275,Loud/Quiet,Bright/Dark,SimData,0.039285714,Kat
+276,Bright/Dark,Loud/Quiet,SimData,0.032142857,Kat
+277,Loud/Quiet,Red/Blue,SimData,0.289855072,Kat
+278,Red/Blue,Loud/Quiet,SimData,0.215384615,Kat
+279,Loud/Quiet,Red/Green,SimData,0,Kat
+280,Red/Green,Loud/Quiet,SimData,0.016666667,Kat
+281,Loud/Quiet,Red/Yellow,SimData,0.768115942,Kat
+282,Red/Yellow,Loud/Quiet,SimData,0.870588235,Kat
+283,Loud/Quiet,Yellow/Blue,SimData,0.294117647,Kat
+284,Yellow/Blue,Loud/Quiet,SimData,0.357142857,Kat
+285,Loud/Quiet,Noisy/Tonal,SimData,0.775,Kat
+286,Noisy/Tonal,Loud/Quiet,SimData,0.739285714,Kat
+287,Loud/Quiet,High Pitch/Low Pitch,SimData,0.635714286,Kat
+288,High Pitch/Low Pitch,Loud/Quiet,SimData,0.689285714,Kat
+289,Loud/Quiet,Jagged/Curvy,SimData,0.471428571,Kat
+290,Jagged/Curvy,Loud/Quiet,SimData,0.539285714,Kat
+291,Loud/Quiet,Large/Small,SimData,0.517857143,Kat
+292,Large/Small,Loud/Quiet,SimData,0.575,Kat
+293,Loud/Quiet,Fast/Slow,SimData,0.985714286,Kat
+294,Fast/Slow,Loud/Quiet,SimData,0.982142857,Kat
+295,Bright/Dark,Red/Blue,SimData,0.197183099,Kat
+296,Red/Blue,Bright/Dark,SimData,0.179104478,Kat
+297,Bright/Dark,Red/Green,SimData,0.428571429,Kat
+298,Red/Green,Bright/Dark,SimData,0.428571429,Kat
+299,Bright/Dark,Red/Yellow,SimData,0.396825397,Kat
+300,Red/Yellow,Bright/Dark,SimData,0.367088608,Kat
+301,Bright/Dark,Yellow/Blue,SimData,0.290322581,Kat
+302,Yellow/Blue,Bright/Dark,SimData,0.25,Kat
+303,Bright/Dark,Noisy/Tonal,SimData,0.196428571,Kat
+304,Noisy/Tonal,Bright/Dark,SimData,0.214285714,Kat
+305,Bright/Dark,High Pitch/Low Pitch,SimData,0.667857143,Kat
+306,High Pitch/Low Pitch,Bright/Dark,SimData,0.567857143,Kat
+307,Bright/Dark,Jagged/Curvy,SimData,0.132142857,Kat
+308,Jagged/Curvy,Bright/Dark,SimData,0.153571429,Kat
+309,Bright/Dark,Large/Small,SimData,0.814285714,Kat
+310,Large/Small,Bright/Dark,SimData,0.828571429,Kat
+311,Bright/Dark,Fast/Slow,SimData,0.860714286,Kat
+312,Fast/Slow,Bright/Dark,SimData,0.857142857,Kat
+313,Red/Blue,Noisy/Tonal,SimData,0.475409836,Kat
+314,Noisy/Tonal,Red/Blue,SimData,0.507692308,Kat
+315,Red/Blue,High Pitch/Low Pitch,SimData,0.422535211,Kat
+316,High Pitch/Low Pitch,Red/Blue,SimData,0.266666667,Kat
+317,Red/Blue,Jagged/Curvy,SimData,0.442622951,Kat
+318,Jagged/Curvy,Red/Blue,SimData,0.415384615,Kat
+319,Red/Blue,Large/Small,SimData,0.623188406,Kat
+320,Large/Small,Red/Blue,SimData,0.506849315,Kat
+321,Red/Blue,Fast/Slow,SimData,0.898305085,Kat
+322,Fast/Slow,Red/Blue,SimData,0.952380952,Kat
+323,Red/Green,Noisy/Tonal,SimData,0.542857143,Kat
+324,Noisy/Tonal,Red/Green,SimData,0.523809524,Kat
+325,Red/Green,High Pitch/Low Pitch,SimData,0.14516129,Kat
+326,High Pitch/Low Pitch,Red/Green,SimData,0.184210526,Kat
+327,Red/Green,Jagged/Curvy,SimData,0.621621622,Kat
+328,Jagged/Curvy,Red/Green,SimData,0.568181818,Kat
+329,Red/Green,Large/Small,SimData,0.5625,Kat
+330,Large/Small,Red/Green,SimData,0.580645161,Kat
+331,Red/Green,Fast/Slow,SimData,0.366666667,Kat
+332,Fast/Slow,Red/Green,SimData,0.216216216,Kat
+333,Red/Yellow,Noisy/Tonal,SimData,0.543209877,Kat
+334,Noisy/Tonal,Red/Yellow,SimData,0.507692308,Kat
+335,Red/Yellow,High Pitch/Low Pitch,SimData,0.935064935,Kat
+336,High Pitch/Low Pitch,Red/Yellow,SimData,0.967213115,Kat
+337,Red/Yellow,Jagged/Curvy,SimData,0.74025974,Kat
+338,Jagged/Curvy,Red/Yellow,SimData,0.836065574,Kat
+339,Red/Yellow,Large/Small,SimData,0.701149425,Kat
+340,Large/Small,Red/Yellow,SimData,0.732394366,Kat
+341,Red/Yellow,Fast/Slow,SimData,0.609195402,Kat
+342,Fast/Slow,Red/Yellow,SimData,0.507042254,Kat
+343,Yellow/Blue,Noisy/Tonal,SimData,0.279411765,Kat
+344,Noisy/Tonal,Yellow/Blue,SimData,0.212121212,Kat
+345,Yellow/Blue,High Pitch/Low Pitch,SimData,0.8,Kat
+346,High Pitch/Low Pitch,Yellow/Blue,SimData,0.779411765,Kat
+347,Yellow/Blue,Jagged/Curvy,SimData,0.558823529,Kat
+348,Jagged/Curvy,Yellow/Blue,SimData,0.636363636,Kat
+349,Yellow/Blue,Large/Small,SimData,0.618421053,Kat
+350,Large/Small,Yellow/Blue,SimData,0.675675676,Kat
+351,Yellow/Blue,Fast/Slow,SimData,0.459459459,Kat
+352,Fast/Slow,Yellow/Blue,SimData,0.458333333,Kat
+353,Noisy/Tonal,High Pitch/Low Pitch,SimData,0.732142857,Kat
+354,High Pitch/Low Pitch,Noisy/Tonal,SimData,0.775,Kat
+355,Noisy/Tonal,Jagged/Curvy,SimData,0.507142857,Kat
+356,Jagged/Curvy,Noisy/Tonal,SimData,0.514285714,Kat
+357,Noisy/Tonal,Large/Small,SimData,0.810714286,Kat
+358,Large/Small,Noisy/Tonal,SimData,0.842857143,Kat
+359,Noisy/Tonal,Fast/Slow,SimData,0.2,Kat
+360,Fast/Slow,Noisy/Tonal,SimData,0.157142857,Kat
+361,High Pitch/Low Pitch,Jagged/Curvy,SimData,0.75,Kat
+362,Jagged/Curvy,High Pitch/Low Pitch,SimData,0.703571429,Kat
+363,High Pitch/Low Pitch,Large/Small,SimData,0.867857143,Kat
+364,Large/Small,High Pitch/Low Pitch,SimData,0.914285714,Kat
+365,High Pitch/Low Pitch,Fast/Slow,SimData,0.978571429,Kat
+366,Fast/Slow,High Pitch/Low Pitch,SimData,0.953571429,Kat
+367,Jagged/Curvy,Large/Small,SimData,0.614285714,Kat
+368,Large/Small,Jagged/Curvy,SimData,0.642857143,Kat
+369,Jagged/Curvy,Fast/Slow,SimData,0.825,Kat
+370,Fast/Slow,Jagged/Curvy,SimData,0.789285714,Kat
+371,Large/Small,Fast/Slow,SimData,0.117857143,Kat
+372,Fast/Slow,Large/Small,SimData,0.125,Kat

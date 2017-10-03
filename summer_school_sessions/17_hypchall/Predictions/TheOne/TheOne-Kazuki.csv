@@ -1,0 +1,559 @@
+,Inducer2,Concurrent2,Source,value,Student
+1,Excited/Bored,Loud/Quiet,Prediction,0.6,Kazuki
+2,Loud/Quiet,Excited/Bored,Prediction,0.6,Kazuki
+3,Excited/Bored,Bright/Dark,Prediction,0.9,Kazuki
+4,Bright/Dark,Excited/Bored,Prediction,0.9,Kazuki
+5,Excited/Bored,Red/Blue,Prediction,0.68,Kazuki
+6,Red/Blue,Excited/Bored,Prediction,0.68,Kazuki
+7,Excited/Bored,Red/Green,Prediction,0.68,Kazuki
+8,Red/Green,Excited/Bored,Prediction,0.68,Kazuki
+9,Excited/Bored,Red/Yellow,Prediction,0.78,Kazuki
+10,Red/Yellow,Excited/Bored,Prediction,0.78,Kazuki
+11,Excited/Bored,Yellow/Blue,Prediction,0.7,Kazuki
+12,Yellow/Blue,Excited/Bored,Prediction,0.7,Kazuki
+13,Excited/Bored,Noisy/Tonal,Prediction,0.75,Kazuki
+14,Noisy/Tonal,Excited/Bored,Prediction,0.75,Kazuki
+15,Excited/Bored,High Pitch/Low Pitch,Prediction,0.75,Kazuki
+16,High Pitch/Low Pitch,Excited/Bored,Prediction,0.75,Kazuki
+17,Excited/Bored,Jagged/Curvy,Prediction,0.67,Kazuki
+18,Jagged/Curvy,Excited/Bored,Prediction,0.67,Kazuki
+19,Excited/Bored,Large/Small,Prediction,0.75,Kazuki
+20,Large/Small,Excited/Bored,Prediction,0.75,Kazuki
+21,Excited/Bored,Fast/Slow,Prediction,0.75,Kazuki
+22,Fast/Slow,Excited/Bored,Prediction,0.75,Kazuki
+23,Happy/Sad,Loud/Quiet,Prediction,0.75,Kazuki
+24,Loud/Quiet,Happy/Sad,Prediction,0.75,Kazuki
+25,Happy/Sad,Bright/Dark,Prediction,0.99,Kazuki
+26,Bright/Dark,Happy/Sad,Prediction,0.99,Kazuki
+27,Happy/Sad,Red/Blue,Prediction,0.8,Kazuki
+28,Red/Blue,Happy/Sad,Prediction,0.8,Kazuki
+29,Happy/Sad,Red/Green,Prediction,0.8,Kazuki
+30,Red/Green,Happy/Sad,Prediction,0.8,Kazuki
+31,Happy/Sad,Red/Yellow,Prediction,0.8,Kazuki
+32,Red/Yellow,Happy/Sad,Prediction,0.8,Kazuki
+33,Happy/Sad,Yellow/Blue,Prediction,0.56,Kazuki
+34,Yellow/Blue,Happy/Sad,Prediction,0.56,Kazuki
+35,Happy/Sad,Noisy/Tonal,Prediction,0.75,Kazuki
+36,Noisy/Tonal,Happy/Sad,Prediction,0.75,Kazuki
+37,Happy/Sad,High Pitch/Low Pitch,Prediction,0.75,Kazuki
+38,High Pitch/Low Pitch,Happy/Sad,Prediction,0.75,Kazuki
+39,Happy/Sad,Jagged/Curvy,Prediction,0.5,Kazuki
+40,Jagged/Curvy,Happy/Sad,Prediction,0.5,Kazuki
+41,Happy/Sad,Large/Small,Prediction,0.75,Kazuki
+42,Large/Small,Happy/Sad,Prediction,0.75,Kazuki
+43,Happy/Sad,Fast/Slow,Prediction,0.66,Kazuki
+44,Fast/Slow,Happy/Sad,Prediction,0.66,Kazuki
+45,Pleased/Disgusted,Loud/Quiet,Prediction,0.5,Kazuki
+46,Loud/Quiet,Pleased/Disgusted,Prediction,0.5,Kazuki
+47,Pleased/Disgusted,Bright/Dark,Prediction,0.8,Kazuki
+48,Bright/Dark,Pleased/Disgusted,Prediction,0.8,Kazuki
+49,Pleased/Disgusted,Red/Blue,Prediction,0.65,Kazuki
+50,Red/Blue,Pleased/Disgusted,Prediction,0.65,Kazuki
+51,Pleased/Disgusted,Red/Green,Prediction,0.65,Kazuki
+52,Red/Green,Pleased/Disgusted,Prediction,0.65,Kazuki
+53,Pleased/Disgusted,Red/Yellow,Prediction,0.65,Kazuki
+54,Red/Yellow,Pleased/Disgusted,Prediction,0.65,Kazuki
+55,Pleased/Disgusted,Yellow/Blue,Prediction,0.3,Kazuki
+56,Yellow/Blue,Pleased/Disgusted,Prediction,0.3,Kazuki
+57,Pleased/Disgusted,Noisy/Tonal,Prediction,0.5,Kazuki
+58,Noisy/Tonal,Pleased/Disgusted,Prediction,0.5,Kazuki
+59,Pleased/Disgusted,High Pitch/Low Pitch,Prediction,0.5,Kazuki
+60,High Pitch/Low Pitch,Pleased/Disgusted,Prediction,0.5,Kazuki
+61,Pleased/Disgusted,Jagged/Curvy,Prediction,0.3,Kazuki
+62,Jagged/Curvy,Pleased/Disgusted,Prediction,0.3,Kazuki
+63,Pleased/Disgusted,Large/Small,Prediction,0.5,Kazuki
+64,Large/Small,Pleased/Disgusted,Prediction,0.5,Kazuki
+65,Pleased/Disgusted,Fast/Slow,Prediction,0.5,Kazuki
+66,Fast/Slow,Pleased/Disgusted,Prediction,0.5,Kazuki
+67,Stressed/Calm,Loud/Quiet,Prediction,0.75,Kazuki
+68,Loud/Quiet,Stressed/Calm,Prediction,0.75,Kazuki
+69,Stressed/Calm,Bright/Dark,Prediction,0.5,Kazuki
+70,Bright/Dark,Stressed/Calm,Prediction,0.5,Kazuki
+71,Stressed/Calm,Red/Blue,Prediction,0.44,Kazuki
+72,Red/Blue,Stressed/Calm,Prediction,0.44,Kazuki
+73,Stressed/Calm,Red/Green,Prediction,0.44,Kazuki
+74,Red/Green,Stressed/Calm,Prediction,0.44,Kazuki
+75,Stressed/Calm,Red/Yellow,Prediction,0.44,Kazuki
+76,Red/Yellow,Stressed/Calm,Prediction,0.44,Kazuki
+77,Stressed/Calm,Yellow/Blue,Prediction,0.5,Kazuki
+78,Yellow/Blue,Stressed/Calm,Prediction,0.5,Kazuki
+79,Stressed/Calm,Noisy/Tonal,Prediction,0.75,Kazuki
+80,Noisy/Tonal,Stressed/Calm,Prediction,0.75,Kazuki
+81,Stressed/Calm,High Pitch/Low Pitch,Prediction,0.75,Kazuki
+82,High Pitch/Low Pitch,Stressed/Calm,Prediction,0.75,Kazuki
+83,Stressed/Calm,Jagged/Curvy,Prediction,1,Kazuki
+84,Jagged/Curvy,Stressed/Calm,Prediction,1,Kazuki
+85,Stressed/Calm,Large/Small,Prediction,0.5,Kazuki
+86,Large/Small,Stressed/Calm,Prediction,0.5,Kazuki
+87,Stressed/Calm,Fast/Slow,Prediction,0.3,Kazuki
+88,Fast/Slow,Stressed/Calm,Prediction,0.3,Kazuki
+89,Loud/Quiet,Bright/Dark,Prediction,0.65,Kazuki
+90,Bright/Dark,Loud/Quiet,Prediction,0.65,Kazuki
+91,Loud/Quiet,Red/Blue,Prediction,0.78,Kazuki
+92,Red/Blue,Loud/Quiet,Prediction,0.78,Kazuki
+93,Loud/Quiet,Red/Green,Prediction,0.78,Kazuki
+94,Red/Green,Loud/Quiet,Prediction,0.78,Kazuki
+95,Loud/Quiet,Red/Yellow,Prediction,0.78,Kazuki
+96,Red/Yellow,Loud/Quiet,Prediction,0.78,Kazuki
+97,Loud/Quiet,Yellow/Blue,Prediction,0.7,Kazuki
+98,Yellow/Blue,Loud/Quiet,Prediction,0.7,Kazuki
+99,Loud/Quiet,Noisy/Tonal,Prediction,0.9,Kazuki
+100,Noisy/Tonal,Loud/Quiet,Prediction,0.9,Kazuki
+101,Loud/Quiet,High Pitch/Low Pitch,Prediction,1,Kazuki
+102,High Pitch/Low Pitch,Loud/Quiet,Prediction,1,Kazuki
+103,Loud/Quiet,Jagged/Curvy,Prediction,0.4,Kazuki
+104,Jagged/Curvy,Loud/Quiet,Prediction,0.4,Kazuki
+105,Loud/Quiet,Large/Small,Prediction,1,Kazuki
+106,Large/Small,Loud/Quiet,Prediction,1,Kazuki
+107,Loud/Quiet,Fast/Slow,Prediction,0.7,Kazuki
+108,Fast/Slow,Loud/Quiet,Prediction,0.7,Kazuki
+109,Bright/Dark,Red/Blue,Prediction,0.78,Kazuki
+110,Red/Blue,Bright/Dark,Prediction,0.78,Kazuki
+111,Bright/Dark,Red/Green,Prediction,0.78,Kazuki
+112,Red/Green,Bright/Dark,Prediction,0.78,Kazuki
+113,Bright/Dark,Red/Yellow,Prediction,0.35,Kazuki
+114,Red/Yellow,Bright/Dark,Prediction,0.35,Kazuki
+115,Bright/Dark,Yellow/Blue,Prediction,0.86,Kazuki
+116,Yellow/Blue,Bright/Dark,Prediction,0.86,Kazuki
+117,Bright/Dark,Noisy/Tonal,Prediction,0.6,Kazuki
+118,Noisy/Tonal,Bright/Dark,Prediction,0.6,Kazuki
+119,Bright/Dark,High Pitch/Low Pitch,Prediction,0.7,Kazuki
+120,High Pitch/Low Pitch,Bright/Dark,Prediction,0.7,Kazuki
+121,Bright/Dark,Jagged/Curvy,Prediction,0.48,Kazuki
+122,Jagged/Curvy,Bright/Dark,Prediction,0.48,Kazuki
+123,Bright/Dark,Large/Small,Prediction,0.58,Kazuki
+124,Large/Small,Bright/Dark,Prediction,0.58,Kazuki
+125,Bright/Dark,Fast/Slow,Prediction,0.86,Kazuki
+126,Fast/Slow,Bright/Dark,Prediction,0.86,Kazuki
+127,Red/Blue,Noisy/Tonal,Prediction,0.32,Kazuki
+128,Noisy/Tonal,Red/Blue,Prediction,0.32,Kazuki
+129,Red/Blue,High Pitch/Low Pitch,Prediction,0.5,Kazuki
+130,High Pitch/Low Pitch,Red/Blue,Prediction,0.5,Kazuki
+131,Red/Blue,Jagged/Curvy,Prediction,0.5,Kazuki
+132,Jagged/Curvy,Red/Blue,Prediction,0.5,Kazuki
+133,Red/Blue,Large/Small,Prediction,0.58,Kazuki
+134,Large/Small,Red/Blue,Prediction,0.58,Kazuki
+135,Red/Blue,Fast/Slow,Prediction,0.1,Kazuki
+136,Fast/Slow,Red/Blue,Prediction,0.1,Kazuki
+137,Red/Green,Noisy/Tonal,Prediction,0.32,Kazuki
+138,Noisy/Tonal,Red/Green,Prediction,0.32,Kazuki
+139,Red/Green,High Pitch/Low Pitch,Prediction,0.5,Kazuki
+140,High Pitch/Low Pitch,Red/Green,Prediction,0.5,Kazuki
+141,Red/Green,Jagged/Curvy,Prediction,0.5,Kazuki
+142,Jagged/Curvy,Red/Green,Prediction,0.5,Kazuki
+143,Red/Green,Large/Small,Prediction,0.58,Kazuki
+144,Large/Small,Red/Green,Prediction,0.58,Kazuki
+145,Red/Green,Fast/Slow,Prediction,0.1,Kazuki
+146,Fast/Slow,Red/Green,Prediction,0.1,Kazuki
+147,Red/Yellow,Noisy/Tonal,Prediction,0.32,Kazuki
+148,Noisy/Tonal,Red/Yellow,Prediction,0.32,Kazuki
+149,Red/Yellow,High Pitch/Low Pitch,Prediction,0.5,Kazuki
+150,High Pitch/Low Pitch,Red/Yellow,Prediction,0.5,Kazuki
+151,Red/Yellow,Jagged/Curvy,Prediction,0.5,Kazuki
+152,Jagged/Curvy,Red/Yellow,Prediction,0.5,Kazuki
+153,Red/Yellow,Large/Small,Prediction,0.58,Kazuki
+154,Large/Small,Red/Yellow,Prediction,0.58,Kazuki
+155,Red/Yellow,Fast/Slow,Prediction,0.25,Kazuki
+156,Fast/Slow,Red/Yellow,Prediction,0.25,Kazuki
+157,Yellow/Blue,Noisy/Tonal,Prediction,0.8,Kazuki
+158,Noisy/Tonal,Yellow/Blue,Prediction,0.8,Kazuki
+159,Yellow/Blue,High Pitch/Low Pitch,Prediction,0.6,Kazuki
+160,High Pitch/Low Pitch,Yellow/Blue,Prediction,0.6,Kazuki
+161,Yellow/Blue,Jagged/Curvy,Prediction,0.2,Kazuki
+162,Jagged/Curvy,Yellow/Blue,Prediction,0.2,Kazuki
+163,Yellow/Blue,Large/Small,Prediction,0.2,Kazuki
+164,Large/Small,Yellow/Blue,Prediction,0.2,Kazuki
+165,Yellow/Blue,Fast/Slow,Prediction,0.57,Kazuki
+166,Fast/Slow,Yellow/Blue,Prediction,0.57,Kazuki
+167,Noisy/Tonal,High Pitch/Low Pitch,Prediction,0.9,Kazuki
+168,High Pitch/Low Pitch,Noisy/Tonal,Prediction,0.9,Kazuki
+169,Noisy/Tonal,Jagged/Curvy,Prediction,1,Kazuki
+170,Jagged/Curvy,Noisy/Tonal,Prediction,1,Kazuki
+171,Noisy/Tonal,Large/Small,Prediction,0.7,Kazuki
+172,Large/Small,Noisy/Tonal,Prediction,0.7,Kazuki
+173,Noisy/Tonal,Fast/Slow,Prediction,0.69,Kazuki
+174,Fast/Slow,Noisy/Tonal,Prediction,0.69,Kazuki
+175,High Pitch/Low Pitch,Jagged/Curvy,Prediction,1,Kazuki
+176,Jagged/Curvy,High Pitch/Low Pitch,Prediction,1,Kazuki
+177,High Pitch/Low Pitch,Large/Small,Prediction,0.6,Kazuki
+178,Large/Small,High Pitch/Low Pitch,Prediction,0.6,Kazuki
+179,High Pitch/Low Pitch,Fast/Slow,Prediction,1,Kazuki
+180,Fast/Slow,High Pitch/Low Pitch,Prediction,1,Kazuki
+181,Jagged/Curvy,Large/Small,Prediction,0,Kazuki
+182,Large/Small,Jagged/Curvy,Prediction,0,Kazuki
+183,Jagged/Curvy,Fast/Slow,Prediction,1,Kazuki
+184,Fast/Slow,Jagged/Curvy,Prediction,1,Kazuki
+185,Large/Small,Fast/Slow,Prediction,0.25,Kazuki
+186,Fast/Slow,Large/Small,Prediction,0.25,Kazuki
+187,Excited/Bored,Loud/Quiet,ImputedPrediction,0.6,Kazuki
+188,Loud/Quiet,Excited/Bored,ImputedPrediction,0.6,Kazuki
+189,Excited/Bored,Bright/Dark,ImputedPrediction,0.9,Kazuki
+190,Bright/Dark,Excited/Bored,ImputedPrediction,0.9,Kazuki
+191,Excited/Bored,Red/Blue,ImputedPrediction,0.68,Kazuki
+192,Red/Blue,Excited/Bored,ImputedPrediction,0.68,Kazuki
+193,Excited/Bored,Red/Green,ImputedPrediction,0.68,Kazuki
+194,Red/Green,Excited/Bored,ImputedPrediction,0.68,Kazuki
+195,Excited/Bored,Red/Yellow,ImputedPrediction,0.78,Kazuki
+196,Red/Yellow,Excited/Bored,ImputedPrediction,0.78,Kazuki
+197,Excited/Bored,Yellow/Blue,ImputedPrediction,0.7,Kazuki
+198,Yellow/Blue,Excited/Bored,ImputedPrediction,0.7,Kazuki
+199,Excited/Bored,Noisy/Tonal,ImputedPrediction,0.75,Kazuki
+200,Noisy/Tonal,Excited/Bored,ImputedPrediction,0.75,Kazuki
+201,Excited/Bored,High Pitch/Low Pitch,ImputedPrediction,0.75,Kazuki
+202,High Pitch/Low Pitch,Excited/Bored,ImputedPrediction,0.75,Kazuki
+203,Excited/Bored,Jagged/Curvy,ImputedPrediction,0.67,Kazuki
+204,Jagged/Curvy,Excited/Bored,ImputedPrediction,0.67,Kazuki
+205,Excited/Bored,Large/Small,ImputedPrediction,0.75,Kazuki
+206,Large/Small,Excited/Bored,ImputedPrediction,0.75,Kazuki
+207,Excited/Bored,Fast/Slow,ImputedPrediction,0.75,Kazuki
+208,Fast/Slow,Excited/Bored,ImputedPrediction,0.75,Kazuki
+209,Happy/Sad,Loud/Quiet,ImputedPrediction,0.75,Kazuki
+210,Loud/Quiet,Happy/Sad,ImputedPrediction,0.75,Kazuki
+211,Happy/Sad,Bright/Dark,ImputedPrediction,0.99,Kazuki
+212,Bright/Dark,Happy/Sad,ImputedPrediction,0.99,Kazuki
+213,Happy/Sad,Red/Blue,ImputedPrediction,0.8,Kazuki
+214,Red/Blue,Happy/Sad,ImputedPrediction,0.8,Kazuki
+215,Happy/Sad,Red/Green,ImputedPrediction,0.8,Kazuki
+216,Red/Green,Happy/Sad,ImputedPrediction,0.8,Kazuki
+217,Happy/Sad,Red/Yellow,ImputedPrediction,0.8,Kazuki
+218,Red/Yellow,Happy/Sad,ImputedPrediction,0.8,Kazuki
+219,Happy/Sad,Yellow/Blue,ImputedPrediction,0.56,Kazuki
+220,Yellow/Blue,Happy/Sad,ImputedPrediction,0.56,Kazuki
+221,Happy/Sad,Noisy/Tonal,ImputedPrediction,0.75,Kazuki
+222,Noisy/Tonal,Happy/Sad,ImputedPrediction,0.75,Kazuki
+223,Happy/Sad,High Pitch/Low Pitch,ImputedPrediction,0.75,Kazuki
+224,High Pitch/Low Pitch,Happy/Sad,ImputedPrediction,0.75,Kazuki
+225,Happy/Sad,Jagged/Curvy,ImputedPrediction,0.5,Kazuki
+226,Jagged/Curvy,Happy/Sad,ImputedPrediction,0.5,Kazuki
+227,Happy/Sad,Large/Small,ImputedPrediction,0.75,Kazuki
+228,Large/Small,Happy/Sad,ImputedPrediction,0.75,Kazuki
+229,Happy/Sad,Fast/Slow,ImputedPrediction,0.66,Kazuki
+230,Fast/Slow,Happy/Sad,ImputedPrediction,0.66,Kazuki
+231,Pleased/Disgusted,Loud/Quiet,ImputedPrediction,0.5,Kazuki
+232,Loud/Quiet,Pleased/Disgusted,ImputedPrediction,0.5,Kazuki
+233,Pleased/Disgusted,Bright/Dark,ImputedPrediction,0.8,Kazuki
+234,Bright/Dark,Pleased/Disgusted,ImputedPrediction,0.8,Kazuki
+235,Pleased/Disgusted,Red/Blue,ImputedPrediction,0.65,Kazuki
+236,Red/Blue,Pleased/Disgusted,ImputedPrediction,0.65,Kazuki
+237,Pleased/Disgusted,Red/Green,ImputedPrediction,0.65,Kazuki
+238,Red/Green,Pleased/Disgusted,ImputedPrediction,0.65,Kazuki
+239,Pleased/Disgusted,Red/Yellow,ImputedPrediction,0.65,Kazuki
+240,Red/Yellow,Pleased/Disgusted,ImputedPrediction,0.65,Kazuki
+241,Pleased/Disgusted,Yellow/Blue,ImputedPrediction,0.3,Kazuki
+242,Yellow/Blue,Pleased/Disgusted,ImputedPrediction,0.3,Kazuki
+243,Pleased/Disgusted,Noisy/Tonal,ImputedPrediction,0.5,Kazuki
+244,Noisy/Tonal,Pleased/Disgusted,ImputedPrediction,0.5,Kazuki
+245,Pleased/Disgusted,High Pitch/Low Pitch,ImputedPrediction,0.5,Kazuki
+246,High Pitch/Low Pitch,Pleased/Disgusted,ImputedPrediction,0.5,Kazuki
+247,Pleased/Disgusted,Jagged/Curvy,ImputedPrediction,0.3,Kazuki
+248,Jagged/Curvy,Pleased/Disgusted,ImputedPrediction,0.3,Kazuki
+249,Pleased/Disgusted,Large/Small,ImputedPrediction,0.5,Kazuki
+250,Large/Small,Pleased/Disgusted,ImputedPrediction,0.5,Kazuki
+251,Pleased/Disgusted,Fast/Slow,ImputedPrediction,0.5,Kazuki
+252,Fast/Slow,Pleased/Disgusted,ImputedPrediction,0.5,Kazuki
+253,Stressed/Calm,Loud/Quiet,ImputedPrediction,0.75,Kazuki
+254,Loud/Quiet,Stressed/Calm,ImputedPrediction,0.75,Kazuki
+255,Stressed/Calm,Bright/Dark,ImputedPrediction,0.5,Kazuki
+256,Bright/Dark,Stressed/Calm,ImputedPrediction,0.5,Kazuki
+257,Stressed/Calm,Red/Blue,ImputedPrediction,0.44,Kazuki
+258,Red/Blue,Stressed/Calm,ImputedPrediction,0.44,Kazuki
+259,Stressed/Calm,Red/Green,ImputedPrediction,0.44,Kazuki
+260,Red/Green,Stressed/Calm,ImputedPrediction,0.44,Kazuki
+261,Stressed/Calm,Red/Yellow,ImputedPrediction,0.44,Kazuki
+262,Red/Yellow,Stressed/Calm,ImputedPrediction,0.44,Kazuki
+263,Stressed/Calm,Yellow/Blue,ImputedPrediction,0.5,Kazuki
+264,Yellow/Blue,Stressed/Calm,ImputedPrediction,0.5,Kazuki
+265,Stressed/Calm,Noisy/Tonal,ImputedPrediction,0.75,Kazuki
+266,Noisy/Tonal,Stressed/Calm,ImputedPrediction,0.75,Kazuki
+267,Stressed/Calm,High Pitch/Low Pitch,ImputedPrediction,0.75,Kazuki
+268,High Pitch/Low Pitch,Stressed/Calm,ImputedPrediction,0.75,Kazuki
+269,Stressed/Calm,Jagged/Curvy,ImputedPrediction,1,Kazuki
+270,Jagged/Curvy,Stressed/Calm,ImputedPrediction,1,Kazuki
+271,Stressed/Calm,Large/Small,ImputedPrediction,0.5,Kazuki
+272,Large/Small,Stressed/Calm,ImputedPrediction,0.5,Kazuki
+273,Stressed/Calm,Fast/Slow,ImputedPrediction,0.3,Kazuki
+274,Fast/Slow,Stressed/Calm,ImputedPrediction,0.3,Kazuki
+275,Loud/Quiet,Bright/Dark,ImputedPrediction,0.65,Kazuki
+276,Bright/Dark,Loud/Quiet,ImputedPrediction,0.65,Kazuki
+277,Loud/Quiet,Red/Blue,ImputedPrediction,0.78,Kazuki
+278,Red/Blue,Loud/Quiet,ImputedPrediction,0.78,Kazuki
+279,Loud/Quiet,Red/Green,ImputedPrediction,0.78,Kazuki
+280,Red/Green,Loud/Quiet,ImputedPrediction,0.78,Kazuki
+281,Loud/Quiet,Red/Yellow,ImputedPrediction,0.78,Kazuki
+282,Red/Yellow,Loud/Quiet,ImputedPrediction,0.78,Kazuki
+283,Loud/Quiet,Yellow/Blue,ImputedPrediction,0.7,Kazuki
+284,Yellow/Blue,Loud/Quiet,ImputedPrediction,0.7,Kazuki
+285,Loud/Quiet,Noisy/Tonal,ImputedPrediction,0.9,Kazuki
+286,Noisy/Tonal,Loud/Quiet,ImputedPrediction,0.9,Kazuki
+287,Loud/Quiet,High Pitch/Low Pitch,ImputedPrediction,1,Kazuki
+288,High Pitch/Low Pitch,Loud/Quiet,ImputedPrediction,1,Kazuki
+289,Loud/Quiet,Jagged/Curvy,ImputedPrediction,0.4,Kazuki
+290,Jagged/Curvy,Loud/Quiet,ImputedPrediction,0.4,Kazuki
+291,Loud/Quiet,Large/Small,ImputedPrediction,1,Kazuki
+292,Large/Small,Loud/Quiet,ImputedPrediction,1,Kazuki
+293,Loud/Quiet,Fast/Slow,ImputedPrediction,0.7,Kazuki
+294,Fast/Slow,Loud/Quiet,ImputedPrediction,0.7,Kazuki
+295,Bright/Dark,Red/Blue,ImputedPrediction,0.78,Kazuki
+296,Red/Blue,Bright/Dark,ImputedPrediction,0.78,Kazuki
+297,Bright/Dark,Red/Green,ImputedPrediction,0.78,Kazuki
+298,Red/Green,Bright/Dark,ImputedPrediction,0.78,Kazuki
+299,Bright/Dark,Red/Yellow,ImputedPrediction,0.35,Kazuki
+300,Red/Yellow,Bright/Dark,ImputedPrediction,0.35,Kazuki
+301,Bright/Dark,Yellow/Blue,ImputedPrediction,0.86,Kazuki
+302,Yellow/Blue,Bright/Dark,ImputedPrediction,0.86,Kazuki
+303,Bright/Dark,Noisy/Tonal,ImputedPrediction,0.6,Kazuki
+304,Noisy/Tonal,Bright/Dark,ImputedPrediction,0.6,Kazuki
+305,Bright/Dark,High Pitch/Low Pitch,ImputedPrediction,0.7,Kazuki
+306,High Pitch/Low Pitch,Bright/Dark,ImputedPrediction,0.7,Kazuki
+307,Bright/Dark,Jagged/Curvy,ImputedPrediction,0.48,Kazuki
+308,Jagged/Curvy,Bright/Dark,ImputedPrediction,0.48,Kazuki
+309,Bright/Dark,Large/Small,ImputedPrediction,0.58,Kazuki
+310,Large/Small,Bright/Dark,ImputedPrediction,0.58,Kazuki
+311,Bright/Dark,Fast/Slow,ImputedPrediction,0.86,Kazuki
+312,Fast/Slow,Bright/Dark,ImputedPrediction,0.86,Kazuki
+313,Red/Blue,Noisy/Tonal,ImputedPrediction,0.32,Kazuki
+314,Noisy/Tonal,Red/Blue,ImputedPrediction,0.32,Kazuki
+315,Red/Blue,High Pitch/Low Pitch,ImputedPrediction,0.5,Kazuki
+316,High Pitch/Low Pitch,Red/Blue,ImputedPrediction,0.5,Kazuki
+317,Red/Blue,Jagged/Curvy,ImputedPrediction,0.5,Kazuki
+318,Jagged/Curvy,Red/Blue,ImputedPrediction,0.5,Kazuki
+319,Red/Blue,Large/Small,ImputedPrediction,0.58,Kazuki
+320,Large/Small,Red/Blue,ImputedPrediction,0.58,Kazuki
+321,Red/Blue,Fast/Slow,ImputedPrediction,0.1,Kazuki
+322,Fast/Slow,Red/Blue,ImputedPrediction,0.1,Kazuki
+323,Red/Green,Noisy/Tonal,ImputedPrediction,0.32,Kazuki
+324,Noisy/Tonal,Red/Green,ImputedPrediction,0.32,Kazuki
+325,Red/Green,High Pitch/Low Pitch,ImputedPrediction,0.5,Kazuki
+326,High Pitch/Low Pitch,Red/Green,ImputedPrediction,0.5,Kazuki
+327,Red/Green,Jagged/Curvy,ImputedPrediction,0.5,Kazuki
+328,Jagged/Curvy,Red/Green,ImputedPrediction,0.5,Kazuki
+329,Red/Green,Large/Small,ImputedPrediction,0.58,Kazuki
+330,Large/Small,Red/Green,ImputedPrediction,0.58,Kazuki
+331,Red/Green,Fast/Slow,ImputedPrediction,0.1,Kazuki
+332,Fast/Slow,Red/Green,ImputedPrediction,0.1,Kazuki
+333,Red/Yellow,Noisy/Tonal,ImputedPrediction,0.32,Kazuki
+334,Noisy/Tonal,Red/Yellow,ImputedPrediction,0.32,Kazuki
+335,Red/Yellow,High Pitch/Low Pitch,ImputedPrediction,0.5,Kazuki
+336,High Pitch/Low Pitch,Red/Yellow,ImputedPrediction,0.5,Kazuki
+337,Red/Yellow,Jagged/Curvy,ImputedPrediction,0.5,Kazuki
+338,Jagged/Curvy,Red/Yellow,ImputedPrediction,0.5,Kazuki
+339,Red/Yellow,Large/Small,ImputedPrediction,0.58,Kazuki
+340,Large/Small,Red/Yellow,ImputedPrediction,0.58,Kazuki
+341,Red/Yellow,Fast/Slow,ImputedPrediction,0.25,Kazuki
+342,Fast/Slow,Red/Yellow,ImputedPrediction,0.25,Kazuki
+343,Yellow/Blue,Noisy/Tonal,ImputedPrediction,0.8,Kazuki
+344,Noisy/Tonal,Yellow/Blue,ImputedPrediction,0.8,Kazuki
+345,Yellow/Blue,High Pitch/Low Pitch,ImputedPrediction,0.6,Kazuki
+346,High Pitch/Low Pitch,Yellow/Blue,ImputedPrediction,0.6,Kazuki
+347,Yellow/Blue,Jagged/Curvy,ImputedPrediction,0.2,Kazuki
+348,Jagged/Curvy,Yellow/Blue,ImputedPrediction,0.2,Kazuki
+349,Yellow/Blue,Large/Small,ImputedPrediction,0.2,Kazuki
+350,Large/Small,Yellow/Blue,ImputedPrediction,0.2,Kazuki
+351,Yellow/Blue,Fast/Slow,ImputedPrediction,0.57,Kazuki
+352,Fast/Slow,Yellow/Blue,ImputedPrediction,0.57,Kazuki
+353,Noisy/Tonal,High Pitch/Low Pitch,ImputedPrediction,0.9,Kazuki
+354,High Pitch/Low Pitch,Noisy/Tonal,ImputedPrediction,0.9,Kazuki
+355,Noisy/Tonal,Jagged/Curvy,ImputedPrediction,1,Kazuki
+356,Jagged/Curvy,Noisy/Tonal,ImputedPrediction,1,Kazuki
+357,Noisy/Tonal,Large/Small,ImputedPrediction,0.7,Kazuki
+358,Large/Small,Noisy/Tonal,ImputedPrediction,0.7,Kazuki
+359,Noisy/Tonal,Fast/Slow,ImputedPrediction,0.69,Kazuki
+360,Fast/Slow,Noisy/Tonal,ImputedPrediction,0.69,Kazuki
+361,High Pitch/Low Pitch,Jagged/Curvy,ImputedPrediction,1,Kazuki
+362,Jagged/Curvy,High Pitch/Low Pitch,ImputedPrediction,1,Kazuki
+363,High Pitch/Low Pitch,Large/Small,ImputedPrediction,0.6,Kazuki
+364,Large/Small,High Pitch/Low Pitch,ImputedPrediction,0.6,Kazuki
+365,High Pitch/Low Pitch,Fast/Slow,ImputedPrediction,1,Kazuki
+366,Fast/Slow,High Pitch/Low Pitch,ImputedPrediction,1,Kazuki
+367,Jagged/Curvy,Large/Small,ImputedPrediction,0,Kazuki
+368,Large/Small,Jagged/Curvy,ImputedPrediction,0,Kazuki
+369,Jagged/Curvy,Fast/Slow,ImputedPrediction,1,Kazuki
+370,Fast/Slow,Jagged/Curvy,ImputedPrediction,1,Kazuki
+371,Large/Small,Fast/Slow,ImputedPrediction,0.25,Kazuki
+372,Fast/Slow,Large/Small,ImputedPrediction,0.25,Kazuki
+373,Excited/Bored,Loud/Quiet,SimData,0.608695652,Kazuki
+374,Loud/Quiet,Excited/Bored,SimData,0.646153846,Kazuki
+375,Excited/Bored,Bright/Dark,SimData,0.820224719,Kazuki
+376,Bright/Dark,Excited/Bored,SimData,0.905882353,Kazuki
+377,Excited/Bored,Red/Blue,SimData,0.857142857,Kazuki
+378,Red/Blue,Excited/Bored,SimData,0.65,Kazuki
+379,Excited/Bored,Red/Green,SimData,0.875,Kazuki
+380,Red/Green,Excited/Bored,SimData,0.608695652,Kazuki
+381,Excited/Bored,Red/Yellow,SimData,0.666666667,Kazuki
+382,Red/Yellow,Excited/Bored,SimData,0.894736842,Kazuki
+383,Excited/Bored,Yellow/Blue,SimData,0.736842105,Kazuki
+384,Yellow/Blue,Excited/Bored,SimData,0.684210526,Kazuki
+385,Excited/Bored,Noisy/Tonal,SimData,0.775280899,Kazuki
+386,Noisy/Tonal,Excited/Bored,SimData,0.729411765,Kazuki
+387,Excited/Bored,High Pitch/Low Pitch,SimData,0.732394366,Kazuki
+388,High Pitch/Low Pitch,Excited/Bored,SimData,0.71641791,Kazuki
+389,Excited/Bored,Jagged/Curvy,SimData,0.666666667,Kazuki
+390,Jagged/Curvy,Excited/Bored,SimData,0.647887324,Kazuki
+391,Excited/Bored,Large/Small,SimData,0.676923077,Kazuki
+392,Large/Small,Excited/Bored,SimData,0.770491803,Kazuki
+393,Excited/Bored,Fast/Slow,SimData,0.753623188,Kazuki
+394,Fast/Slow,Excited/Bored,SimData,0.815384615,Kazuki
+395,Happy/Sad,Loud/Quiet,SimData,0.753623188,Kazuki
+396,Loud/Quiet,Happy/Sad,SimData,0.780821918,Kazuki
+397,Happy/Sad,Bright/Dark,SimData,0.985074627,Kazuki
+398,Bright/Dark,Happy/Sad,SimData,1,Kazuki
+399,Happy/Sad,Red/Blue,SimData,0.842105263,Kazuki
+400,Red/Blue,Happy/Sad,SimData,0.692307692,Kazuki
+401,Happy/Sad,Red/Green,SimData,0.782608696,Kazuki
+402,Red/Green,Happy/Sad,SimData,0.733333333,Kazuki
+403,Happy/Sad,Red/Yellow,SimData,1,Kazuki
+404,Red/Yellow,Happy/Sad,SimData,0.75,Kazuki
+405,Happy/Sad,Yellow/Blue,SimData,0.8,Kazuki
+406,Yellow/Blue,Happy/Sad,SimData,0.578947368,Kazuki
+407,Happy/Sad,Noisy/Tonal,SimData,0.782608696,Kazuki
+408,Noisy/Tonal,Happy/Sad,SimData,0.739726027,Kazuki
+409,Happy/Sad,High Pitch/Low Pitch,SimData,0.723076923,Kazuki
+410,High Pitch/Low Pitch,Happy/Sad,SimData,0.855072464,Kazuki
+411,Happy/Sad,Jagged/Curvy,SimData,0.436619718,Kazuki
+412,Jagged/Curvy,Happy/Sad,SimData,0.573333333,Kazuki
+413,Happy/Sad,Large/Small,SimData,0.769230769,Kazuki
+414,Large/Small,Happy/Sad,SimData,0.666666667,Kazuki
+415,Happy/Sad,Fast/Slow,SimData,0.690140845,Kazuki
+416,Fast/Slow,Happy/Sad,SimData,0.626666667,Kazuki
+417,Pleased/Disgusted,Loud/Quiet,SimData,0.541666667,Kazuki
+418,Loud/Quiet,Pleased/Disgusted,SimData,0.528571429,Kazuki
+419,Pleased/Disgusted,Bright/Dark,SimData,0.783333333,Kazuki
+420,Bright/Dark,Pleased/Disgusted,SimData,0.75862069,Kazuki
+421,Pleased/Disgusted,Red/Blue,SimData,0.375,Kazuki
+422,Red/Blue,Pleased/Disgusted,SimData,0.785714286,Kazuki
+423,Pleased/Disgusted,Red/Green,SimData,0.681818182,Kazuki
+424,Red/Green,Pleased/Disgusted,SimData,0.571428571,Kazuki
+425,Pleased/Disgusted,Red/Yellow,SimData,0.5,Kazuki
+426,Red/Yellow,Pleased/Disgusted,SimData,0.714285714,Kazuki
+427,Pleased/Disgusted,Yellow/Blue,SimData,0.3125,Kazuki
+428,Yellow/Blue,Pleased/Disgusted,SimData,0.363636364,Kazuki
+429,Pleased/Disgusted,Noisy/Tonal,SimData,0.444444444,Kazuki
+430,Noisy/Tonal,Pleased/Disgusted,SimData,0.538461538,Kazuki
+431,Pleased/Disgusted,High Pitch/Low Pitch,SimData,0.459459459,Kazuki
+432,High Pitch/Low Pitch,Pleased/Disgusted,SimData,0.583333333,Kazuki
+433,Pleased/Disgusted,Jagged/Curvy,SimData,0.318181818,Kazuki
+434,Jagged/Curvy,Pleased/Disgusted,SimData,0.3125,Kazuki
+435,Pleased/Disgusted,Large/Small,SimData,0.472972973,Kazuki
+436,Large/Small,Pleased/Disgusted,SimData,0.597222222,Kazuki
+437,Pleased/Disgusted,Fast/Slow,SimData,0.46969697,Kazuki
+438,Fast/Slow,Pleased/Disgusted,SimData,0.46875,Kazuki
+439,Stressed/Calm,Loud/Quiet,SimData,0.742857143,Kazuki
+440,Loud/Quiet,Stressed/Calm,SimData,0.805555556,Kazuki
+441,Stressed/Calm,Bright/Dark,SimData,0.5,Kazuki
+442,Bright/Dark,Stressed/Calm,SimData,0.575757576,Kazuki
+443,Stressed/Calm,Red/Blue,SimData,0.733333333,Kazuki
+444,Red/Blue,Stressed/Calm,SimData,0.55,Kazuki
+445,Stressed/Calm,Red/Green,SimData,0.315789474,Kazuki
+446,Red/Green,Stressed/Calm,SimData,0.590909091,Kazuki
+447,Stressed/Calm,Red/Yellow,SimData,0.526315789,Kazuki
+448,Red/Yellow,Stressed/Calm,SimData,0.333333333,Kazuki
+449,Stressed/Calm,Yellow/Blue,SimData,0.588235294,Kazuki
+450,Yellow/Blue,Stressed/Calm,SimData,0.533333333,Kazuki
+451,Stressed/Calm,Noisy/Tonal,SimData,0.764705882,Kazuki
+452,Noisy/Tonal,Stressed/Calm,SimData,0.742857143,Kazuki
+453,Stressed/Calm,High Pitch/Low Pitch,SimData,0.771428571,Kazuki
+454,High Pitch/Low Pitch,Stressed/Calm,SimData,0.763888889,Kazuki
+455,Stressed/Calm,Jagged/Curvy,SimData,1,Kazuki
+456,Jagged/Curvy,Stressed/Calm,SimData,1,Kazuki
+457,Stressed/Calm,Large/Small,SimData,0.618421053,Kazuki
+458,Large/Small,Stressed/Calm,SimData,0.474358974,Kazuki
+459,Stressed/Calm,Fast/Slow,SimData,0.324324324,Kazuki
+460,Fast/Slow,Stressed/Calm,SimData,0.289473684,Kazuki
+461,Loud/Quiet,Bright/Dark,SimData,0.692857143,Kazuki
+462,Bright/Dark,Loud/Quiet,SimData,0.610714286,Kazuki
+463,Loud/Quiet,Red/Blue,SimData,0.724637681,Kazuki
+464,Red/Blue,Loud/Quiet,SimData,0.815384615,Kazuki
+465,Loud/Quiet,Red/Green,SimData,0.702702703,Kazuki
+466,Red/Green,Loud/Quiet,SimData,0.816666667,Kazuki
+467,Loud/Quiet,Red/Yellow,SimData,0.869565217,Kazuki
+468,Red/Yellow,Loud/Quiet,SimData,0.741176471,Kazuki
+469,Loud/Quiet,Yellow/Blue,SimData,0.617647059,Kazuki
+470,Yellow/Blue,Loud/Quiet,SimData,0.642857143,Kazuki
+471,Loud/Quiet,Noisy/Tonal,SimData,0.914285714,Kazuki
+472,Noisy/Tonal,Loud/Quiet,SimData,0.910714286,Kazuki
+473,Loud/Quiet,High Pitch/Low Pitch,SimData,1,Kazuki
+474,High Pitch/Low Pitch,Loud/Quiet,SimData,1,Kazuki
+475,Loud/Quiet,Jagged/Curvy,SimData,0.375,Kazuki
+476,Jagged/Curvy,Loud/Quiet,SimData,0.367857143,Kazuki
+477,Loud/Quiet,Large/Small,SimData,1,Kazuki
+478,Large/Small,Loud/Quiet,SimData,1,Kazuki
+479,Loud/Quiet,Fast/Slow,SimData,0.732142857,Kazuki
+480,Fast/Slow,Loud/Quiet,SimData,0.714285714,Kazuki
+481,Bright/Dark,Red/Blue,SimData,0.774647887,Kazuki
+482,Red/Blue,Bright/Dark,SimData,0.791044776,Kazuki
+483,Bright/Dark,Red/Green,SimData,0.821428571,Kazuki
+484,Red/Green,Bright/Dark,SimData,0.757142857,Kazuki
+485,Bright/Dark,Red/Yellow,SimData,0.476190476,Kazuki
+486,Red/Yellow,Bright/Dark,SimData,0.35443038,Kazuki
+487,Bright/Dark,Yellow/Blue,SimData,0.951612903,Kazuki
+488,Yellow/Blue,Bright/Dark,SimData,0.875,Kazuki
+489,Bright/Dark,Noisy/Tonal,SimData,0.585714286,Kazuki
+490,Noisy/Tonal,Bright/Dark,SimData,0.628571429,Kazuki
+491,Bright/Dark,High Pitch/Low Pitch,SimData,0.717857143,Kazuki
+492,High Pitch/Low Pitch,Bright/Dark,SimData,0.696428571,Kazuki
+493,Bright/Dark,Jagged/Curvy,SimData,0.510714286,Kazuki
+494,Jagged/Curvy,Bright/Dark,SimData,0.464285714,Kazuki
+495,Bright/Dark,Large/Small,SimData,0.607142857,Kazuki
+496,Large/Small,Bright/Dark,SimData,0.578571429,Kazuki
+497,Bright/Dark,Fast/Slow,SimData,0.842857143,Kazuki
+498,Fast/Slow,Bright/Dark,SimData,0.910714286,Kazuki
+499,Red/Blue,Noisy/Tonal,SimData,0.31147541,Kazuki
+500,Noisy/Tonal,Red/Blue,SimData,0.307692308,Kazuki
+501,Red/Blue,High Pitch/Low Pitch,SimData,0.549295775,Kazuki
+502,High Pitch/Low Pitch,Red/Blue,SimData,0.56,Kazuki
+503,Red/Blue,Jagged/Curvy,SimData,0.442622951,Kazuki
+504,Jagged/Curvy,Red/Blue,SimData,0.523076923,Kazuki
+505,Red/Blue,Large/Small,SimData,0.579710145,Kazuki
+506,Large/Small,Red/Blue,SimData,0.520547945,Kazuki
+507,Red/Blue,Fast/Slow,SimData,0.13559322,Kazuki
+508,Fast/Slow,Red/Blue,SimData,0.047619048,Kazuki
+509,Red/Green,Noisy/Tonal,SimData,0.257142857,Kazuki
+510,Noisy/Tonal,Red/Green,SimData,0.261904762,Kazuki
+511,Red/Green,High Pitch/Low Pitch,SimData,0.532258065,Kazuki
+512,High Pitch/Low Pitch,Red/Green,SimData,0.513157895,Kazuki
+513,Red/Green,Jagged/Curvy,SimData,0.5,Kazuki
+514,Jagged/Curvy,Red/Green,SimData,0.522727273,Kazuki
+515,Red/Green,Large/Small,SimData,0.5,Kazuki
+516,Large/Small,Red/Green,SimData,0.677419355,Kazuki
+517,Red/Green,Fast/Slow,SimData,0.033333333,Kazuki
+518,Fast/Slow,Red/Green,SimData,0.094594595,Kazuki
+519,Red/Yellow,Noisy/Tonal,SimData,0.37037037,Kazuki
+520,Noisy/Tonal,Red/Yellow,SimData,0.323076923,Kazuki
+521,Red/Yellow,High Pitch/Low Pitch,SimData,0.506493506,Kazuki
+522,High Pitch/Low Pitch,Red/Yellow,SimData,0.360655738,Kazuki
+523,Red/Yellow,Jagged/Curvy,SimData,0.519480519,Kazuki
+524,Jagged/Curvy,Red/Yellow,SimData,0.573770492,Kazuki
+525,Red/Yellow,Large/Small,SimData,0.586206897,Kazuki
+526,Large/Small,Red/Yellow,SimData,0.492957746,Kazuki
+527,Red/Yellow,Fast/Slow,SimData,0.218390805,Kazuki
+528,Fast/Slow,Red/Yellow,SimData,0.225352113,Kazuki
+529,Yellow/Blue,Noisy/Tonal,SimData,0.808823529,Kazuki
+530,Noisy/Tonal,Yellow/Blue,SimData,0.833333333,Kazuki
+531,Yellow/Blue,High Pitch/Low Pitch,SimData,0.557142857,Kazuki
+532,High Pitch/Low Pitch,Yellow/Blue,SimData,0.691176471,Kazuki
+533,Yellow/Blue,Jagged/Curvy,SimData,0.147058824,Kazuki
+534,Jagged/Curvy,Yellow/Blue,SimData,0.272727273,Kazuki
+535,Yellow/Blue,Large/Small,SimData,0.197368421,Kazuki
+536,Large/Small,Yellow/Blue,SimData,0.202702703,Kazuki
+537,Yellow/Blue,Fast/Slow,SimData,0.594594595,Kazuki
+538,Fast/Slow,Yellow/Blue,SimData,0.625,Kazuki
+539,Noisy/Tonal,High Pitch/Low Pitch,SimData,0.907142857,Kazuki
+540,High Pitch/Low Pitch,Noisy/Tonal,SimData,0.889285714,Kazuki
+541,Noisy/Tonal,Jagged/Curvy,SimData,1,Kazuki
+542,Jagged/Curvy,Noisy/Tonal,SimData,1,Kazuki
+543,Noisy/Tonal,Large/Small,SimData,0.678571429,Kazuki
+544,Large/Small,Noisy/Tonal,SimData,0.714285714,Kazuki
+545,Noisy/Tonal,Fast/Slow,SimData,0.703571429,Kazuki
+546,Fast/Slow,Noisy/Tonal,SimData,0.678571429,Kazuki
+547,High Pitch/Low Pitch,Jagged/Curvy,SimData,1,Kazuki
+548,Jagged/Curvy,High Pitch/Low Pitch,SimData,1,Kazuki
+549,High Pitch/Low Pitch,Large/Small,SimData,0.528571429,Kazuki
+550,Large/Small,High Pitch/Low Pitch,SimData,0.617857143,Kazuki
+551,High Pitch/Low Pitch,Fast/Slow,SimData,1,Kazuki
+552,Fast/Slow,High Pitch/Low Pitch,SimData,1,Kazuki
+553,Jagged/Curvy,Large/Small,SimData,0,Kazuki
+554,Large/Small,Jagged/Curvy,SimData,0,Kazuki
+555,Jagged/Curvy,Fast/Slow,SimData,1,Kazuki
+556,Fast/Slow,Jagged/Curvy,SimData,1,Kazuki
+557,Large/Small,Fast/Slow,SimData,0.210714286,Kazuki
+558,Fast/Slow,Large/Small,SimData,0.278571429,Kazuki

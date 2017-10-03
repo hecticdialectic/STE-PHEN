@@ -1,0 +1,94 @@
+Comparison,Prediction
+Affect EB-Amp,0.5
+Affect EB-Brightness,0.5
+Affect EB-Color RB,0.5
+Affect EB-Color RG,0.5
+Affect EB-Color RY,0.5
+Affect EB-Color YB,0.5
+Affect EB-Noise,0.5
+Affect EB-Pitch,0.5
+Affect EB-Shape,0.5
+Affect EB-Size,0.5
+Affect EB-Speed,0.5
+Affect HS-Amp,0.5
+Affect HS-Brightness,0.5
+Affect HS-Color RB,0.5
+Affect HS-Color RG,0.5
+Affect HS-Color RY,0.5
+Affect HS-Color YB,0.5
+Affect HS-Noise,0.5
+Affect HS-Pitch,0.5
+Affect HS-Shape,0.5
+Affect HS-Size,0.5
+Affect HS-Speed,0.5
+Affect PD-Amp,0.5
+Affect PD-Brightness,0.5
+Affect PD-Color RB,0.5
+Affect PD-Color RG,0.5
+Affect PD-Color RY,0.5
+Affect PD-Color YB,0.5
+Affect PD-Noise,0.5
+Affect PD-Pitch,0.5
+Affect PD-Shape,0.5
+Affect PD-Size,0.5
+Affect PD-Speed,0.5
+Affect SC-Amp,0.5
+Affect SC-Brightness,0.5
+Affect SC-Color RB,0.5
+Affect SC-Color RG,0.5
+Affect SC-Color RY,0.5
+Affect SC-Color YB,0.5
+Affect SC-Noise,0.5
+Affect SC-Pitch,0.5
+Affect SC-Shape,0.5
+Affect SC-Size,0.5
+Affect SC-Speed,0.5
+Amp-Brightness,0.7
+Amp-Color RB,0.5
+Amp-Color RG,0.5
+Amp-Color RY,0.5
+Amp-Color YB,0.5
+Amp-Noise,0.8
+Amp-Pitch,0.8
+Amp-Shape,0.5
+Amp-Size,0.7
+Amp-Speed,0.5
+Brightness-Color RB,0.6
+Brightness-Color RG,0.6
+Brightness-Color RY,0.6
+Brightness-Color YB,0.6
+Brightness-Noise,0.6
+Brightness-Pitch,0.6
+Brightness-Shape,0.5
+Brightness-Size,0.5
+Brightness-Speed,0.5
+Color RB-Noise,0.5
+Color RB-Pitch,0.5
+Color RB-Shape,0.5
+Color RB-Size,0.5
+Color RB-Speed,0.5
+Color RG-Noise,0.5
+Color RG-Pitch,0.5
+Color RG-Shape,0.5
+Color RG-Size,0.5
+Color RG-Speed,0.5
+Color RY-Noise,0.5
+Color RY-Pitch,0.5
+Color RY-Shape,0.5
+Color RY-Size,0.5
+Color RY-Speed,0.5
+Color YB-Noise,0.5
+Color YB-Pitch,0.5
+Color YB-Shape,0.5
+Color YB-Size,0.5
+Color YB-Speed,0.5
+Noise-Pitch,0.8
+Noise-Shape,0.5
+Noise-Size,0.8
+Noise-Speed,0.5
+Pitch-Shape,0.5
+Pitch-Size,0.6
+Pitch-Speed,0.5
+Shape-Size,0.5
+Shape-Speed,0.5
+Size-Speed,0.3

@@ -1,0 +1,94 @@
+"","Inducer","Concurrent","Comparison","Prediction"
+"1","Affect EB","Amp","Affect EB-Amp",0.9
+"2","Affect EB","Brightness","Affect EB-Brightness",0.9
+"3","Affect EB","Color RB","Affect EB-Color RB",0.5
+"4","Affect EB","Color RG","Affect EB-Color RG",0.5
+"5","Affect EB","Color RY","Affect EB-Color RY",0.5
+"6","Affect EB","Color YB","Affect EB-Color YB",0.6
+"7","Affect EB","Noise","Affect EB-Noise",0.2
+"8","Affect EB","Pitch","Affect EB-Pitch",0.95
+"9","Affect EB","Shape","Affect EB-Shape",0.65
+"10","Affect EB","Size","Affect EB-Size",0.45
+"11","Affect EB","Speed","Affect EB-Speed",0.95
+"12","Affect HS","Amp","Affect HS-Amp",0.9
+"13","Affect HS","Brightness","Affect HS-Brightness",0.9
+"14","Affect HS","Color RB","Affect HS-Color RB",0.75
+"15","Affect HS","Color RG","Affect HS-Color RG",0.5
+"16","Affect HS","Color RY","Affect HS-Color RY",0.5
+"17","Affect HS","Color YB","Affect HS-Color YB",0.8
+"18","Affect HS","Noise","Affect HS-Noise",0.15
+"19","Affect HS","Pitch","Affect HS-Pitch",0.9
+"20","Affect HS","Shape","Affect HS-Shape",0.4
+"21","Affect HS","Size","Affect HS-Size",0.6
+"22","Affect HS","Speed","Affect HS-Speed",0.9
+"23","Affect PD","Amp","Affect PD-Amp",0.5
+"24","Affect PD","Brightness","Affect PD-Brightness",0.9
+"25","Affect PD","Color RB","Affect PD-Color RB",0.45
+"26","Affect PD","Color RG","Affect PD-Color RG",0.25
+"27","Affect PD","Color RY","Affect PD-Color RY",0.45
+"28","Affect PD","Color YB","Affect PD-Color YB",0.5
+"29","Affect PD","Noise","Affect PD-Noise",0.1
+"30","Affect PD","Pitch","Affect PD-Pitch",0.5
+"31","Affect PD","Shape","Affect PD-Shape",0.15
+"32","Affect PD","Size","Affect PD-Size",0.6
+"33","Affect PD","Speed","Affect PD-Speed",0.15
+"34","Affect SC","Amp","Affect SC-Amp",0.9
+"35","Affect SC","Brightness","Affect SC-Brightness",0.65
+"36","Affect SC","Color RB","Affect SC-Color RB",0.5
+"37","Affect SC","Color RG","Affect SC-Color RG",0.8
+"38","Affect SC","Color RY","Affect SC-Color RY",0.6
+"39","Affect SC","Color YB","Affect SC-Color YB",0.5
+"40","Affect SC","Noise","Affect SC-Noise",0.95
+"41","Affect SC","Pitch","Affect SC-Pitch",0.95
+"42","Affect SC","Shape","Affect SC-Shape",0.95
+"43","Affect SC","Size","Affect SC-Size",0.5
+"44","Affect SC","Speed","Affect SC-Speed",0.9
+"49","Amp","Brightness","Amp-Brightness",0.6
+"50","Amp","Color RB","Amp-Color RB",0.5
+"51","Amp","Color RG","Amp-Color RG",0.7
+"52","Amp","Color RY","Amp-Color RY",0.5
+"53","Amp","Color YB","Amp-Color YB",0.7
+"54","Amp","Noise","Amp-Noise",0.6
+"55","Amp","Pitch","Amp-Pitch",0.45
+"56","Amp","Shape","Amp-Shape",0.45
+"57","Amp","Size","Amp-Size",0.8
+"58","Amp","Speed","Amp-Speed",0.2
+"64","Brightness","Color RB","Brightness-Color RB",0.5
+"65","Brightness","Color RG","Brightness-Color RG",0.5
+"66","Brightness","Color RY","Brightness-Color RY",0.5
+"67","Brightness","Color YB","Brightness-Color YB",0.5
+"68","Brightness","Noise","Brightness-Noise",0.3
+"69","Brightness","Pitch","Brightness-Pitch",0.95
+"70","Brightness","Shape","Brightness-Shape",0.5
+"71","Brightness","Size","Brightness-Size",0.5
+"72","Brightness","Speed","Brightness-Speed",0.7
+"79","Color RB","Noise","Color RB-Noise",0.5
+"80","Color RB","Pitch","Color RB-Pitch",0.5
+"81","Color RB","Shape","Color RB-Shape",0.6
+"82","Color RB","Size","Color RB-Size",0.5
+"83","Color RB","Speed","Color RB-Speed",0.6
+"90","Color RG","Noise","Color RG-Noise",0.7
+"91","Color RG","Pitch","Color RG-Pitch",0.7
+"92","Color RG","Shape","Color RG-Shape",0.6
+"93","Color RG","Size","Color RG-Size",0.5
+"94","Color RG","Speed","Color RG-Speed",0.5
+"101","Color RY","Noise","Color RY-Noise",0.5
+"102","Color RY","Pitch","Color RY-Pitch",0.5
+"103","Color RY","Shape","Color RY-Shape",0.5
+"104","Color RY","Size","Color RY-Size",0.5
+"105","Color RY","Speed","Color RY-Speed",0.5
+"112","Color YB","Noise","Color YB-Noise",0.5
+"113","Color YB","Pitch","Color YB-Pitch",0.7
+"114","Color YB","Shape","Color YB-Shape",0.6
+"115","Color YB","Size","Color YB-Size",0.5
+"116","Color YB","Speed","Color YB-Speed",0.6
+"127","Noise","Pitch","Noise-Pitch",0.6
+"128","Noise","Shape","Noise-Shape",0.95
+"129","Noise","Size","Noise-Size",0.5
+"130","Noise","Speed","Noise-Speed",0.4
+"142","Pitch","Shape","Pitch-Shape",0.95
+"143","Pitch","Size","Pitch-Size",0.1
+"144","Pitch","Speed","Pitch-Speed",0.9
+"157","Shape","Size","Shape-Size",0.5
+"158","Shape","Speed","Shape-Speed",0.8
+"172","Size","Speed","Size-Speed",0.35

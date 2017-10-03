@@ -1,0 +1,559 @@
+,Inducer2,Concurrent2,Source,value,Student
+1,Excited/Bored,Loud/Quiet,Prediction,0.9,Jeroen
+2,Loud/Quiet,Excited/Bored,Prediction,0.9,Jeroen
+3,Excited/Bored,Bright/Dark,Prediction,0.85,Jeroen
+4,Bright/Dark,Excited/Bored,Prediction,0.85,Jeroen
+5,Excited/Bored,Red/Blue,Prediction,0.61,Jeroen
+6,Red/Blue,Excited/Bored,Prediction,0.61,Jeroen
+7,Excited/Bored,Red/Green,Prediction,0.07,Jeroen
+8,Red/Green,Excited/Bored,Prediction,0.07,Jeroen
+9,Excited/Bored,Red/Yellow,Prediction,0.38,Jeroen
+10,Red/Yellow,Excited/Bored,Prediction,0.38,Jeroen
+11,Excited/Bored,Yellow/Blue,Prediction,0.83,Jeroen
+12,Yellow/Blue,Excited/Bored,Prediction,0.83,Jeroen
+13,Excited/Bored,Noisy/Tonal,Prediction,0.29,Jeroen
+14,Noisy/Tonal,Excited/Bored,Prediction,0.29,Jeroen
+15,Excited/Bored,High Pitch/Low Pitch,Prediction,0.52,Jeroen
+16,High Pitch/Low Pitch,Excited/Bored,Prediction,0.52,Jeroen
+17,Excited/Bored,Jagged/Curvy,Prediction,0.58,Jeroen
+18,Jagged/Curvy,Excited/Bored,Prediction,0.58,Jeroen
+19,Excited/Bored,Large/Small,Prediction,0.83,Jeroen
+20,Large/Small,Excited/Bored,Prediction,0.83,Jeroen
+21,Excited/Bored,Fast/Slow,Prediction,0.94,Jeroen
+22,Fast/Slow,Excited/Bored,Prediction,0.94,Jeroen
+23,Happy/Sad,Loud/Quiet,Prediction,0.87,Jeroen
+24,Loud/Quiet,Happy/Sad,Prediction,0.87,Jeroen
+25,Happy/Sad,Bright/Dark,Prediction,0.96,Jeroen
+26,Bright/Dark,Happy/Sad,Prediction,0.96,Jeroen
+27,Happy/Sad,Red/Blue,Prediction,NA,Jeroen
+28,Red/Blue,Happy/Sad,Prediction,NA,Jeroen
+29,Happy/Sad,Red/Green,Prediction,0.14,Jeroen
+30,Red/Green,Happy/Sad,Prediction,0.14,Jeroen
+31,Happy/Sad,Red/Yellow,Prediction,0.24,Jeroen
+32,Red/Yellow,Happy/Sad,Prediction,0.24,Jeroen
+33,Happy/Sad,Yellow/Blue,Prediction,0.9,Jeroen
+34,Yellow/Blue,Happy/Sad,Prediction,0.9,Jeroen
+35,Happy/Sad,Noisy/Tonal,Prediction,0.17,Jeroen
+36,Noisy/Tonal,Happy/Sad,Prediction,0.17,Jeroen
+37,Happy/Sad,High Pitch/Low Pitch,Prediction,0.56,Jeroen
+38,High Pitch/Low Pitch,Happy/Sad,Prediction,0.56,Jeroen
+39,Happy/Sad,Jagged/Curvy,Prediction,0.5,Jeroen
+40,Jagged/Curvy,Happy/Sad,Prediction,0.5,Jeroen
+41,Happy/Sad,Large/Small,Prediction,0.9,Jeroen
+42,Large/Small,Happy/Sad,Prediction,0.9,Jeroen
+43,Happy/Sad,Fast/Slow,Prediction,0.99,Jeroen
+44,Fast/Slow,Happy/Sad,Prediction,0.99,Jeroen
+45,Pleased/Disgusted,Loud/Quiet,Prediction,0.48,Jeroen
+46,Loud/Quiet,Pleased/Disgusted,Prediction,0.48,Jeroen
+47,Pleased/Disgusted,Bright/Dark,Prediction,NA,Jeroen
+48,Bright/Dark,Pleased/Disgusted,Prediction,NA,Jeroen
+49,Pleased/Disgusted,Red/Blue,Prediction,0.58,Jeroen
+50,Red/Blue,Pleased/Disgusted,Prediction,0.58,Jeroen
+51,Pleased/Disgusted,Red/Green,Prediction,0,Jeroen
+52,Red/Green,Pleased/Disgusted,Prediction,0,Jeroen
+53,Pleased/Disgusted,Red/Yellow,Prediction,0.19,Jeroen
+54,Red/Yellow,Pleased/Disgusted,Prediction,0.19,Jeroen
+55,Pleased/Disgusted,Yellow/Blue,Prediction,0.83,Jeroen
+56,Yellow/Blue,Pleased/Disgusted,Prediction,0.83,Jeroen
+57,Pleased/Disgusted,Noisy/Tonal,Prediction,0.1,Jeroen
+58,Noisy/Tonal,Pleased/Disgusted,Prediction,0.1,Jeroen
+59,Pleased/Disgusted,High Pitch/Low Pitch,Prediction,0.56,Jeroen
+60,High Pitch/Low Pitch,Pleased/Disgusted,Prediction,0.56,Jeroen
+61,Pleased/Disgusted,Jagged/Curvy,Prediction,0.32,Jeroen
+62,Jagged/Curvy,Pleased/Disgusted,Prediction,0.32,Jeroen
+63,Pleased/Disgusted,Large/Small,Prediction,0.84,Jeroen
+64,Large/Small,Pleased/Disgusted,Prediction,0.84,Jeroen
+65,Pleased/Disgusted,Fast/Slow,Prediction,NA,Jeroen
+66,Fast/Slow,Pleased/Disgusted,Prediction,NA,Jeroen
+67,Stressed/Calm,Loud/Quiet,Prediction,0.96,Jeroen
+68,Loud/Quiet,Stressed/Calm,Prediction,0.96,Jeroen
+69,Stressed/Calm,Bright/Dark,Prediction,NA,Jeroen
+70,Bright/Dark,Stressed/Calm,Prediction,NA,Jeroen
+71,Stressed/Calm,Red/Blue,Prediction,0.89,Jeroen
+72,Red/Blue,Stressed/Calm,Prediction,0.89,Jeroen
+73,Stressed/Calm,Red/Green,Prediction,0.79,Jeroen
+74,Red/Green,Stressed/Calm,Prediction,0.79,Jeroen
+75,Stressed/Calm,Red/Yellow,Prediction,1,Jeroen
+76,Red/Yellow,Stressed/Calm,Prediction,1,Jeroen
+77,Stressed/Calm,Yellow/Blue,Prediction,0.74,Jeroen
+78,Yellow/Blue,Stressed/Calm,Prediction,0.74,Jeroen
+79,Stressed/Calm,Noisy/Tonal,Prediction,0.77,Jeroen
+80,Noisy/Tonal,Stressed/Calm,Prediction,0.77,Jeroen
+81,Stressed/Calm,High Pitch/Low Pitch,Prediction,NA,Jeroen
+82,High Pitch/Low Pitch,Stressed/Calm,Prediction,NA,Jeroen
+83,Stressed/Calm,Jagged/Curvy,Prediction,NA,Jeroen
+84,Jagged/Curvy,Stressed/Calm,Prediction,NA,Jeroen
+85,Stressed/Calm,Large/Small,Prediction,NA,Jeroen
+86,Large/Small,Stressed/Calm,Prediction,NA,Jeroen
+87,Stressed/Calm,Fast/Slow,Prediction,0.99,Jeroen
+88,Fast/Slow,Stressed/Calm,Prediction,0.99,Jeroen
+89,Loud/Quiet,Bright/Dark,Prediction,0.82,Jeroen
+90,Bright/Dark,Loud/Quiet,Prediction,0.82,Jeroen
+91,Loud/Quiet,Red/Blue,Prediction,0.72,Jeroen
+92,Red/Blue,Loud/Quiet,Prediction,0.72,Jeroen
+93,Loud/Quiet,Red/Green,Prediction,NA,Jeroen
+94,Red/Green,Loud/Quiet,Prediction,NA,Jeroen
+95,Loud/Quiet,Red/Yellow,Prediction,0.6,Jeroen
+96,Red/Yellow,Loud/Quiet,Prediction,0.6,Jeroen
+97,Loud/Quiet,Yellow/Blue,Prediction,0.93,Jeroen
+98,Yellow/Blue,Loud/Quiet,Prediction,0.93,Jeroen
+99,Loud/Quiet,Noisy/Tonal,Prediction,0.56,Jeroen
+100,Noisy/Tonal,Loud/Quiet,Prediction,0.56,Jeroen
+101,Loud/Quiet,High Pitch/Low Pitch,Prediction,0.63,Jeroen
+102,High Pitch/Low Pitch,Loud/Quiet,Prediction,0.63,Jeroen
+103,Loud/Quiet,Jagged/Curvy,Prediction,NA,Jeroen
+104,Jagged/Curvy,Loud/Quiet,Prediction,NA,Jeroen
+105,Loud/Quiet,Large/Small,Prediction,0.84,Jeroen
+106,Large/Small,Loud/Quiet,Prediction,0.84,Jeroen
+107,Loud/Quiet,Fast/Slow,Prediction,0.83,Jeroen
+108,Fast/Slow,Loud/Quiet,Prediction,0.83,Jeroen
+109,Bright/Dark,Red/Blue,Prediction,0.68,Jeroen
+110,Red/Blue,Bright/Dark,Prediction,0.68,Jeroen
+111,Bright/Dark,Red/Green,Prediction,0.51,Jeroen
+112,Red/Green,Bright/Dark,Prediction,0.51,Jeroen
+113,Bright/Dark,Red/Yellow,Prediction,NA,Jeroen
+114,Red/Yellow,Bright/Dark,Prediction,NA,Jeroen
+115,Bright/Dark,Yellow/Blue,Prediction,0.83,Jeroen
+116,Yellow/Blue,Bright/Dark,Prediction,0.83,Jeroen
+117,Bright/Dark,Noisy/Tonal,Prediction,0.48,Jeroen
+118,Noisy/Tonal,Bright/Dark,Prediction,0.48,Jeroen
+119,Bright/Dark,High Pitch/Low Pitch,Prediction,NA,Jeroen
+120,High Pitch/Low Pitch,Bright/Dark,Prediction,NA,Jeroen
+121,Bright/Dark,Jagged/Curvy,Prediction,NA,Jeroen
+122,Jagged/Curvy,Bright/Dark,Prediction,NA,Jeroen
+123,Bright/Dark,Large/Small,Prediction,0.8,Jeroen
+124,Large/Small,Bright/Dark,Prediction,0.8,Jeroen
+125,Bright/Dark,Fast/Slow,Prediction,0.84,Jeroen
+126,Fast/Slow,Bright/Dark,Prediction,0.84,Jeroen
+127,Red/Blue,Noisy/Tonal,Prediction,0.41,Jeroen
+128,Noisy/Tonal,Red/Blue,Prediction,0.41,Jeroen
+129,Red/Blue,High Pitch/Low Pitch,Prediction,NA,Jeroen
+130,High Pitch/Low Pitch,Red/Blue,Prediction,NA,Jeroen
+131,Red/Blue,Jagged/Curvy,Prediction,0.59,Jeroen
+132,Jagged/Curvy,Red/Blue,Prediction,0.59,Jeroen
+133,Red/Blue,Large/Small,Prediction,0.68,Jeroen
+134,Large/Small,Red/Blue,Prediction,0.68,Jeroen
+135,Red/Blue,Fast/Slow,Prediction,0.78,Jeroen
+136,Fast/Slow,Red/Blue,Prediction,0.78,Jeroen
+137,Red/Green,Noisy/Tonal,Prediction,0.37,Jeroen
+138,Noisy/Tonal,Red/Green,Prediction,0.37,Jeroen
+139,Red/Green,High Pitch/Low Pitch,Prediction,0.46,Jeroen
+140,High Pitch/Low Pitch,Red/Green,Prediction,0.46,Jeroen
+141,Red/Green,Jagged/Curvy,Prediction,0.43,Jeroen
+142,Jagged/Curvy,Red/Green,Prediction,0.43,Jeroen
+143,Red/Green,Large/Small,Prediction,NA,Jeroen
+144,Large/Small,Red/Green,Prediction,NA,Jeroen
+145,Red/Green,Fast/Slow,Prediction,NA,Jeroen
+146,Fast/Slow,Red/Green,Prediction,NA,Jeroen
+147,Red/Yellow,Noisy/Tonal,Prediction,0.4,Jeroen
+148,Noisy/Tonal,Red/Yellow,Prediction,0.4,Jeroen
+149,Red/Yellow,High Pitch/Low Pitch,Prediction,0.49,Jeroen
+150,High Pitch/Low Pitch,Red/Yellow,Prediction,0.49,Jeroen
+151,Red/Yellow,Jagged/Curvy,Prediction,NA,Jeroen
+152,Jagged/Curvy,Red/Yellow,Prediction,NA,Jeroen
+153,Red/Yellow,Large/Small,Prediction,NA,Jeroen
+154,Large/Small,Red/Yellow,Prediction,NA,Jeroen
+155,Red/Yellow,Fast/Slow,Prediction,NA,Jeroen
+156,Fast/Slow,Red/Yellow,Prediction,NA,Jeroen
+157,Yellow/Blue,Noisy/Tonal,Prediction,0.62,Jeroen
+158,Noisy/Tonal,Yellow/Blue,Prediction,0.62,Jeroen
+159,Yellow/Blue,High Pitch/Low Pitch,Prediction,0.75,Jeroen
+160,High Pitch/Low Pitch,Yellow/Blue,Prediction,0.75,Jeroen
+161,Yellow/Blue,Jagged/Curvy,Prediction,NA,Jeroen
+162,Jagged/Curvy,Yellow/Blue,Prediction,NA,Jeroen
+163,Yellow/Blue,Large/Small,Prediction,0.84,Jeroen
+164,Large/Small,Yellow/Blue,Prediction,0.84,Jeroen
+165,Yellow/Blue,Fast/Slow,Prediction,0.88,Jeroen
+166,Fast/Slow,Yellow/Blue,Prediction,0.88,Jeroen
+167,Noisy/Tonal,High Pitch/Low Pitch,Prediction,0.47,Jeroen
+168,High Pitch/Low Pitch,Noisy/Tonal,Prediction,0.47,Jeroen
+169,Noisy/Tonal,Jagged/Curvy,Prediction,0.49,Jeroen
+170,Jagged/Curvy,Noisy/Tonal,Prediction,0.49,Jeroen
+171,Noisy/Tonal,Large/Small,Prediction,0.52,Jeroen
+172,Large/Small,Noisy/Tonal,Prediction,0.52,Jeroen
+173,Noisy/Tonal,Fast/Slow,Prediction,0.6,Jeroen
+174,Fast/Slow,Noisy/Tonal,Prediction,0.6,Jeroen
+175,High Pitch/Low Pitch,Jagged/Curvy,Prediction,0.57,Jeroen
+176,Jagged/Curvy,High Pitch/Low Pitch,Prediction,0.57,Jeroen
+177,High Pitch/Low Pitch,Large/Small,Prediction,0.59,Jeroen
+178,Large/Small,High Pitch/Low Pitch,Prediction,0.59,Jeroen
+179,High Pitch/Low Pitch,Fast/Slow,Prediction,0.75,Jeroen
+180,Fast/Slow,High Pitch/Low Pitch,Prediction,0.75,Jeroen
+181,Jagged/Curvy,Large/Small,Prediction,NA,Jeroen
+182,Large/Small,Jagged/Curvy,Prediction,NA,Jeroen
+183,Jagged/Curvy,Fast/Slow,Prediction,0.71,Jeroen
+184,Fast/Slow,Jagged/Curvy,Prediction,0.71,Jeroen
+185,Large/Small,Fast/Slow,Prediction,0.72,Jeroen
+186,Fast/Slow,Large/Small,Prediction,0.72,Jeroen
+187,Excited/Bored,Loud/Quiet,ImputedPrediction,0.9,Jeroen
+188,Loud/Quiet,Excited/Bored,ImputedPrediction,0.9,Jeroen
+189,Excited/Bored,Bright/Dark,ImputedPrediction,0.85,Jeroen
+190,Bright/Dark,Excited/Bored,ImputedPrediction,0.85,Jeroen
+191,Excited/Bored,Red/Blue,ImputedPrediction,0.61,Jeroen
+192,Red/Blue,Excited/Bored,ImputedPrediction,0.61,Jeroen
+193,Excited/Bored,Red/Green,ImputedPrediction,0.07,Jeroen
+194,Red/Green,Excited/Bored,ImputedPrediction,0.07,Jeroen
+195,Excited/Bored,Red/Yellow,ImputedPrediction,0.38,Jeroen
+196,Red/Yellow,Excited/Bored,ImputedPrediction,0.38,Jeroen
+197,Excited/Bored,Yellow/Blue,ImputedPrediction,0.83,Jeroen
+198,Yellow/Blue,Excited/Bored,ImputedPrediction,0.83,Jeroen
+199,Excited/Bored,Noisy/Tonal,ImputedPrediction,0.29,Jeroen
+200,Noisy/Tonal,Excited/Bored,ImputedPrediction,0.29,Jeroen
+201,Excited/Bored,High Pitch/Low Pitch,ImputedPrediction,0.52,Jeroen
+202,High Pitch/Low Pitch,Excited/Bored,ImputedPrediction,0.52,Jeroen
+203,Excited/Bored,Jagged/Curvy,ImputedPrediction,0.58,Jeroen
+204,Jagged/Curvy,Excited/Bored,ImputedPrediction,0.58,Jeroen
+205,Excited/Bored,Large/Small,ImputedPrediction,0.83,Jeroen
+206,Large/Small,Excited/Bored,ImputedPrediction,0.83,Jeroen
+207,Excited/Bored,Fast/Slow,ImputedPrediction,0.94,Jeroen
+208,Fast/Slow,Excited/Bored,ImputedPrediction,0.94,Jeroen
+209,Happy/Sad,Loud/Quiet,ImputedPrediction,0.87,Jeroen
+210,Loud/Quiet,Happy/Sad,ImputedPrediction,0.87,Jeroen
+211,Happy/Sad,Bright/Dark,ImputedPrediction,0.96,Jeroen
+212,Bright/Dark,Happy/Sad,ImputedPrediction,0.96,Jeroen
+213,Happy/Sad,Red/Blue,ImputedPrediction,0.63369863,Jeroen
+214,Red/Blue,Happy/Sad,ImputedPrediction,0.63369863,Jeroen
+215,Happy/Sad,Red/Green,ImputedPrediction,0.14,Jeroen
+216,Red/Green,Happy/Sad,ImputedPrediction,0.14,Jeroen
+217,Happy/Sad,Red/Yellow,ImputedPrediction,0.24,Jeroen
+218,Red/Yellow,Happy/Sad,ImputedPrediction,0.24,Jeroen
+219,Happy/Sad,Yellow/Blue,ImputedPrediction,0.9,Jeroen
+220,Yellow/Blue,Happy/Sad,ImputedPrediction,0.9,Jeroen
+221,Happy/Sad,Noisy/Tonal,ImputedPrediction,0.17,Jeroen
+222,Noisy/Tonal,Happy/Sad,ImputedPrediction,0.17,Jeroen
+223,Happy/Sad,High Pitch/Low Pitch,ImputedPrediction,0.56,Jeroen
+224,High Pitch/Low Pitch,Happy/Sad,ImputedPrediction,0.56,Jeroen
+225,Happy/Sad,Jagged/Curvy,ImputedPrediction,0.5,Jeroen
+226,Jagged/Curvy,Happy/Sad,ImputedPrediction,0.5,Jeroen
+227,Happy/Sad,Large/Small,ImputedPrediction,0.9,Jeroen
+228,Large/Small,Happy/Sad,ImputedPrediction,0.9,Jeroen
+229,Happy/Sad,Fast/Slow,ImputedPrediction,0.99,Jeroen
+230,Fast/Slow,Happy/Sad,ImputedPrediction,0.99,Jeroen
+231,Pleased/Disgusted,Loud/Quiet,ImputedPrediction,0.48,Jeroen
+232,Loud/Quiet,Pleased/Disgusted,ImputedPrediction,0.48,Jeroen
+233,Pleased/Disgusted,Bright/Dark,ImputedPrediction,0.63369863,Jeroen
+234,Bright/Dark,Pleased/Disgusted,ImputedPrediction,0.63369863,Jeroen
+235,Pleased/Disgusted,Red/Blue,ImputedPrediction,0.58,Jeroen
+236,Red/Blue,Pleased/Disgusted,ImputedPrediction,0.58,Jeroen
+237,Pleased/Disgusted,Red/Green,ImputedPrediction,0,Jeroen
+238,Red/Green,Pleased/Disgusted,ImputedPrediction,0,Jeroen
+239,Pleased/Disgusted,Red/Yellow,ImputedPrediction,0.19,Jeroen
+240,Red/Yellow,Pleased/Disgusted,ImputedPrediction,0.19,Jeroen
+241,Pleased/Disgusted,Yellow/Blue,ImputedPrediction,0.83,Jeroen
+242,Yellow/Blue,Pleased/Disgusted,ImputedPrediction,0.83,Jeroen
+243,Pleased/Disgusted,Noisy/Tonal,ImputedPrediction,0.1,Jeroen
+244,Noisy/Tonal,Pleased/Disgusted,ImputedPrediction,0.1,Jeroen
+245,Pleased/Disgusted,High Pitch/Low Pitch,ImputedPrediction,0.56,Jeroen
+246,High Pitch/Low Pitch,Pleased/Disgusted,ImputedPrediction,0.56,Jeroen
+247,Pleased/Disgusted,Jagged/Curvy,ImputedPrediction,0.32,Jeroen
+248,Jagged/Curvy,Pleased/Disgusted,ImputedPrediction,0.32,Jeroen
+249,Pleased/Disgusted,Large/Small,ImputedPrediction,0.84,Jeroen
+250,Large/Small,Pleased/Disgusted,ImputedPrediction,0.84,Jeroen
+251,Pleased/Disgusted,Fast/Slow,ImputedPrediction,0.63369863,Jeroen
+252,Fast/Slow,Pleased/Disgusted,ImputedPrediction,0.63369863,Jeroen
+253,Stressed/Calm,Loud/Quiet,ImputedPrediction,0.96,Jeroen
+254,Loud/Quiet,Stressed/Calm,ImputedPrediction,0.96,Jeroen
+255,Stressed/Calm,Bright/Dark,ImputedPrediction,0.63369863,Jeroen
+256,Bright/Dark,Stressed/Calm,ImputedPrediction,0.63369863,Jeroen
+257,Stressed/Calm,Red/Blue,ImputedPrediction,0.89,Jeroen
+258,Red/Blue,Stressed/Calm,ImputedPrediction,0.89,Jeroen
+259,Stressed/Calm,Red/Green,ImputedPrediction,0.79,Jeroen
+260,Red/Green,Stressed/Calm,ImputedPrediction,0.79,Jeroen
+261,Stressed/Calm,Red/Yellow,ImputedPrediction,1,Jeroen
+262,Red/Yellow,Stressed/Calm,ImputedPrediction,1,Jeroen
+263,Stressed/Calm,Yellow/Blue,ImputedPrediction,0.74,Jeroen
+264,Yellow/Blue,Stressed/Calm,ImputedPrediction,0.74,Jeroen
+265,Stressed/Calm,Noisy/Tonal,ImputedPrediction,0.77,Jeroen
+266,Noisy/Tonal,Stressed/Calm,ImputedPrediction,0.77,Jeroen
+267,Stressed/Calm,High Pitch/Low Pitch,ImputedPrediction,0.63369863,Jeroen
+268,High Pitch/Low Pitch,Stressed/Calm,ImputedPrediction,0.63369863,Jeroen
+269,Stressed/Calm,Jagged/Curvy,ImputedPrediction,0.63369863,Jeroen
+270,Jagged/Curvy,Stressed/Calm,ImputedPrediction,0.63369863,Jeroen
+271,Stressed/Calm,Large/Small,ImputedPrediction,0.63369863,Jeroen
+272,Large/Small,Stressed/Calm,ImputedPrediction,0.63369863,Jeroen
+273,Stressed/Calm,Fast/Slow,ImputedPrediction,0.99,Jeroen
+274,Fast/Slow,Stressed/Calm,ImputedPrediction,0.99,Jeroen
+275,Loud/Quiet,Bright/Dark,ImputedPrediction,0.82,Jeroen
+276,Bright/Dark,Loud/Quiet,ImputedPrediction,0.82,Jeroen
+277,Loud/Quiet,Red/Blue,ImputedPrediction,0.72,Jeroen
+278,Red/Blue,Loud/Quiet,ImputedPrediction,0.72,Jeroen
+279,Loud/Quiet,Red/Green,ImputedPrediction,0.63369863,Jeroen
+280,Red/Green,Loud/Quiet,ImputedPrediction,0.63369863,Jeroen
+281,Loud/Quiet,Red/Yellow,ImputedPrediction,0.6,Jeroen
+282,Red/Yellow,Loud/Quiet,ImputedPrediction,0.6,Jeroen
+283,Loud/Quiet,Yellow/Blue,ImputedPrediction,0.93,Jeroen
+284,Yellow/Blue,Loud/Quiet,ImputedPrediction,0.93,Jeroen
+285,Loud/Quiet,Noisy/Tonal,ImputedPrediction,0.56,Jeroen
+286,Noisy/Tonal,Loud/Quiet,ImputedPrediction,0.56,Jeroen
+287,Loud/Quiet,High Pitch/Low Pitch,ImputedPrediction,0.63,Jeroen
+288,High Pitch/Low Pitch,Loud/Quiet,ImputedPrediction,0.63,Jeroen
+289,Loud/Quiet,Jagged/Curvy,ImputedPrediction,0.63369863,Jeroen
+290,Jagged/Curvy,Loud/Quiet,ImputedPrediction,0.63369863,Jeroen
+291,Loud/Quiet,Large/Small,ImputedPrediction,0.84,Jeroen
+292,Large/Small,Loud/Quiet,ImputedPrediction,0.84,Jeroen
+293,Loud/Quiet,Fast/Slow,ImputedPrediction,0.83,Jeroen
+294,Fast/Slow,Loud/Quiet,ImputedPrediction,0.83,Jeroen
+295,Bright/Dark,Red/Blue,ImputedPrediction,0.68,Jeroen
+296,Red/Blue,Bright/Dark,ImputedPrediction,0.68,Jeroen
+297,Bright/Dark,Red/Green,ImputedPrediction,0.51,Jeroen
+298,Red/Green,Bright/Dark,ImputedPrediction,0.51,Jeroen
+299,Bright/Dark,Red/Yellow,ImputedPrediction,0.63369863,Jeroen
+300,Red/Yellow,Bright/Dark,ImputedPrediction,0.63369863,Jeroen
+301,Bright/Dark,Yellow/Blue,ImputedPrediction,0.83,Jeroen
+302,Yellow/Blue,Bright/Dark,ImputedPrediction,0.83,Jeroen
+303,Bright/Dark,Noisy/Tonal,ImputedPrediction,0.48,Jeroen
+304,Noisy/Tonal,Bright/Dark,ImputedPrediction,0.48,Jeroen
+305,Bright/Dark,High Pitch/Low Pitch,ImputedPrediction,0.63369863,Jeroen
+306,High Pitch/Low Pitch,Bright/Dark,ImputedPrediction,0.63369863,Jeroen
+307,Bright/Dark,Jagged/Curvy,ImputedPrediction,0.63369863,Jeroen
+308,Jagged/Curvy,Bright/Dark,ImputedPrediction,0.63369863,Jeroen
+309,Bright/Dark,Large/Small,ImputedPrediction,0.8,Jeroen
+310,Large/Small,Bright/Dark,ImputedPrediction,0.8,Jeroen
+311,Bright/Dark,Fast/Slow,ImputedPrediction,0.84,Jeroen
+312,Fast/Slow,Bright/Dark,ImputedPrediction,0.84,Jeroen
+313,Red/Blue,Noisy/Tonal,ImputedPrediction,0.41,Jeroen
+314,Noisy/Tonal,Red/Blue,ImputedPrediction,0.41,Jeroen
+315,Red/Blue,High Pitch/Low Pitch,ImputedPrediction,0.63369863,Jeroen
+316,High Pitch/Low Pitch,Red/Blue,ImputedPrediction,0.63369863,Jeroen
+317,Red/Blue,Jagged/Curvy,ImputedPrediction,0.59,Jeroen
+318,Jagged/Curvy,Red/Blue,ImputedPrediction,0.59,Jeroen
+319,Red/Blue,Large/Small,ImputedPrediction,0.68,Jeroen
+320,Large/Small,Red/Blue,ImputedPrediction,0.68,Jeroen
+321,Red/Blue,Fast/Slow,ImputedPrediction,0.78,Jeroen
+322,Fast/Slow,Red/Blue,ImputedPrediction,0.78,Jeroen
+323,Red/Green,Noisy/Tonal,ImputedPrediction,0.37,Jeroen
+324,Noisy/Tonal,Red/Green,ImputedPrediction,0.37,Jeroen
+325,Red/Green,High Pitch/Low Pitch,ImputedPrediction,0.46,Jeroen
+326,High Pitch/Low Pitch,Red/Green,ImputedPrediction,0.46,Jeroen
+327,Red/Green,Jagged/Curvy,ImputedPrediction,0.43,Jeroen
+328,Jagged/Curvy,Red/Green,ImputedPrediction,0.43,Jeroen
+329,Red/Green,Large/Small,ImputedPrediction,0.63369863,Jeroen
+330,Large/Small,Red/Green,ImputedPrediction,0.63369863,Jeroen
+331,Red/Green,Fast/Slow,ImputedPrediction,0.63369863,Jeroen
+332,Fast/Slow,Red/Green,ImputedPrediction,0.63369863,Jeroen
+333,Red/Yellow,Noisy/Tonal,ImputedPrediction,0.4,Jeroen
+334,Noisy/Tonal,Red/Yellow,ImputedPrediction,0.4,Jeroen
+335,Red/Yellow,High Pitch/Low Pitch,ImputedPrediction,0.49,Jeroen
+336,High Pitch/Low Pitch,Red/Yellow,ImputedPrediction,0.49,Jeroen
+337,Red/Yellow,Jagged/Curvy,ImputedPrediction,0.63369863,Jeroen
+338,Jagged/Curvy,Red/Yellow,ImputedPrediction,0.63369863,Jeroen
+339,Red/Yellow,Large/Small,ImputedPrediction,0.63369863,Jeroen
+340,Large/Small,Red/Yellow,ImputedPrediction,0.63369863,Jeroen
+341,Red/Yellow,Fast/Slow,ImputedPrediction,0.63369863,Jeroen
+342,Fast/Slow,Red/Yellow,ImputedPrediction,0.63369863,Jeroen
+343,Yellow/Blue,Noisy/Tonal,ImputedPrediction,0.62,Jeroen
+344,Noisy/Tonal,Yellow/Blue,ImputedPrediction,0.62,Jeroen
+345,Yellow/Blue,High Pitch/Low Pitch,ImputedPrediction,0.75,Jeroen
+346,High Pitch/Low Pitch,Yellow/Blue,ImputedPrediction,0.75,Jeroen
+347,Yellow/Blue,Jagged/Curvy,ImputedPrediction,0.63369863,Jeroen
+348,Jagged/Curvy,Yellow/Blue,ImputedPrediction,0.63369863,Jeroen
+349,Yellow/Blue,Large/Small,ImputedPrediction,0.84,Jeroen
+350,Large/Small,Yellow/Blue,ImputedPrediction,0.84,Jeroen
+351,Yellow/Blue,Fast/Slow,ImputedPrediction,0.88,Jeroen
+352,Fast/Slow,Yellow/Blue,ImputedPrediction,0.88,Jeroen
+353,Noisy/Tonal,High Pitch/Low Pitch,ImputedPrediction,0.47,Jeroen
+354,High Pitch/Low Pitch,Noisy/Tonal,ImputedPrediction,0.47,Jeroen
+355,Noisy/Tonal,Jagged/Curvy,ImputedPrediction,0.49,Jeroen
+356,Jagged/Curvy,Noisy/Tonal,ImputedPrediction,0.49,Jeroen
+357,Noisy/Tonal,Large/Small,ImputedPrediction,0.52,Jeroen
+358,Large/Small,Noisy/Tonal,ImputedPrediction,0.52,Jeroen
+359,Noisy/Tonal,Fast/Slow,ImputedPrediction,0.6,Jeroen
+360,Fast/Slow,Noisy/Tonal,ImputedPrediction,0.6,Jeroen
+361,High Pitch/Low Pitch,Jagged/Curvy,ImputedPrediction,0.57,Jeroen
+362,Jagged/Curvy,High Pitch/Low Pitch,ImputedPrediction,0.57,Jeroen
+363,High Pitch/Low Pitch,Large/Small,ImputedPrediction,0.59,Jeroen
+364,Large/Small,High Pitch/Low Pitch,ImputedPrediction,0.59,Jeroen
+365,High Pitch/Low Pitch,Fast/Slow,ImputedPrediction,0.75,Jeroen
+366,Fast/Slow,High Pitch/Low Pitch,ImputedPrediction,0.75,Jeroen
+367,Jagged/Curvy,Large/Small,ImputedPrediction,0.63369863,Jeroen
+368,Large/Small,Jagged/Curvy,ImputedPrediction,0.63369863,Jeroen
+369,Jagged/Curvy,Fast/Slow,ImputedPrediction,0.71,Jeroen
+370,Fast/Slow,Jagged/Curvy,ImputedPrediction,0.71,Jeroen
+371,Large/Small,Fast/Slow,ImputedPrediction,0.72,Jeroen
+372,Fast/Slow,Large/Small,ImputedPrediction,0.72,Jeroen
+373,Excited/Bored,Loud/Quiet,SimData,0.971014493,Jeroen
+374,Loud/Quiet,Excited/Bored,SimData,0.892307692,Jeroen
+375,Excited/Bored,Bright/Dark,SimData,0.853932584,Jeroen
+376,Bright/Dark,Excited/Bored,SimData,0.811764706,Jeroen
+377,Excited/Bored,Red/Blue,SimData,0.571428571,Jeroen
+378,Red/Blue,Excited/Bored,SimData,0.7,Jeroen
+379,Excited/Bored,Red/Green,SimData,0.083333333,Jeroen
+380,Red/Green,Excited/Bored,SimData,0.043478261,Jeroen
+381,Excited/Bored,Red/Yellow,SimData,0.285714286,Jeroen
+382,Red/Yellow,Excited/Bored,SimData,0.526315789,Jeroen
+383,Excited/Bored,Yellow/Blue,SimData,0.842105263,Jeroen
+384,Yellow/Blue,Excited/Bored,SimData,0.842105263,Jeroen
+385,Excited/Bored,Noisy/Tonal,SimData,0.247191011,Jeroen
+386,Noisy/Tonal,Excited/Bored,SimData,0.223529412,Jeroen
+387,Excited/Bored,High Pitch/Low Pitch,SimData,0.464788732,Jeroen
+388,High Pitch/Low Pitch,Excited/Bored,SimData,0.462686567,Jeroen
+389,Excited/Bored,Jagged/Curvy,SimData,0.453333333,Jeroen
+390,Jagged/Curvy,Excited/Bored,SimData,0.633802817,Jeroen
+391,Excited/Bored,Large/Small,SimData,0.846153846,Jeroen
+392,Large/Small,Excited/Bored,SimData,0.770491803,Jeroen
+393,Excited/Bored,Fast/Slow,SimData,0.913043478,Jeroen
+394,Fast/Slow,Excited/Bored,SimData,0.907692308,Jeroen
+395,Happy/Sad,Loud/Quiet,SimData,0.826086957,Jeroen
+396,Loud/Quiet,Happy/Sad,SimData,0.863013699,Jeroen
+397,Happy/Sad,Bright/Dark,SimData,0.940298507,Jeroen
+398,Bright/Dark,Happy/Sad,SimData,0.985915493,Jeroen
+399,Happy/Sad,Red/Blue,SimData,0.736842105,Jeroen
+400,Red/Blue,Happy/Sad,SimData,0.923076923,Jeroen
+401,Happy/Sad,Red/Green,SimData,0.130434783,Jeroen
+402,Red/Green,Happy/Sad,SimData,0.266666667,Jeroen
+403,Happy/Sad,Red/Yellow,SimData,0.545454545,Jeroen
+404,Red/Yellow,Happy/Sad,SimData,0.15,Jeroen
+405,Happy/Sad,Yellow/Blue,SimData,0.9,Jeroen
+406,Yellow/Blue,Happy/Sad,SimData,0.684210526,Jeroen
+407,Happy/Sad,Noisy/Tonal,SimData,0.15942029,Jeroen
+408,Noisy/Tonal,Happy/Sad,SimData,0.191780822,Jeroen
+409,Happy/Sad,High Pitch/Low Pitch,SimData,0.584615385,Jeroen
+410,High Pitch/Low Pitch,Happy/Sad,SimData,0.666666667,Jeroen
+411,Happy/Sad,Jagged/Curvy,SimData,0.507042254,Jeroen
+412,Jagged/Curvy,Happy/Sad,SimData,0.4,Jeroen
+413,Happy/Sad,Large/Small,SimData,0.876923077,Jeroen
+414,Large/Small,Happy/Sad,SimData,0.884057971,Jeroen
+415,Happy/Sad,Fast/Slow,SimData,0.985915493,Jeroen
+416,Fast/Slow,Happy/Sad,SimData,0.973333333,Jeroen
+417,Pleased/Disgusted,Loud/Quiet,SimData,0.5,Jeroen
+418,Loud/Quiet,Pleased/Disgusted,SimData,0.485714286,Jeroen
+419,Pleased/Disgusted,Bright/Dark,SimData,0.55,Jeroen
+420,Bright/Dark,Pleased/Disgusted,SimData,0.655172414,Jeroen
+421,Pleased/Disgusted,Red/Blue,SimData,0.75,Jeroen
+422,Red/Blue,Pleased/Disgusted,SimData,0.428571429,Jeroen
+423,Pleased/Disgusted,Red/Green,SimData,0,Jeroen
+424,Red/Green,Pleased/Disgusted,SimData,0,Jeroen
+425,Pleased/Disgusted,Red/Yellow,SimData,0.125,Jeroen
+426,Red/Yellow,Pleased/Disgusted,SimData,0.142857143,Jeroen
+427,Pleased/Disgusted,Yellow/Blue,SimData,0.9375,Jeroen
+428,Yellow/Blue,Pleased/Disgusted,SimData,0.727272727,Jeroen
+429,Pleased/Disgusted,Noisy/Tonal,SimData,0.074074074,Jeroen
+430,Noisy/Tonal,Pleased/Disgusted,SimData,0.134615385,Jeroen
+431,Pleased/Disgusted,High Pitch/Low Pitch,SimData,0.554054054,Jeroen
+432,High Pitch/Low Pitch,Pleased/Disgusted,SimData,0.597222222,Jeroen
+433,Pleased/Disgusted,Jagged/Curvy,SimData,0.393939394,Jeroen
+434,Jagged/Curvy,Pleased/Disgusted,SimData,0.296875,Jeroen
+435,Pleased/Disgusted,Large/Small,SimData,0.797297297,Jeroen
+436,Large/Small,Pleased/Disgusted,SimData,0.763888889,Jeroen
+437,Pleased/Disgusted,Fast/Slow,SimData,0.575757576,Jeroen
+438,Fast/Slow,Pleased/Disgusted,SimData,0.578125,Jeroen
+439,Stressed/Calm,Loud/Quiet,SimData,0.971428571,Jeroen
+440,Loud/Quiet,Stressed/Calm,SimData,0.986111111,Jeroen
+441,Stressed/Calm,Bright/Dark,SimData,0.609375,Jeroen
+442,Bright/Dark,Stressed/Calm,SimData,0.651515152,Jeroen
+443,Stressed/Calm,Red/Blue,SimData,0.933333333,Jeroen
+444,Red/Blue,Stressed/Calm,SimData,0.7,Jeroen
+445,Stressed/Calm,Red/Green,SimData,0.789473684,Jeroen
+446,Red/Green,Stressed/Calm,SimData,0.772727273,Jeroen
+447,Stressed/Calm,Red/Yellow,SimData,1,Jeroen
+448,Red/Yellow,Stressed/Calm,SimData,1,Jeroen
+449,Stressed/Calm,Yellow/Blue,SimData,0.352941176,Jeroen
+450,Yellow/Blue,Stressed/Calm,SimData,0.8,Jeroen
+451,Stressed/Calm,Noisy/Tonal,SimData,0.823529412,Jeroen
+452,Noisy/Tonal,Stressed/Calm,SimData,0.8,Jeroen
+453,Stressed/Calm,High Pitch/Low Pitch,SimData,0.642857143,Jeroen
+454,High Pitch/Low Pitch,Stressed/Calm,SimData,0.638888889,Jeroen
+455,Stressed/Calm,Jagged/Curvy,SimData,0.558823529,Jeroen
+456,Jagged/Curvy,Stressed/Calm,SimData,0.585714286,Jeroen
+457,Stressed/Calm,Large/Small,SimData,0.684210526,Jeroen
+458,Large/Small,Stressed/Calm,SimData,0.692307692,Jeroen
+459,Stressed/Calm,Fast/Slow,SimData,0.986486486,Jeroen
+460,Fast/Slow,Stressed/Calm,SimData,0.986842105,Jeroen
+461,Loud/Quiet,Bright/Dark,SimData,0.814285714,Jeroen
+462,Bright/Dark,Loud/Quiet,SimData,0.821428571,Jeroen
+463,Loud/Quiet,Red/Blue,SimData,0.768115942,Jeroen
+464,Red/Blue,Loud/Quiet,SimData,0.646153846,Jeroen
+465,Loud/Quiet,Red/Green,SimData,0.635135135,Jeroen
+466,Red/Green,Loud/Quiet,SimData,0.65,Jeroen
+467,Loud/Quiet,Red/Yellow,SimData,0.550724638,Jeroen
+468,Red/Yellow,Loud/Quiet,SimData,0.505882353,Jeroen
+469,Loud/Quiet,Yellow/Blue,SimData,0.970588235,Jeroen
+470,Yellow/Blue,Loud/Quiet,SimData,0.914285714,Jeroen
+471,Loud/Quiet,Noisy/Tonal,SimData,0.528571429,Jeroen
+472,Noisy/Tonal,Loud/Quiet,SimData,0.589285714,Jeroen
+473,Loud/Quiet,High Pitch/Low Pitch,SimData,0.632142857,Jeroen
+474,High Pitch/Low Pitch,Loud/Quiet,SimData,0.671428571,Jeroen
+475,Loud/Quiet,Jagged/Curvy,SimData,0.610714286,Jeroen
+476,Jagged/Curvy,Loud/Quiet,SimData,0.642857143,Jeroen
+477,Loud/Quiet,Large/Small,SimData,0.857142857,Jeroen
+478,Large/Small,Loud/Quiet,SimData,0.860714286,Jeroen
+479,Loud/Quiet,Fast/Slow,SimData,0.8,Jeroen
+480,Fast/Slow,Loud/Quiet,SimData,0.825,Jeroen
+481,Bright/Dark,Red/Blue,SimData,0.591549296,Jeroen
+482,Red/Blue,Bright/Dark,SimData,0.597014925,Jeroen
+483,Bright/Dark,Red/Green,SimData,0.5,Jeroen
+484,Red/Green,Bright/Dark,SimData,0.557142857,Jeroen
+485,Bright/Dark,Red/Yellow,SimData,0.698412698,Jeroen
+486,Red/Yellow,Bright/Dark,SimData,0.594936709,Jeroen
+487,Bright/Dark,Yellow/Blue,SimData,0.870967742,Jeroen
+488,Yellow/Blue,Bright/Dark,SimData,0.8125,Jeroen
+489,Bright/Dark,Noisy/Tonal,SimData,0.442857143,Jeroen
+490,Noisy/Tonal,Bright/Dark,SimData,0.475,Jeroen
+491,Bright/Dark,High Pitch/Low Pitch,SimData,0.6,Jeroen
+492,High Pitch/Low Pitch,Bright/Dark,SimData,0.607142857,Jeroen
+493,Bright/Dark,Jagged/Curvy,SimData,0.667857143,Jeroen
+494,Jagged/Curvy,Bright/Dark,SimData,0.582142857,Jeroen
+495,Bright/Dark,Large/Small,SimData,0.825,Jeroen
+496,Large/Small,Bright/Dark,SimData,0.796428571,Jeroen
+497,Bright/Dark,Fast/Slow,SimData,0.853571429,Jeroen
+498,Fast/Slow,Bright/Dark,SimData,0.825,Jeroen
+499,Red/Blue,Noisy/Tonal,SimData,0.508196721,Jeroen
+500,Noisy/Tonal,Red/Blue,SimData,0.430769231,Jeroen
+501,Red/Blue,High Pitch/Low Pitch,SimData,0.690140845,Jeroen
+502,High Pitch/Low Pitch,Red/Blue,SimData,0.6,Jeroen
+503,Red/Blue,Jagged/Curvy,SimData,0.540983607,Jeroen
+504,Jagged/Curvy,Red/Blue,SimData,0.584615385,Jeroen
+505,Red/Blue,Large/Small,SimData,0.594202899,Jeroen
+506,Large/Small,Red/Blue,SimData,0.630136986,Jeroen
+507,Red/Blue,Fast/Slow,SimData,0.694915254,Jeroen
+508,Fast/Slow,Red/Blue,SimData,0.825396825,Jeroen
+509,Red/Green,Noisy/Tonal,SimData,0.428571429,Jeroen
+510,Noisy/Tonal,Red/Green,SimData,0.333333333,Jeroen
+511,Red/Green,High Pitch/Low Pitch,SimData,0.516129032,Jeroen
+512,High Pitch/Low Pitch,Red/Green,SimData,0.447368421,Jeroen
+513,Red/Green,Jagged/Curvy,SimData,0.527027027,Jeroen
+514,Jagged/Curvy,Red/Green,SimData,0.420454545,Jeroen
+515,Red/Green,Large/Small,SimData,0.541666667,Jeroen
+516,Large/Small,Red/Green,SimData,0.64516129,Jeroen
+517,Red/Green,Fast/Slow,SimData,0.716666667,Jeroen
+518,Fast/Slow,Red/Green,SimData,0.513513514,Jeroen
+519,Red/Yellow,Noisy/Tonal,SimData,0.333333333,Jeroen
+520,Noisy/Tonal,Red/Yellow,SimData,0.353846154,Jeroen
+521,Red/Yellow,High Pitch/Low Pitch,SimData,0.441558442,Jeroen
+522,High Pitch/Low Pitch,Red/Yellow,SimData,0.491803279,Jeroen
+523,Red/Yellow,Jagged/Curvy,SimData,0.623376623,Jeroen
+524,Jagged/Curvy,Red/Yellow,SimData,0.540983607,Jeroen
+525,Red/Yellow,Large/Small,SimData,0.632183908,Jeroen
+526,Large/Small,Red/Yellow,SimData,0.676056338,Jeroen
+527,Red/Yellow,Fast/Slow,SimData,0.620689655,Jeroen
+528,Fast/Slow,Red/Yellow,SimData,0.690140845,Jeroen
+529,Yellow/Blue,Noisy/Tonal,SimData,0.75,Jeroen
+530,Noisy/Tonal,Yellow/Blue,SimData,0.606060606,Jeroen
+531,Yellow/Blue,High Pitch/Low Pitch,SimData,0.728571429,Jeroen
+532,High Pitch/Low Pitch,Yellow/Blue,SimData,0.691176471,Jeroen
+533,Yellow/Blue,Jagged/Curvy,SimData,0.720588235,Jeroen
+534,Jagged/Curvy,Yellow/Blue,SimData,0.651515152,Jeroen
+535,Yellow/Blue,Large/Small,SimData,0.855263158,Jeroen
+536,Large/Small,Yellow/Blue,SimData,0.837837838,Jeroen
+537,Yellow/Blue,Fast/Slow,SimData,0.918918919,Jeroen
+538,Fast/Slow,Yellow/Blue,SimData,0.902777778,Jeroen
+539,Noisy/Tonal,High Pitch/Low Pitch,SimData,0.489285714,Jeroen
+540,High Pitch/Low Pitch,Noisy/Tonal,SimData,0.442857143,Jeroen
+541,Noisy/Tonal,Jagged/Curvy,SimData,0.521428571,Jeroen
+542,Jagged/Curvy,Noisy/Tonal,SimData,0.489285714,Jeroen
+543,Noisy/Tonal,Large/Small,SimData,0.621428571,Jeroen
+544,Large/Small,Noisy/Tonal,SimData,0.514285714,Jeroen
+545,Noisy/Tonal,Fast/Slow,SimData,0.585714286,Jeroen
+546,Fast/Slow,Noisy/Tonal,SimData,0.642857143,Jeroen
+547,High Pitch/Low Pitch,Jagged/Curvy,SimData,0.503571429,Jeroen
+548,Jagged/Curvy,High Pitch/Low Pitch,SimData,0.55,Jeroen
+549,High Pitch/Low Pitch,Large/Small,SimData,0.603571429,Jeroen
+550,Large/Small,High Pitch/Low Pitch,SimData,0.628571429,Jeroen
+551,High Pitch/Low Pitch,Fast/Slow,SimData,0.785714286,Jeroen
+552,Fast/Slow,High Pitch/Low Pitch,SimData,0.785714286,Jeroen
+553,Jagged/Curvy,Large/Small,SimData,0.632142857,Jeroen
+554,Large/Small,Jagged/Curvy,SimData,0.639285714,Jeroen
+555,Jagged/Curvy,Fast/Slow,SimData,0.721428571,Jeroen
+556,Fast/Slow,Jagged/Curvy,SimData,0.746428571,Jeroen
+557,Large/Small,Fast/Slow,SimData,0.785714286,Jeroen
+558,Fast/Slow,Large/Small,SimData,0.685714286,Jeroen
