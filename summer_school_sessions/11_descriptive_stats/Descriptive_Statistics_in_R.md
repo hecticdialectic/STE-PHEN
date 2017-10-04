@@ -11,16 +11,16 @@ Let's start by loading in our clean data and some libraries:
 
 ```r
 cleandata <- read.csv(
-"F:/Google Drive/GitHub Repos/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandata.csv")
-
-data <- subset(cleandata, DataSet == "Pilot")  ##Change as appropriate
+"D:/Github/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandataN.csv")
 
 library(plyr)
 library(tidyverse)
-library(doBy)
+
+maindata <- subset(cleandata, DataSet == "Main")
+pilotdata <- subset(cleandata, DataSet == "Pilot")
 ```
 
-There are lots of very basic statistics that we might want to take a look at first - in many experiments we'll want to know super simple things, like the grand mean response (or response-correctness). It's not particularly informative for our purposes, but the mean response in this dataset is 0.6219262 - which means that "High" stimuli were paired with other "High" stimuli 62.192623% of the time.
+There are lots of very basic statistics that we might want to take a look at first - in many experiments we'll want to know super simple things, like the grand mean response (or response-correctness). It's not particularly informative for our purposes, but the mean response in this dataset is 0.6125579 - which means that "High" stimuli were paired with other "High" stimuli 61.255787% of the time.
 
 #Normality
 
@@ -30,7 +30,7 @@ There are tons of tests of the normality of data in R, but I generally prefer vi
 
 
 ```r
-ggplot(data, aes(sample = Response, colour= Condition)) + 
+ggplot(maindata, aes(sample = Response, colour= Condition)) + 
   stat_qq(aes(shape = Condition))+
   ggtitle("qq Plots of Data by Condition") +
   labs(x="", y="") +
@@ -50,7 +50,7 @@ We'll also aggregate just per-subject and look at the same plot (and per-compari
 
 
 ```r
-dataagg1 <- aggregate(Response ~ Comparison + Condition + Subject, data = data, mean)
+dataagg1 <- aggregate(Response ~ Comparison + Condition + Subject, data = maindata, mean)
 
 ggplot(dataagg1, aes(sample = Response, colour= Condition)) + 
   stat_qq(aes(shape = Condition))+
@@ -65,7 +65,7 @@ ggplot(dataagg1, aes(sample = Response, colour= Condition)) +
 ![](Descriptive_Statistics_in_R_files/figure-html/QQPlot 2-1.png)<!-- -->
 
 ```r
-dataagg2 <- aggregate(Response ~ Condition + Subject, data = data, mean)
+dataagg2 <- aggregate(Response ~ Condition + Subject, data = maindata, mean)
 
 ggplot(dataagg2, aes(sample = Response, colour= Condition)) + 
   stat_qq(aes(shape = Condition))+
@@ -80,7 +80,7 @@ ggplot(dataagg2, aes(sample = Response, colour= Condition)) +
 ![](Descriptive_Statistics_in_R_files/figure-html/QQPlot 2-2.png)<!-- -->
 
 ```r
-dataagg3 <- aggregate(Response ~ Comparison + Condition, data = data, mean)
+dataagg3 <- aggregate(Response ~ Comparison + Condition, data = maindata, mean)
 ggplot(dataagg3, aes(sample = Response, colour= Condition)) + 
   stat_qq(aes(shape = Condition))+
   ggtitle("qq Plots of Data by Condition") +
@@ -100,113 +100,113 @@ When we collapse to data aggregated per participant we get something slightly cl
 
 #Means
 
-Okay, with that slightly pointless test of normality out of the way, we can start to look at the actual data- we already know the grand mean is 0.6219262, but what did participants associate with what?
+Okay, with that slightly pointless test of normality out of the way, we can start to look at the actual data- we already know the grand mean is 0.6125579, but what did participants associate with what?
 
 The first way we can look at this is just as a table of means
 
 
 ```r
-dataagg4 <- aggregate(Response~Comparison, data=data, mean)
+dataagg4 <- aggregate(Response~Comparison, data=maindata, mean)
 means<- as.data.frame(xtabs(Response ~ Comparison, data=dataagg4))
 
 means
 ```
 
 ```
-##              Comparison      Freq
-## 1         Affect EB-Amp 0.9111111
-## 2  Affect EB-Brightness 0.9387755
-## 3    Affect EB-Color RB 0.8000000
-## 4    Affect EB-Color RG 0.1875000
-## 5    Affect EB-Color RY 0.3750000
-## 6    Affect EB-Color YB 0.8000000
-## 7       Affect EB-Noise 0.2653061
-## 8       Affect EB-Pitch 0.4693878
-## 9       Affect EB-Shape 0.5510204
-## 10       Affect EB-Size 0.7555556
-## 11      Affect EB-Speed 0.9333333
-## 12        Affect HS-Amp 0.9696970
-## 13 Affect HS-Brightness 1.0000000
-## 14   Affect HS-Color RB 0.8750000
-## 15   Affect HS-Color RG 0.2142857
-## 16   Affect HS-Color RY 0.5000000
-## 17   Affect HS-Color YB 0.9230769
-## 18      Affect HS-Noise 0.2641509
-## 19      Affect HS-Pitch 0.5555556
-## 20      Affect HS-Shape 0.4912281
-## 21       Affect HS-Size 0.8378378
-## 22      Affect HS-Speed 0.9591837
-## 23        Affect PD-Amp 0.4545455
-## 24 Affect PD-Brightness 0.8108108
-## 25   Affect PD-Color RB 0.6666667
-## 26   Affect PD-Color RG 0.1666667
-## 27   Affect PD-Color RY 0.7500000
-## 28   Affect PD-Color YB 0.8181818
-## 29      Affect PD-Noise 0.2000000
-## 30      Affect PD-Pitch 0.4864865
-## 31      Affect PD-Shape 0.2413793
-## 32       Affect PD-Size 0.7931034
-## 33      Affect PD-Speed 0.6666667
-## 34        Affect SC-Amp 0.9811321
-## 35 Affect SC-Brightness 0.7317073
-## 36   Affect SC-Color RB 1.0000000
-## 37   Affect SC-Color RG 0.7142857
-## 38   Affect SC-Color RY 0.8333333
-## 39   Affect SC-Color YB 0.6923077
-## 40      Affect SC-Noise 0.8918919
-## 41      Affect SC-Pitch 0.5945946
-## 42      Affect SC-Shape 0.9090909
-## 43       Affect SC-Size 0.6226415
-## 44      Affect SC-Speed 0.9387755
-## 45       Amp-Brightness 0.9000000
-## 46         Amp-Color RB 0.9687500
-## 47         Amp-Color RG 0.5961538
-## 48         Amp-Color RY 0.7187500
-## 49         Amp-Color YB 0.9318182
-## 50            Amp-Noise 0.4875000
-## 51            Amp-Pitch 0.2743902
-## 52            Amp-Shape 0.7560976
-## 53             Amp-Size 0.9125000
-## 54            Amp-Speed 0.9375000
-## 55  Brightness-Color RB 0.5312500
-## 56  Brightness-Color RG 0.2916667
-## 57  Brightness-Color RY 0.3125000
-## 58  Brightness-Color YB 0.8333333
-## 59     Brightness-Noise 0.3062500
-## 60     Brightness-Pitch 0.5731707
-## 61     Brightness-Shape 0.5182927
-## 62      Brightness-Size 0.6500000
-## 63     Brightness-Speed 0.9125000
-## 64       Color RB-Noise 0.6000000
-## 65       Color RB-Pitch 0.5000000
-## 66       Color RB-Shape 0.7000000
-## 67        Color RB-Size 0.7500000
-## 68       Color RB-Speed 0.7500000
-## 69       Color RG-Noise 0.6730769
-## 70       Color RG-Pitch 0.2692308
-## 71       Color RG-Shape 0.7500000
-## 72        Color RG-Size 0.4375000
-## 73       Color RG-Speed 0.4464286
-## 74       Color RY-Noise 0.5208333
-## 75       Color RY-Pitch 0.4687500
-## 76       Color RY-Shape 0.7750000
-## 77        Color RY-Size 0.6750000
-## 78       Color RY-Speed 0.4375000
-## 79       Color YB-Noise 0.4250000
-## 80       Color YB-Pitch 0.6000000
-## 81       Color YB-Shape 0.7500000
-## 82        Color YB-Size 0.6562500
-## 83       Color YB-Speed 0.9722222
-## 84          Noise-Pitch 0.6036585
-## 85          Noise-Shape 0.7012195
-## 86           Noise-Size 0.5000000
-## 87          Noise-Speed 0.5750000
-## 88          Pitch-Shape 0.6071429
-## 89           Pitch-Size 0.2256098
-## 90          Pitch-Speed 0.5670732
-## 91           Shape-Size 0.5121951
-## 92          Shape-Speed 0.8170732
-## 93           Size-Speed 0.3437500
+##              Comparison       Freq
+## 1         Affect EB-Amp 0.93577982
+## 2  Affect EB-Brightness 0.89743590
+## 3    Affect EB-Color RB 0.63333333
+## 4    Affect EB-Color RG 0.13333333
+## 5    Affect EB-Color RY 0.13793103
+## 6    Affect EB-Color YB 0.75000000
+## 7       Affect EB-Noise 0.26446281
+## 8       Affect EB-Pitch 0.60550459
+## 9       Affect EB-Shape 0.56880734
+## 10       Affect EB-Size 0.84070796
+## 11      Affect EB-Speed 0.92035398
+## 12        Affect HS-Amp 0.85185185
+## 13 Affect HS-Brightness 0.93333333
+## 14   Affect HS-Color RB 0.54166667
+## 15   Affect HS-Color RG 0.20833333
+## 16   Affect HS-Color RY 0.30434783
+## 17   Affect HS-Color YB 0.80769231
+## 18      Affect HS-Noise 0.15200000
+## 19      Affect HS-Pitch 0.41573034
+## 20      Affect HS-Shape 0.41880342
+## 21       Affect HS-Size 0.84931507
+## 22      Affect HS-Speed 0.90099010
+## 23        Affect PD-Amp 0.66055046
+## 24 Affect PD-Brightness 0.82857143
+## 25   Affect PD-Color RB 0.38095238
+## 26   Affect PD-Color RG 0.00000000
+## 27   Affect PD-Color RY 0.10000000
+## 28   Affect PD-Color YB 0.56521739
+## 29      Affect PD-Noise 0.09589041
+## 30      Affect PD-Pitch 0.42352941
+## 31      Affect PD-Shape 0.34246575
+## 32       Affect PD-Size 0.77528090
+## 33      Affect PD-Speed 0.63636364
+## 34        Affect SC-Amp 0.96629213
+## 35 Affect SC-Brightness 0.76923077
+## 36   Affect SC-Color RB 0.90909091
+## 37   Affect SC-Color RG 0.81818182
+## 38   Affect SC-Color RY 0.90476190
+## 39   Affect SC-Color YB 0.83333333
+## 40      Affect SC-Noise 0.80000000
+## 41      Affect SC-Pitch 0.49541284
+## 42      Affect SC-Shape 0.85882353
+## 43       Affect SC-Size 0.71681416
+## 44      Affect SC-Speed 0.95505618
+## 45       Amp-Brightness 0.83505155
+## 46         Amp-Color RB 0.90099010
+## 47         Amp-Color RG 0.63809524
+## 48         Amp-Color RY 0.60396040
+## 49         Amp-Color YB 0.87654321
+## 50            Amp-Noise 0.43947368
+## 51            Amp-Pitch 0.32731959
+## 52            Amp-Shape 0.82105263
+## 53             Amp-Size 0.88802083
+## 54            Amp-Speed 0.91755319
+## 55  Brightness-Color RB 0.54639175
+## 56  Brightness-Color RG 0.28865979
+## 57  Brightness-Color RY 0.23595506
+## 58  Brightness-Color YB 0.76146789
+## 59     Brightness-Noise 0.24218750
+## 60     Brightness-Pitch 0.52295918
+## 61     Brightness-Shape 0.55208333
+## 62      Brightness-Size 0.66237113
+## 63     Brightness-Speed 0.88684211
+## 64       Color RB-Noise 0.65882353
+## 65       Color RB-Pitch 0.49504950
+## 66       Color RB-Shape 0.76470588
+## 67        Color RB-Size 0.68571429
+## 68       Color RB-Speed 0.82022472
+## 69       Color RG-Noise 0.68235294
+## 70       Color RG-Pitch 0.47422680
+## 71       Color RG-Shape 0.65882353
+## 72        Color RG-Size 0.46666667
+## 73       Color RG-Speed 0.47311828
+## 74       Color RY-Noise 0.63440860
+## 75       Color RY-Pitch 0.29032258
+## 76       Color RY-Shape 0.67010309
+## 77        Color RY-Size 0.59405941
+## 78       Color RY-Speed 0.52380952
+## 79       Color YB-Noise 0.48760331
+## 80       Color YB-Pitch 0.58415842
+## 81       Color YB-Shape 0.62393162
+## 82        Color YB-Size 0.53246753
+## 83       Color YB-Speed 0.84946237
+## 84          Noise-Pitch 0.54687500
+## 85          Noise-Shape 0.71276596
+## 86           Noise-Size 0.53157895
+## 87          Noise-Speed 0.60752688
+## 88          Pitch-Shape 0.59375000
+## 89           Pitch-Size 0.23195876
+## 90          Pitch-Speed 0.58157895
+## 91           Shape-Size 0.54210526
+## 92          Shape-Speed 0.86021505
+## 93           Size-Speed 0.37765957
 ```
 
 So we can look at that table of means- it's nice but not that exciting- what we instead want to do is look at a heatmap of our results - 
@@ -241,14 +241,15 @@ ggplot(data= PilotDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
 ![](Descriptive_Statistics_in_R_files/figure-html/First Heatmap-1.png)<!-- -->
 
 ```r
-FullDataAgg <- subset(CleanDataAgg, DataSet == "Simulated")
+MainDataAgg <- subset(CleanDataAgg, DataSet == "Main")
 
-ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
   geom_tile(color = "white") +
-  ggtitle("Biases - Pilot Data") +
+  ggtitle("Biases - Main Data") +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
                        midpoint = 0.5, limit = c(0,1),
                        name="Direction and Strength of Associaton") +
+  geom_text(aes(label = round(Response, 2)), size = 2) +
   theme_classic()+ 
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
   coord_fixed() 
@@ -260,11 +261,11 @@ So there are heatmaps- one for the Pilot Data and one for the Full Data - the fi
 
 
 ```r
-DiffDataAgg <- FullDataAgg
+DiffDataAgg <- MainDataAgg
 
 DiffDataAgg$DataSet <- "Difference"
 
-DiffDataAgg$Response <- abs(FullDataAgg$Response - PilotDataAgg$Response)
+DiffDataAgg$Response <- abs(MainDataAgg$Response - PilotDataAgg$Response)
 
 ggplot(data= DiffDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
   geom_tile(color = "white") +
@@ -286,31 +287,21 @@ To that end we are going to do a t-test for every one of our 93 comparisons agai
 
 
 ```r
+library(doBy)
+
 FullData <- summaryBy(Response ~ 
                        Subject + DataSet + Condition +
                        Inducer + Concurrent + Comparison,
-                     data= data, Fun = c(mean))
+                     data= maindata, Fun = c(mean))
 
 library(powerAnalysis)
-```
-
-```
-## Warning: package 'powerAnalysis' was built under R version 3.4.1
-```
-
-```r
 comparisons <- sort(unique(FullData$Comparison))
 pvals <- list()
 zvals <- list()
 statvals <- list()
 rm(comparison)
-```
 
-```
-## Warning in rm(comparison): object 'comparison' not found
-```
 
-```r
 for(comparison in comparisons){
   testdata <- subset(FullData, Comparison == comparison)
   
@@ -326,545 +317,16 @@ for(comparison in comparisons){
   statvals <- c(statvals, teststat)
   
 }
-```
 
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
+MainDataAgg$pValue <- as.numeric(pvals)
+MainDataAgg$ZValue <- as.numeric(zvals)
+MainDataAgg$effsize <- as.numeric(statvals)
 
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
+MainDataAgg$effsize <- ifelse(MainDataAgg$Response < 0.5,
+                              MainDataAgg$effsize * -1,
+                              MainDataAgg$effsize)
 
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with ties
-```
-
-```
-## Warning in wilcox.test.default(testdata$Response, mu = 0.5, alternative =
-## "two.sided"): cannot compute exact p-value with zeroes
-```
-
-```r
-FullDataAgg$pValue <- as.numeric(pvals)
-FullDataAgg$ZValue <- as.numeric(zvals)
-FullDataAgg$effsize <- as.numeric(statvals)
-
-FullDataAgg$effsize <- ifelse(FullDataAgg$Response < 0.5,
-                              FullDataAgg$effsize * -1,
-                              FullDataAgg$effsize)
-
-ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize)) +
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize)) +
   geom_tile(color = "white") +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
                        name="Effect Size") +
@@ -881,11 +343,11 @@ So this is all of our effect sizes- some are obviously very small and some are v
 
 
 ```r
-FullDataAgg$correctedP <- FullDataAgg$pValue * 93
+MainDataAgg$correctedP <- MainDataAgg$pValue * 93
 
-FullDataAgg$effsize2 <- as.numeric(ifelse(FullDataAgg$correctedP > 0.05,
+MainDataAgg$effsize2 <- as.numeric(ifelse(MainDataAgg$correctedP > 0.05,
                                "NA",
-                               FullDataAgg$effsize))
+                               MainDataAgg$effsize))
 ```
 
 ```
@@ -893,7 +355,7 @@ FullDataAgg$effsize2 <- as.numeric(ifelse(FullDataAgg$correctedP > 0.05,
 ```
 
 ```r
-ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
   geom_tile(color = "white") +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
                        name="Effect Size") +
@@ -904,6 +366,33 @@ ggplot(data= FullDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
 ```
 
 ![](Descriptive_Statistics_in_R_files/figure-html/Correcting p for multiple comparisons-1.png)<!-- -->
+
+```r
+MainDataAgg$Response2 <- as.numeric(ifelse(MainDataAgg$correctedP > 0.05,
+                               "NA",
+                               MainDataAgg$Response))
+```
+
+```
+## Warning: NAs introduced by coercion
+```
+
+```r
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response2)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(0,1),
+                       midpoint = 0.5, name="Significant Responses") +
+  geom_text(aes(label = round(Response2, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed()
+```
+
+```
+## Warning: Removed 98 rows containing missing values (geom_text).
+```
+
+![](Descriptive_Statistics_in_R_files/figure-html/Correcting p for multiple comparisons-2.png)<!-- -->
 
 
 

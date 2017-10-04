@@ -15,11 +15,10 @@ Let's start by loading in our clean data and some libraries:
 
 ```{r Libraries and Data, message = FALSE, warning = FALSE}
 cleandata <- read.csv(
-"F:/Google Drive/GitHub Repos/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandataN.csv")
+"D:/Github/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandataN.csv")
 
 library(plyr)
 library(tidyverse)
-library(doBy)
 
 maindata <- subset(cleandata, DataSet == "Main")
 pilotdata <- subset(cleandata, DataSet == "Pilot")
@@ -93,7 +92,7 @@ When we collapse to data aggregated per participant we get something slightly cl
 
 #Means
 
-Okay, with that slightly pointless test of normality out of the way, we can start to look at the actual data- we already know the grand mean is `r mean(data$Response)`, but what did participants associate with what?
+Okay, with that slightly pointless test of normality out of the way, we can start to look at the actual data- we already know the grand mean is `r mean(maindata$Response)`, but what did participants associate with what?
 
 The first way we can look at this is just as a table of means
 
@@ -142,6 +141,7 @@ ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
                        midpoint = 0.5, limit = c(0,1),
                        name="Direction and Strength of Associaton") +
+  geom_text(aes(label = round(Response, 2)), size = 2) +
   theme_classic()+ 
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
   coord_fixed() 
@@ -177,7 +177,8 @@ So we know how our data lines up with our pilot data, and we know the mean respo
 
 To that end we are going to do a t-test for every one of our 93 comparisons against chance- because our data aren't normally distributed we want to use a nonparametic statistic- in this case a signed-ranks test.
 
-```{r Wilcoxon}
+```{r Wilcoxon, warning = FALSE, message = FALSE}
+library(doBy)
 
 FullData <- summaryBy(Response ~ 
                        Subject + DataSet + Condition +
@@ -250,8 +251,180 @@ ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
   coord_fixed() 
 
+MainDataAgg$Response2 <- as.numeric(ifelse(MainDataAgg$correctedP > 0.05,
+                               "NA",
+                               MainDataAgg$Response))
+
+ggplot(data= MainDataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response2)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(0,1),
+                       midpoint = 0.5, name="Significant Responses") +
+  geom_text(aes(label = round(Response, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed()
+
+
 ```
 
+So those are the main experiment data, but lets consider *all* of the data instead - that is, the pilot data, the main experiment data, and the affect data all together
+
+```{r Analysis of Pooled Data, message = FALSE, warning = FALSE}
+
+alldataAgg <- subset(CleanDataAgg, DataSet != "Simulated")
+
+ggplot(data= alldataAgg, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
+  geom_tile(color = "white") +
+  ggtitle("Biases - All Data") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
+                       midpoint = 0.5, limit = c(0,1),
+                       name="Direction and Strength of Associaton") +
+  geom_text(aes(label = round(Response, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed() +
+  facet_wrap(~DataSet)
+
+ggsave("Responses by DataSet.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 16, height = 5, units = c("in", "cm", "mm"),
+  dpi = 300)
+
+
+alldataAgg2 <- aggregate(Response ~ Inducer2 + Concurrent2, data= alldataAgg, mean)
+
+ggplot(data= alldataAgg2, aes(x=Concurrent2, y=Inducer2, fill=Response)) +
+  geom_tile(color = "white") +
+  ggtitle("Biases - All Data") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", 
+                       midpoint = 0.5, limit = c(0,1),
+                       name="Direction and Strength of Associaton") +
+  geom_text(aes(label = round(Response, 2)), size = 4) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 16))+
+  theme(axis.text.y = element_text(angle = 0, vjust = 1, hjust = 1, size = 16))+
+  coord_fixed() 
+
+ggsave("Responses - All Data.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 12, height = 10, units = c("in", "cm", "mm"),
+  dpi = 300)
+
+```
+
+
+So those are the responses- lets do the effect sizes again, and the other plots
+
+```{r Effect Sizes and Other Plots, message = FALSE, warning = FALSE}
+
+AllFullData <- summaryBy(Response ~ 
+                       Subject + DataSet + Condition +
+                       Inducer + Concurrent + Comparison,
+                     data= alldata, Fun = c(mean))
+
+comparisons <- sort(unique(AllFullData$Comparison))
+pvals <- list()
+zvals <- list()
+statvals <- list()
+rm(comparison)
+
+
+for(comparison in comparisons){
+  testdata <- subset(AllFullData, Comparison == comparison)
+  
+  testres <- wilcox.test(testdata$Response, mu= 0.5, alternative = "two.sided")
+  
+  pval <- testres$p.value
+  pvals <- c(pvals, pval)
+  
+  testZ <- qnorm(pval/2)
+  zvals <- c(zvals, testZ)
+  
+  teststat <- abs(testZ / (sqrt(nrow(testdata))))
+  statvals <- c(statvals, teststat)
+  
+}
+
+
+alldataAgg2$pValue <- as.numeric(pvals)
+alldataAgg2$ZValue <- as.numeric(zvals)
+alldataAgg2$effsize <- as.numeric(statvals)
+
+alldataAgg2$effsize <- ifelse(alldataAgg2$Response < 0.5,
+                              alldataAgg2$effsize * -1,
+                              alldataAgg2$effsize)
+
+ggplot(data= alldataAgg2, aes(x=Concurrent2, y=Inducer2, fill=effsize)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
+                       name="Effect Size") +
+  geom_text(aes(label = round(effsize, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed() 
+
+ggsave("Effect Sizes - All Data.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 12, height = 10, units = c("in", "cm", "mm"),
+  dpi = 300)
+
+
+alldataAgg2$correctedP <- alldataAgg2$pValue * 93
+
+alldataAgg2$effsize2 <- as.numeric(ifelse(alldataAgg2$correctedP > 0.05,
+                               "NA",
+                               alldataAgg2$effsize))
+
+
+ggplot(data= alldataAgg2, aes(x=Concurrent2, y=Inducer2, fill=effsize2)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(-1,1),
+                       name="Effect Size") +
+  geom_text(aes(label = round(effsize, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed() 
+
+ggsave("Effect Sizes - All Data - Significant.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 12, height = 10, units = c("in", "cm", "mm"),
+  dpi = 300)
+
+alldataAgg2$Response2 <- as.numeric(ifelse(alldataAgg2$correctedP > 0.05,
+                               "NA",
+                               alldataAgg2$Response))
+
+ggplot(data= alldataAgg2, aes(x=Concurrent2, y=Inducer2, fill=Response2)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(0,1),
+                       midpoint = 0.5, name="Significant Responses") +
+  geom_text(aes(label = round(Response, 2)), size = 2) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  coord_fixed()
+
+ggsave("Responses - All Data - Significant.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 12, height = 10, units = c("in", "cm", "mm"),
+  dpi = 300)
+
+
+####
+
+alldataAgg2$Response3 <- as.numeric(ifelse(alldataAgg2$pValue > 0.05,
+                               "NA",
+                               alldataAgg2$Response))
+
+ggplot(data= alldataAgg2, aes(x=Concurrent2, y=Inducer2, fill=Response3)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white", limit = c(0,1),
+                       midpoint = 0.5, name="Significant Responses") +
+  geom_text(aes(label = abs(round(effsize, 2))), size = 5) +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 18))+
+  theme(axis.text.y = element_text(angle = 0, vjust = 1, hjust = 1, size = 18))+
+  coord_fixed()
+
+
+ggsave("Responses - All Data - Significant - New.png", plot = last_plot(), device = NULL, path = NULL,
+  width = 12, height = 10, units = c("in", "cm", "mm"),
+  dpi = 300)
+```
 
 
 
