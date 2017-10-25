@@ -15,7 +15,7 @@ Let's start by loading in our clean data and some libraries:
 
 ```{r Libraries and Data, message = FALSE, warning = FALSE}
 cleandata <- read.csv(
-"D:/Github/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandataN.csv")
+"F:/Github Repos/STE-PHEN/summer_school_sessions/11_descriptive_stats/cleandataN.csv")
 
 library(plyr)
 library(tidyverse)
@@ -314,6 +314,7 @@ ggsave("Responses - All Data.png", plot = last_plot(), device = NULL, path = NUL
 So those are the responses- lets do the effect sizes again, and the other plots
 
 ```{r Effect Sizes and Other Plots, message = FALSE, warning = FALSE}
+alldata <- subset(cleandata, DataSet != "Simulated")
 
 AllFullData <- summaryBy(Response ~ 
                        Subject + DataSet + Condition +
